@@ -1,0 +1,102 @@
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .btn.gray-btn-border {
+    
+        padding: 23px 60px;
+    
+    }
+    
+    .btn.green-bg-btn {
+    
+        padding: 23px 60px;
+    
+    }
+    
+    .h4hero-content>p {
+    
+        padding-right: 0;
+    
+    }
+    
+    
+    
+}
+
+@media screen and (min-width:375px) and (max-width:767px) {
+	.single-slider {
+		margin-left: -48em;
+	}
+	.footer-title h3{
+		display: none;
+	}
+	.anaseh {
+		margin-top: 6em;
+	}
+	.footer-contact-info {
+		margin-top: -4em;
+	}
+	.footer-top {
+		height: 64em;
+	}
+}
+
+@media screen and (min-width:425px) and (max-width:767px) {
+	.footer-top {
+		height: 58em;
+	}
+}
+
+@media screen and (min-width:570px) and (max-width: 767px) {
+	.footer-menu ul li {
+		display: inline-block;
+		margin-left: 2em;
+	}
+	.footer-top {
+		height: 43em;
+	}
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+	.single-slider {
+		margin-left: -30em;
+	}
+	.section-left {
+		margin-left:0em;
+	}
+	#linkler {
+		margin-left: 3.4em;
+		margin-top: 4em;
+	}
+	.fa-facebook-square:before {
+		content: "\f082";
+	
+	}
+}
+
+@media screen and (min-width:1024px) and (max-width:1119px) {
+	.d-none{
+		display: block !important;
+		margin-left: 4em;
+	}
+	.linkler {
+		margin-left: 3.4em;
+		margin-top: 3em;
+	}
+	.sosial{
+		margin-left: 40px;
+		margin-top: 3em;	
+	}
+	.footer-top {
+		height: 38em;
+	}
+	#blog {
+		left: 30em ;
+	}
+	.single-slider {
+		margin-left: -22em;
+	}
+	.section-left {
+		margin-left: 0em;
+	}
+
+}

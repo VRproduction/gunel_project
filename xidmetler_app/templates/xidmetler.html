@@ -1,0 +1,937 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% for bashlig in baslig %}
+    <title>{{ bashlig }}</title>
+    {% endfor %}
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    {% for photos in photobashlig %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{photos.bashligsekil.url}}">
+    {% endfor %}
+    <!-- Place favicon.png in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/xidmetlerres.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fotik-xidmetler.css' %}" />
+
+    <style>
+        .copyright p {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 1em;
+            background: darkgrey;
+            margin-top: -12px;
+        }
+
+        .col-sm h3 {
+            color: #fff;
+            margin-left: 11px;
+        }
+
+        .ml-auto .fa-phone {
+            margin-top: -13px;
+        }
+
+        .futic {
+            margin-left: 90px;
+        }
+
+        .footer-link {
+            margin-left: 5em;
+        }
+
+        .footer-number {
+            display: inline;
+        }
+
+        .sualsection {
+            width: 60%;
+            margin-left: 16em;
+        }
+
+        .logofooter {
+            width: 50%;
+            margin-left: 85px;
+            margin-top: -95px;
+        }
+
+        .copyright {
+            margin-top: 60px;
+        }
+
+        .copyright-img {
+            width: 45%;
+            margin-left: 90px;
+            margin-top: -6px;
+        }
+
+        .futbloq {
+            font-size: 8px;
+        }
+
+        .blog-feeds-text {
+            margin-left: 185px;
+            margin-top: -75px;
+        }
+
+        .logo::before {
+            position: absolute;
+            content: "";
+            border: 47px solid #fff;
+            left: -35px;
+            width: 170px;
+            height: 170px;
+            top: -83px;
+            border-radius: 100%;
+            z-index: 1;
+        }
+
+        .qebul-button {
+            border-radius: 30px;
+            padding-left: 40px;
+            padding-right: 35px;
+            background-color: rgb(225, 36, 84);
+            color: white !important;
+        }
+
+
+        .mp {
+            border: 0;
+            width: 80%;
+            margin-left: 12em;
+            margin-top: 0em;
+            padding: 2em;
+            height: 35em;
+            border-radius: 35px;
+        }
+
+        .footer-top {
+            height: 37em;
+        }
+
+        .footer-title h3 {
+            margin-left: 2.5em
+        }
+
+        .footer-menu {
+            margin-left: -32em;
+            margin-top: -14em;
+        }
+
+        .futik {
+            margin-top: 28em !important;
+        }
+
+        .xidm {
+            margin-top: -48px;
+        }
+
+    </style>
+
+    <style>
+        @media screen and (min-width:320px) and (max-width:374px) {
+            .service-details-thumb img {
+                max-width: 100%;
+                width: 100%;
+                height: 35%;
+                margin-top: -5em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+
+            .section-title {
+                margin-top: -33em;
+            }
+
+            .testi-content {
+                height: 100rem;
+            }
+
+            .banner-widget img {
+                height: 20em;
+                width: 90%;
+                max-width: 100%;
+                margin-left: 2em;
+            }
+
+            .testi-author-title {
+                display: none !important;
+            }
+
+            .testi-author-desination {
+                display: none !important;
+            }
+
+            .testi-content span {
+                display: none;
+            }
+
+            .srvis {
+                margin-top: 4em !important;
+            }
+
+            .more-service-title {
+                margin-left: 40px;
+                margin-top: -24px;
+            }
+
+            .futu {
+                margin-top: -10em !important;
+            }
+        }
+
+        @media screen and (min-width:375px) and (max-width:767px) {
+
+            nav#cssmenu ul {
+                float: right;
+                margin-top: 60px;
+            }
+            
+            .right_info span {
+                margin-left: 12px;
+            }
+
+            .open {
+                margin-top: 70px;
+            }
+
+            .footer-20192 {
+                margin-top: 5rem;
+                height: 76.599rem;
+                position: relative;
+                color: #fff;
+                padding: 7rem 0;
+                background-color: #141d2a;
+            }
+            .copyright p {
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding: 1em;
+                background: darkgrey;
+                margin-top: 0px;
+            }
+
+            .futic {
+                margin-left: 0em;
+            }
+
+            .postbox__thumb img {
+                margin-top: 45px;
+                width: 100%;
+            }
+
+            .right_info {
+                display: contents;
+            }
+
+            .futbloq {
+                margin-left: -70px;
+                margin-top: 40px;
+                width: 126%;
+            }
+
+            .footer-link {
+                margin-left: 125px;
+                margin-top: 45px;
+            }
+
+            .footer-number {
+                display: flex;
+            }
+
+            .sualsection {
+                width: 100%;
+                margin-left: 0em;
+            }
+
+            #qebulayazil {
+                display: none;
+            }
+
+            .logo img {
+                max-width: 170px;
+                width: 32%;
+                position: absolute;
+                margin-top: -35px;
+                height: 5rem;
+                margin-left: -165px;
+            }
+
+            .logo::before {
+                position: absolute;
+                content: "";
+                border: 47px solid #fff;
+                left: -35px;
+                width: 145px;
+                height: 140px;
+                top: -49px;
+                border-radius: 100%;
+
+            }
+
+            .card-text {
+                text-align: center;
+            }
+
+            .linkler {
+                display: block;
+                margin-left: -3em;
+                margin-top: 2em;
+            }
+        }
+
+        @media screen and (min-width:1100px) and (max-width:1199px) {
+            .footer-20192 {
+                height: 49.2em;
+            }
+        }
+
+
+        @media screen and (min-width:375px) and (max-width:424px) {
+
+            .srvis {
+                margin-top: 60em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+
+            .service-details-thumb img {
+                width: 100%;
+                height: 8%;
+            }
+
+            .section-text {
+                margin-top: 41em;
+            }
+
+            .futu {
+                margin-top: 35em;
+            }
+
+            .more-service-title {
+                margin-left: 40px;
+                margin-top: -25px;
+            }
+
+            .haqsekil {
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                width: 80% !important;
+                height: 5% !important;
+            }
+
+            .xidm {
+                margin-top: -30em;
+            }
+
+            .banner-widget img {
+                width: 100%;
+                height: 20%;
+                margin-left: 0em;
+            }
+
+            .widget-title-box {
+                margin-top: 26em;
+            }
+
+            .linkler {
+                display: block;
+                margin-left: -3em;
+            }
+        }
+        @media screen and (min-width:425px) and (max-width:767px) {
+            .srvis {
+                margin-top: 60em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+
+            .service-details-thumb img {
+                width: 100%;
+                height: 40%;
+            }
+
+            .section-text {
+                margin-top: -31em;
+            }
+
+            .futu {
+                margin-top: -13em;
+            }
+
+            .more-service-title {
+                margin-left: 40px;
+                margin-top: -25px;
+            }
+
+            .haqsekil {
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                width: 80%;
+                height: 40%;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            .srvis {
+                margin-top: 60em;
+            }
+
+            .service-details-thumb img {
+                width: 100%;
+                height: 40%;
+            }
+
+            .section-text {
+                margin-top: -31em;
+            }
+
+            .futu {
+                margin-top: -13em;
+            }
+
+            .more-service-title {
+                margin-left: 40px;
+                margin-top: -25px;
+            }
+
+            .testi-box .mb-10 img {
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                width: 66%;
+                height: 41%;
+            }
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1439px) {
+            .topnav a {
+                margin-top: -5px
+            }
+
+            .service-details-thumb img {
+                width: 100%;
+                height: 25em;
+                max-width: 100%;
+            }
+
+            .section-text {
+                margin-top: 42em;
+            }
+
+            .footer-20192 {
+                height: 47.2em;
+            }
+
+            .copyright p {
+                margin-top: 100px;
+            }
+
+            .more-service-title {
+                margin-left: 40px;
+                margin-top: -35px;
+            }
+        }
+
+        @media screen and (min-width:1440px) and (max-width:2560px) {
+            .topnav a {
+                margin-top: -10px;
+            }
+
+            .xidm {
+
+                margin-top: 10em;
+            }
+
+            .service-details-thumb img {
+                width: 100%;
+                height:25em;
+                max-width: 100%;
+            }
+
+            .futu {
+                margin-top: 0em;
+            }
+
+            .section-title h5 {
+                margin-bottom: 28px;
+                margin-top: -30em;
+            }
+
+            .banner-widget img {
+                height: 10%;
+                margin-left: 1em;
+                width: 100%;
+            }
+
+            .futu ul {
+                display: -webkit-box;
+                margin-left: -35em;
+                margin-top: 6em;
+            }
+
+            .futu li {
+                margin-left: 3em;
+            }
+
+            .haqsekil {
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                width: 80%;
+                height: 36%;
+            }
+
+            .section-text {
+                margin-top: 33em;
+            }
+        }
+
+        @media screen and (max-width:2560px) {
+            .haqsekil {
+                border-top-left-radius: 100%;
+                border-top-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                width: 46%;
+                height: 6%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- header begin -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12 right_info">
+                        {% for numbers in numberemail %}
+                        <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
+                        <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-7 col-sm-12 left_info">
+                        <div>
+                            <a style="top:-12px;" href="{% url 'appoinment' %}" id="qebulayazil" class="btn">Qəbula Yazıl</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 2em;" class="header-main">
+            <div class="container">
+                <nav id='cssmenu'>
+                    <div class="logo">
+                        {% for i in logosekil %}
+                        <a href="{% url 'homepage' %}"><img class="imges" style="position: absolute;"
+                                src="{{ i.logosekilana.url }}" alt=""></a>
+                        {% endfor %}
+                    </div>
+                    <div id="head-mobile"></div>
+                    <div class="header-social-icons f-right d-none d-xl-block">
+                        <ul style="display: flex;
+                        margin-top: -27px;
+                        margin-left: 20px;">
+                            {% for i in haqqimda %}
+                            <li><a href="{{ i.facebook_url }}" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ i.instagram_url }}" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li><a href="{{ i.youtube_url }}" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div style="background-color:rgb(225, 36, 84);" class="button"></div>
+                    <ul>
+                        <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
+                        <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
+                        <li><a href="{% url 'media' %}">Media</a></li>
+                        <li><a href="{% url 'blog' %}">Bloq</a></li>
+                        <li><a href="{% url 'contact' %}">Əlaqə</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- header end -->
+
+    <main>
+        <!-- hero-area start -->
+        {% for i in esasfoto %}
+        <section class="breadcrumb-bg pt-200 pb-180" data-background="img/page/page-bg.jpg"
+            style="background-image: url({{ i.esas_foto.url }});">
+            {% endfor %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9">
+                        <div class="page-title">
+                            {% for i in esasfotoyazilar %}
+                            <p class="small-text pb-15">{{ i.metn_1 }}</p>
+                            <h4>{{ i.metn_2 }}</h4>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero-area end -->
+        <!-- service-details-area start -->
+        <div class="service-details-area pt-120 pb-100">
+            <div class="container">
+                <div class="row">
+                    {% for i in haqqimizdamel %}
+                    <div class="col-md-6 col-lg-6">
+                        <article class="service-details-box">
+                            <div class="service-details-thumb mb-80">
+                                <img class="img" src="{{ i.esas_foto.url }}" alt="">
+                            </div>
+                            <div class="section-title pos-rel mb-45">
+                                <div class="section-text pos-rel">
+                                    <h5 class="green-color text-up-case">{{ i.haqqimizda_ust_yazi_1 }}</h5>
+                                    <h4>{{ i.haqqimizda_ust_yazi_2 }}</h4>
+                                </div>
+                                <div class="section-line pos-rel">
+                                    <img src="{{ i.xett_foto.url }}" alt="">
+                                </div>
+                            </div>
+                            <div class="service-details-text mb-30">
+                                <p>{{ i.metn }}</p>
+                            </div>
+
+                            <div class="ser-fea-box f-left">
+                                <div class="ser-fea-icon f-left">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="col-xl-5 col-lg-4">
+                        <div class="srvis service-widget mb-50">
+                            <div class="widget-title-box mb-30">
+                                <h3 class="widget-title">Digər Servislər</h3>
+                            </div>
+                            <div class="more-service-list">
+                                <ul>
+                                    {% for i in digerservis %}
+                                    <li>
+                                        <a href="#">
+                                            <div class="more-service-icon"><i style="font-size: 30px;"
+                                                    class="fas fa-arrow-right"></i></div>
+                                            <div class="more-service-title">{{ i.servisin_adi }}</div>
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="service-widget mb-50 border-0 p-0">
+                            {% for i in baner %}
+                            <div class="banner-widget">
+                                <a href="{% url 'appoinment' %}">
+                                    <img src="{{ i.sag_baner.url }}" alt="" />
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="xidm service-widget mb-50">
+                            <div class="widget-title-box mb-30">
+                                <h3 class="widget-title">Xidmətlərimiz</h3>
+                            </div>
+                            <div class="more-service-list">
+                                <ul>
+                                    {% for i in servismelumat %}
+                                    <li>
+                                        <a style="cursor: progress;">
+                                            <div class="more-service-icon"><i style="font-size: 30px;"
+                                                    class="fas fa-arrow-right"></i></div>
+                                            <div class="more-service-title">{{ i.sag_melumat }}</div>
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- service-details-area end -->
+    </main>
+
+    <!-- footer start -->
+    <footer style="background-image: url({% static 'img/footer-map.png' %});" class="footer-20192">
+        <div class="site-section">
+            <div class="container">
+
+                <div class="cta d-block d-md-flex align-items-center px-5 sualsection">
+                    <div>
+                        <h2 class="mb-0">Sualınız var?</h2>
+                    </div>
+                    <div class="ml-auto">
+                        <a data-animation="fadeInLeft" data-delay=".6s" href=""
+                            class="btn btn-icon btn-icon-green ml-0"><span><i class="fas fa-phone"></i></span>Əlaqə
+                            Saxla</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm">
+                        {% for i in logosekil %}
+                        <a href="{% url 'homepage' %}"><img class="logofooter" src="{{ i.logosekilana.url }}"></a>
+                        {% endfor %}
+                        <h3 style="padding:22px; font-size: 15px;">Mammoloq, radioloq Günel Qəmbərova süd vəzi
+                            xərçənginin dəyərləndirilməsində,
+                            eləcə
+                            də xərçəng diaqnozunun qoyulmasında müstəsna rolu olan mammoqrafiya, ultrasəs,
+                            duktoqrafiya və biopsiya müayinələrini icra edir.</h3>
+                        <div class="footer-number">
+                            {% for numbers in numberemail %}
+                            <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
+                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i>
+                                {{numbers.email}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-sm">
+                        <div class="footer-link">
+                            <h3 class="lin">Linklər</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="{% url 'contact' %}">Əlaqə bölməsi</a></li>
+                                <li><a href="{% url 'blog' %}">Bloq bölməsi</a></li>
+                                <li><a href="{% url 'media' %}">Media | TV</a></li>
+                                <li><a href="{% url 'xidmetler' %}">Xidmətlərimiz</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm futbloq">
+                        {% for i in footer_bloq %}
+                        <div class="futic">
+                            <div style="display: inline-grid; height: 10em;" class="signle-blog-feeds mb-20">
+                                <div class="blog-feeds-thumb">
+                                    <img class="copyright-img" style="width:15%" src="{{ i.foto.url }}">
+                                </div>
+                                <div class="blog-feeds-text">
+                                    <h4 style="color: white;"><a href="{% url 'blog' %}">{{i.bloq_seyfenin_bashliq_postu}}</a></h4>
+                                    <span style="font-size: 15px;" class="feeds-date">{{ i.vaxt }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>VrProduction@2021</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- JS here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/jquery-magnific-popup.min.js' %}"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+    <script src="https://kit.fontawesome.com/566ead0cef.js"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/one-page-nav-min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/ajax-form.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/menuc.js' %}"></script>
+    <!-- <script src="{% static 'icon/js/fontawesome.js' %}"></script> -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+
+    <script>
+
+        (function ($) {
+            $.fn.menumaker = function (options) {
+                var cssmenu = $(this),
+                    settings = $.extend({
+                        format: "dropdown",
+                        sticky: false
+                    }, options);
+                return this.each(function () {
+                    $(this).find(".button").on('click', function () {
+                        $(this).toggleClass('menu-opened');
+                        var mainmenu = $(this).next('ul');
+                        if (mainmenu.hasClass('open')) {
+                            mainmenu.slideToggle().removeClass('open');
+                        } else {
+
+                            mainmenu.slideToggle().addClass('open');
+                            if (settings.format === "dropdown") {
+                                mainmenu.find('ul').show();
+                            }
+                        }
+                    });
+                    cssmenu.find('li ul').parent().addClass('has-sub');
+                    multiTg = function () {
+                        cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+                        cssmenu.find('.submenu-button').on('click', function () {
+                            $(this).toggleClass('submenu-opened');
+                            if ($(this).siblings('ul').hasClass('open')) {
+                                $(this).siblings('ul').removeClass('open').slideToggle();
+                            } else {
+                                $(this).siblings('ul').addClass('open').slideToggle();
+                            }
+                        });
+                    };
+                    if (settings.format === 'multitoggle') multiTg();
+                    else cssmenu.addClass('dropdown');
+                    if (settings.sticky === true) cssmenu.css('position', 'fixed');
+                    resizeFix = function () {
+                        var mediasize = 1000;
+                        if ($(window).width() > mediasize) {
+                            cssmenu.find('ul').show();
+
+                        }
+                        if ($(window).width() <= mediasize) {
+                            cssmenu.find('ul').hide().removeClass('open');
+                        }
+                    };
+                    resizeFix();
+                    return $(window).on('resize', resizeFix);
+                });
+            };
+        })(jQuery);
+
+        (function ($) {
+            $(document).ready(function () {
+                $("#cssmenu").menumaker({
+                    format: "multitoggle"
+                });
+            });
+        })(jQuery);
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('<a href="#" class="scrollToTop"><span></span></a>').appendTo("body");
+
+            // Check to see if the window is top & if not then fade in button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 500) {
+                    $('.scrollToTop').fadeIn(300);
+                } else {
+                    $('.scrollToTop').fadeOut(300);
+                }
+            });
+
+            // Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300);
+                return false;
+            });
+
+        });
+    </script>
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('<a href="#" class="scrollToTop"><span></span></a>').appendTo("body");
+
+            // Check to see if the window is top & if not then fade in button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1500) {
+                    $('.scrollToTop').fadeIn(300);
+                } else {
+                    $('.scrollToTop').fadeOut(300);
+                }
+            });
+
+            // Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300);
+                return false;
+            });
+
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

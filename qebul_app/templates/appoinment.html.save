@@ -1,0 +1,539 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% for bashlig in baslig %}
+    <title>{{ bashlig }}</title>
+    {% endfor %}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    {% for photos in photobashlig %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{photos.bashligsekil.url}}">
+    {% endfor %}
+    <!-- Place favicon.png in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/qebulres.css' %}">
+
+    <style>
+        .mp {
+            border: 0;
+            width: 80%;
+            margin-left: 12em;
+            margin-top: 0em;
+            padding: 2em;
+            height: 35em;
+            border-radius: 35px;
+        }
+
+        .footer-top {
+            height: 37em;
+        }
+
+        .footer-title h3 {
+            margin-left: 2.5em
+        }
+
+        .footer-menu {
+            margin-left: -32em;
+            margin-top: -14em;
+        }
+
+        .futik {
+            margin-top: 28em !important;
+        }
+
+        .xidm {
+            margin-top: -48px;
+        }
+    </style>
+
+
+    <style>
+        .haqsekil {
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+            width: 30%;
+        }
+
+        .futu {
+            margin-top: 150em;
+        }
+
+        .linkler {
+            display: -webkit-box;
+            margin-left: -22em;
+            margin-top: 5em;
+        }
+
+        .card-text li {
+            padding-left: 4em;
+        }
+
+        .footer-top {
+            height: 44em;
+        }
+
+        .section-left {
+            margin-left: 13em;
+        }
+
+        .linkler {
+            margin-left: 2.5em;
+        }
+    </style>
+
+    <style>
+        @media screen and (max-width:1440px) {
+            .linkler {
+                margin-left: -25em;
+            }
+        }
+
+
+
+        @media screen and (min-width:320px) and (max-width:374px) {
+            .linkler {
+                display: block;
+                margin-left: -4em;
+            }
+        }
+
+        @media screen and (min-width:375px) and (max-width:424px) {
+            .linkler {
+                display: block;
+                margin-left: -4em;
+            }
+	    
+	    .card-text {
+	    	text-align:center;
+	    }
+
+        }
+
+        @media screen and (min-width:425px) and (max-width:767px) {
+            .linkler {
+                display: block;
+                margin-left: -4em;
+            }
+        }
+
+        #fooot {
+            margin-left: 30em;
+            margin-top: 9em;
+        }
+
+        .footer-widget {
+            margin-top: -5em;
+        }
+
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            .linkler {
+                margin-left: -10em;
+                margin-top: 0em;
+                display: block;
+            }
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1439px) {
+            .linkler {
+                margin-left: -17em;
+            }
+
+            .card-text li {
+                padding-left: 1em;
+            }
+
+            .section-button {
+                margin-left: 47em;
+            }
+
+        }
+
+        @media screen and (min-width:1440px) and (max-width:2560px) {
+            .linkler {
+                margin-left: -17em;
+            }
+
+            .card-text li {
+                padding-left: 3em;
+            }
+        }
+
+
+        @media screen and (min-width:1440px) and (max-width:2560) {
+            .card {
+                margin-top: 30em;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- header begin -->
+    <header>
+        <div class="banner">
+            <span style="margin-left: 13em;" class="section-left">
+                {% for i in logosekil %}
+                <a href="{% url 'homepage' %}"><img style="width: 7%;margin-left: -11.5em;position: absolute;"
+                        src="{{ i.logosekilana.url }}" alt=""></a>
+                {% endfor %}
+                {% for numbers in numberemail %}
+                <span><i class="fas fa-phone"></i> {{numbers.number}}</span>
+                <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span>
+                {% endfor %}
+            </span>
+            <span class="section-right">
+                {% for i in haqqimda %}
+                <a href="{{ i.facebook_url }}" title="Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="{{ i.instagram_url }}" title="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="{{ i.youtube_url }}" title="Youtube"><i class="fa fa-youtube"></i></a>
+                {% endfor %}
+            </span>
+        </div>
+
+        <div class="topnav" id="myTopnav">
+            <a href="{% url 'appoinment' %}">Qəbula Yazıl</a>
+            <a href="{% url 'contact' %}">Əlaqə</a>
+            <a href="{% url 'blog' %}">Bloq</a>
+            <a href="{% url 'media' %}">Media</a>
+            <a href="{% url 'xidmetler' %}">Xidmətlər</a>
+            <a href="{% url 'homepage' %}">Ana Səhifə</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <main>
+        <!-- hero-area start -->
+        {% for i in esassekil %}
+        <section class="breadcrumb-bg pt-200 pb-180" data-background=""
+            style="background-image: url({{i.esassekil.url}});">
+            {% endfor %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-12">
+                        {% for i in esasyazilar %}
+                        <div class="page-title">
+                            <p class="small-text pb-15">{{ i.yazı_1 }}</p>
+                            <h1>{{ i.yazı_2 }}</h1>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero-area end -->
+        <!-- about-area start -->
+        <section class="about-area pt-120 pb-90">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-5">
+                        <div class="about-left-side pos-rel mb-30">
+                            {% for i in foto %}
+                            <div class="medical-icon-brand-2 medical-icon-brand-3">
+                                <img src="{{ i.ortafoto.url }}" alt="">
+                            </div>
+                            <div class="about-front-img pos-rel">
+                                <img src="{{ i.esasfoto.url }}" alt="">
+                                <a class="popup-video about-video-btn white-video-btn" href="{{ i.youtube_url }}"><i
+                                        class="fas fa-play"></i></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-7">
+                       <div class="about-title news-letter-title mb-70">
+                                            <h5 class="pink-color">Qəbul formasını göndərdikdən sonra, sizin sorğunuz 24
+                                                saat ərzində cavablanacaqdır</h5>
+                                            <h1>Qəbula Yazıl</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form style="width:50%; method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Adınız</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" name="adtext">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Soyadınız</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1"
+                                            name="soyadtext">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Telefon Nömrəniz</label>
+                                        <input type="number" class="form-control" id="exampleInputPassword1"
+                                            name="number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">G-mail</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" name="email">
+                                        <small id="emailHelp" class="form-text text-muted">Təkcə G-Mail Daxil Edə
+                                            Bilərsiniz.</small>
+                                        <button style="margin-top: 1em;width: 100%;" type="submit"
+                                            class="btn btn-primary">Məlumatı Göndər</button>
+                                    </div>
+                                </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-area end -->
+        <!-- calculate-area start -->
+        {% for i in arxasekilform %}
+        <section class="appointment-area appointment-area-3 pos-rel pt-115 pb-120" data-background="" style=" background-size: 132%;
+        background-repeat: no-repeat; background-image: url({{ i.foto.url }});">
+            {% endfor %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="calculate-box white-bg">
+                            <div style="padding:1em;" class="calculate-content">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="about-title news-letter-title mb-70">
+                                            <h5 class="pink-color">Qəbul formasını göndərdikdən sonra, sizin sorğunuz 24
+                                                saat ərzində cavablanacaqdır</h5>
+                                            <h1>Qəbula Yazıl</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Adınız</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" name="adtext">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Soyadınız</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1"
+                                            name="soyadtext">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Telefon Nömrəniz</label>
+                                        <input type="number" class="form-control" id="exampleInputPassword1"
+                                            name="number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">G-mail</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" name="email">
+                                        <small id="emailHelp" class="form-text text-muted">Təkcə G-Mail Daxil Edə
+                                            Bilərsiniz.</small>
+                                        <button style="margin-top: 1em;width: 100%;" type="submit"
+                                            class="btn btn-primary">Məlumatı Göndər</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- calculate-area end -->
+        <!-- latest-news-area start -->
+        <section class="latest-news-area pt-115 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-7">
+                        <div class="section-title pos-rel mb-75">
+                            <div class="section-icon">
+                                {% for i in bloqanaseyfefoto %}
+                                <img class="section-back-icon back-icon-left" src="{{ i.arxafonfoto.url }}" alt="">
+                                {% endfor %}
+                            </div>
+                            <div class="section-text pos-rel">
+                                {% for i in bloqsolmetn %}
+                                <h5>{{ i.kicikmetn }}</h5>
+                                <h2>{{ i.boyukyazi }}</h2>
+                                {% endfor %}
+                                <br>
+                            </div>
+                            <div class="section-line pos-rel">
+                                <img src="{% static 'img/line.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5 d-none d-lg-block">
+                        <div class="section-button text-right pt-80">
+                            <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'blog' %}"
+                                class="btn btn-icon ml-0"><span>+</span>Bloq</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for i in bloqxeber %}
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="latest-news-box mb-30">
+                            <div class="latest-news-thumb mb-35">
+                                <img src="{{ i.foto.url }}" alt="">
+                            </div>
+                            <div class="latest-news-content">
+                                <div class="news-meta mb-10">
+                                    <span><a href="#" class="news-tag">{{ i.kicikmetn }}</a></span>
+                                    <span class="meta-date"><i class="far fa-calendar"></i>{{ i.tarix }}</span>
+                                </div>
+                                <h3><a href="news-details.html">{{ i.ustmetn }}</a></h3>
+                                <p>{{ i.etraflimelumat|slice:200 }}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- latest-news-area end -->
+    </main>
+
+
+    <!-- footer start -->
+    <footer style="background-color: whitesmoke;">
+        <div class="container-fluid mt-5">
+            <div class="card bg-white mx-5">
+                <div class="row mb-4">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="footer-text pull-left">                          
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi non
+                                pariatur numquam animi nam at impedit odit nisi.</p>
+                            <div class="social mt-2 mb-3">
+                                {% for i in haqqimda %}
+                                <a href="{{ i.facebook_url }}"><i class="fa fa-facebook-official fa-lg"></i></a>
+                                <a href="{{ i.instagram_url }}"><i class="fa fa-instagram fa-lg"></i> </a>
+                                <a href="{{ i.youtube_url }}"><i class="fa fa-youtube fa-lg"></i> </a>
+                                {% endfor %}
+                                <i style="display: none;" class="fa fa-facebook"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <ul class="card-text linkler">
+                            <li style="border-radius: 50%; text-align: center;">
+                                <h3><a href="{% url 'homepage' %}">Ana Səhifə</a></h3>
+                            </li>
+                            <li style="border-radius: 50%; text-align: center;">
+                                <h3><a href="{% url 'xidmetler' %}">Xidmətlər</a></h3>
+                            </li>
+                            <li style="border-radius: 50%; text-align: center;">
+                                <h3><a href="{% url 'media' %}">Media</a></h3>
+                            </li>
+                            <li style="border-radius: 50%; text-align: center;">
+                                <h3><a href="{% url 'blog' %}">Bloq</a></h3>
+                            </li>
+                            <li style="border-radius: 50%; text-align: center;">
+                                <h3><a href="{% url 'contact' %}">Əlaqə</a></h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+
+                    </div>
+                </div>
+                <div class="divider mb-4"> </div>
+                <div class="row" style="font-size:10px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="pull-left">
+                            <p><i class="fa fa-copyright"></i> 2021 VrProduction</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer end -->
+
+    <!-- JS here -->
+
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+
+    <script>
+        function initMap() {
+            var options = {
+                zoom: 13,
+                center: { lat: 40.3979318, lng: 49.8209377 }
+            }
+
+            var map = new
+                google.maps.Map(document.getElementById('map'), options)
+        }
+    </script>
+
+
+
+    <script src="https://kit.fontawesome.com/566ead0cef.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/one-page-nav-min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/ajax-form.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- <script src="{% static 'icon/js/fontawesome.js' %}"></script> -->
+    <script src="{% static 'js/main.js' %}"></script><a id="scrollUp" href="#top"
+        style="display: none; position: fixed; z-index: 2147483647;"><i class="fas fa-chevron-up"></i></a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnZWxC8GpzgiLll70zIrVhB9xmw5r7YZ4&callback=initMap">
+        </script>
+
+
+</body>
+
+</html>

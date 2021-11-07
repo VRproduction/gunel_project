@@ -1,0 +1,44 @@
+upstream ems_server {
+
+   server unix:/run/gunicorn.sock fail_timeout=0;
+}
+
+server {
+
+  listen 80;
+  server_name www.sudvezixercengi.az sudvezixercengi.az;
+  client_max_body_size 4G;
+  #fastcgi_buffers 16 16k; 
+  #fastcgi_buffer_size 32k;
+
+ 
+  access_log /var/www/html/log/nginx-access.log;
+  error_log /var/www/html/log/nginx-error.log;
+
+  location /static/ {
+      alias /var/www/html/staticfiles/;
+  }
+  
+
+  location /media {
+      alias /var/www/html/media;
+  }
+
+
+  location / {
+      proxy_set_header X-Forwarde-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+      proxy_redirect off;
+      
+
+
+
+      if (!-f $request_filename) {
+           proxy_pass http://ems_server;
+          break;
+      }
+
+   }
+
+
+}

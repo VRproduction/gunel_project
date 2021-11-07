@@ -1,0 +1,967 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% for bashlig in baslig %}
+    <title>{{ bashlig }}</title>
+    {% endfor %}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    {% for photos in photobashlig %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{photos.bashligsekil.url}}">
+    {% endfor %}
+    <!-- Place favicon.png in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/qebulres.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fotik.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/qebul-futik.css'}" />
+
+    <style>
+        form {
+            margin-top: -2em;
+            width: 100%;
+            margin-left: 3em;
+        }
+
+        .logo img {
+            max-width: 170px;
+            width: 55%;
+            position: absolute;
+            margin-top: -73px;
+            height: 8rem;
+            margin-left: -23px;
+        }
+
+        .footer-link .lin {
+            margin-left: 18px;
+        }
+
+        .ml-auto .fa-phone {
+            margin-top: 13px;
+        }
+
+        .footer-link {
+            margin-left: 125px;
+            margin-top: 45px;
+        }
+
+        .copyright p {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 1em;
+            background: darkgrey;
+            margin-top: 60px;
+        }
+
+        article .postbox__text {
+            height: 38em;
+        }
+
+        .dagaetraf {
+            margin-left: 4em !important;
+        }
+
+        .futic {
+            margin-left: 90px;
+        }
+
+        .footer-link {
+            margin-left: 3em;
+        }
+
+        .footer-number {
+            display: inline-flex;
+        }
+
+        .sualsection {
+            margin-top: 30px;
+            width: 60%;
+            margin-left: 16em;
+        }
+
+        .logofooter {
+            width: 50%;
+            margin-left: 85px;
+            margin-top: -95px;
+        }
+
+        .copyright {
+            margin-top: 60px;
+        }
+
+        .copyright-img {
+            width: 45%;
+            margin-left: 90px;
+            margin-top: -6px;
+        }
+
+        .futbloq {
+            font-size: 8px;
+        }
+
+        .blog-feeds-text {
+            margin-left: 185px;
+            margin-top: -75px;
+        }
+
+        .logo::before {
+            position: absolute;
+            content: "";
+            border: 47px solid #fff;
+            left: -35px;
+            width: 170px;
+            height: 170px;
+            top: -83px;
+            border-radius: 100%;
+            z-index: 1;
+        }
+
+        .qebul-button {
+            border-radius: 30px;
+            padding-left: 40px;
+            padding-right: 35px;
+            background-color: rgb(225, 36, 84);
+            color: white !important;
+        }
+
+        .footer-20192 {
+            background-size: contain;
+            margin-top: 5rem;
+            height: 50.2rem;
+            position: relative;
+            color: #fff;
+            padding: 7rem 0;
+            background-color: #141d2a;
+        }
+
+        .footer-text p {
+            text-align: center;
+        }
+
+        .mp {
+            border: 0;
+            width: 80%;
+            margin-left: 12em;
+            margin-top: 0em;
+            padding: 2em;
+            height: 35em;
+            border-radius: 35.0px;
+        }
+
+        .footer-top {
+            height: 37em;
+        }
+
+        .footer-title h3 {
+            margin-left: 2.5em
+        }
+
+        .footer-menu {
+            margin-left: -32em;
+            margin-top: -14em;
+        }
+
+        .futik {
+            margin-top: 28em !important;
+        }
+
+        .xidm {
+            margin-top: -48px;
+        }
+
+        .qebul-button {
+            border-radius: 30px;
+            padding-left: 40px;
+            padding-right: 35px;
+            background-color: rgb(225, 36, 84);
+            color: white !important;
+        }
+
+        .mp {
+            border: 0;
+            width: 80%;
+            margin-left: 12em;
+            margin-top: 0em;
+            padding: 2em;
+            height: 35em;
+            border-radius: 35px;
+        }
+
+        .footer-top {
+            height: 37em;
+        }
+
+        .footer-title h3 {
+            margin-left: 2.5em
+        }
+
+        .footer-menu {
+            margin-left: -32em;
+            margin-top: -14em;
+        }
+
+        .futik {
+            margin-top: 28em !important;
+        }
+
+        .xidm {
+            margin-top: -48px;
+        }
+    </style>
+
+
+    <style>
+        .haqsekil {
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+            width: 30%;
+        }
+
+        .futu {
+            margin-top: 150em;
+        }
+
+        .linkler {
+            display: -webkit-box;
+            margin-left: -22em;
+            margin-top: 5em;
+        }
+
+        .card-text li {
+            padding-left: 4em;
+        }
+
+        .footer-top {
+            height: 44em;
+        }
+
+        .section-left {
+            margin-left: 13em;
+        }
+
+        .linkler {
+            margin-left: 2.5em;
+        }
+    </style>
+
+    <style>
+        @media screen and (max-width:1440px) {
+            .linkler {
+                margin-left: -25em;
+            }
+        }
+
+
+
+        @media screen and (min-width:320px) and (max-width:374px) {
+            .linkler {
+                display: block;
+                margin-left: -4em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+        }
+
+        @media screen and (min-width:375px) and (max-width:424px) {
+            .sualsection {
+                margin-top: -10px;
+            }
+
+            form {
+                margin-top: -2em;
+                width: 100%;
+                margin-left: 0em;
+            }
+
+            .breadcrumb-bg {
+                background-size: 180% 100%;
+            }
+
+            .yutik {
+                margin-top: 5px;
+            }
+
+            .pos-rel h2 {
+                font-size: 17px;
+            }
+
+            nav#cssmenu ul {
+                float: right;
+                margin-top: 60px;
+            }
+
+
+            .copyright p {
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding: 1em;
+                background: darkgrey;
+                margin-top: 0px;
+            }
+
+            .futic {
+                margin-left: 0em;
+            }
+
+            .postbox__thumb img {
+                margin-top: 45px;
+                width: 100%;
+            }
+
+            .right_info {
+                display: flex;
+                font-size: 12px;
+            }
+
+            .footer-20192 {
+                margin-top: 5rem;
+                height: 75.3rem;
+                position: relative;
+                color: #fff;
+                padding: 7rem 0;
+                background-color: #141d2a;
+            }
+
+            .futbloq {
+                margin-left: -70px;
+                margin-top: 40px;
+                width: 126%;
+            }
+
+            .footer-link {
+                margin-left: 125px;
+                margin-top: 45px;
+            }
+
+            .footer-number {
+                display: flex;
+            }
+
+            .sualsection {
+                width: 100%;
+                margin-left: 0em;
+                margin-top: -15px;
+            }
+
+            #qebulayazil {
+                display: none;
+            }
+
+            .right_info span {
+                margin-left: 12px;
+            }
+
+            .logo img {
+                max-width: 170px;
+                width: 33%;
+                position: absolute;
+                margin-top: -41px;
+                height: 5.2rem;
+                margin-left: -165px;
+            }
+
+            .logo::before {
+                position: absolute;
+                content: "";
+                border: 47px solid #fff;
+                left: -35px;
+                width: 145px;
+                height: 140px;
+                top: -49px;
+                border-radius: 100%;
+
+            }
+
+            nav#cssmenu ul {
+                float: right;
+                margin-top: 60px;
+            }
+
+            .right_info span {
+                margin-left: 12px;
+            }
+
+            .open {
+                margin-top: 70px;
+            }
+
+
+            .copyright p {
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding: 1em;
+                background: darkgrey;
+                margin-top: 0px;
+            }
+
+
+            #foot {
+                height: 49em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+
+            .linkl {
+                margin-left: 3.5em !important;
+            }
+
+            .linkler {
+                display: block;
+                margin-left: -3em;
+            }
+        }
+
+        @media screen and (min-width:425px) and (max-width:767px) {
+            .footer-top {
+                height: 43em !important;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+
+            .linkler {
+                display: block;
+                margin-left: -4em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+
+            .card-text {
+                text-align: center;
+            }
+
+        }
+
+        @media screen and (min-width:425px) and (max-width:767px) {
+            .linkler {
+                display: block;
+                margin-left: -4em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+        }
+
+        #fooot {
+            margin-left: 30em;
+            margin-top: 9em;
+        }
+
+        .footer-widget {
+            margin-top: -5em;
+        }
+
+        @media screen and (min-width:768px) and (max-width:1023px) {
+            .linkler {
+                margin-left: -10em;
+                margin-top: 0em;
+                display: block;
+            }
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1439px) {
+
+            form {
+                margin-left: 2em;
+            }
+
+            .footer-20192 {
+                height: 43.6rem;
+            }
+
+            .linkler {
+                margin-left: -17em;
+            }
+
+            .card-text li {
+                padding-left: 1em;
+            }
+
+            .section-button {
+                margin-left: 47em;
+            }
+
+        }
+
+        @media screen and (min-width:1440px) and (max-width:2560px) {
+            .linkler {
+                margin-left: -17em;
+            }
+
+            .card-text li {
+                padding-left: 3em;
+            }
+        }
+
+
+        @media screen and (min-width:1440px) and (max-width:2560) {
+            .card {
+                margin-top: 30em;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- header begin -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div style="color: #647589;" class="col-md-5 col-sm-12 right_info">
+                        {% for numbers in numberemail %}
+                        <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
+                        <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-7 col-sm-12 left_info">
+                        <div>
+                            <a style="top:-12px;" href="{% url 'appoinment' %}" id="qebulayazil" class="btn">Qəbula
+                                Yazıl</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 2em;" class="header-main">
+            <div class="container">
+                <nav id='cssmenu'>
+                    <div class="logo">
+                        {% for i in logosekil %}
+                        <a href="{% url 'homepage' %}"><img class="imges" style="position: absolute;"
+                                src="{{ i.logosekilana.url }}" alt=""></a>
+                        {% endfor %}
+                    </div>
+                    <div id="head-mobile"></div>
+                    <div class="header-social-icons f-right d-none d-xl-block">
+                        <ul style="display: flex;
+                        margin-top: -27px;
+                        margin-left: 20px;">
+                            {% for i in haqqimda %}
+                            <li><a href="{{ i.facebook_url }}" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ i.instagram_url }}" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li><a href="{{ i.youtube_url }}" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div style="background-color:rgb(225, 36, 84);" class="button"></div>
+                    <ul>
+                        <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
+                        <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
+                        <li><a href="{% url 'media' %}">Media</a></li>
+                        <li><a href="{% url 'blog' %}">Bloq</a></li>
+                        <li><a href="{% url 'contact' %}">Əlaqə</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <main>
+        <!-- hero-area start -->
+        {% for i in esassekil %}
+        <section class="breadcrumb-bg pt-200 pb-180" data-background=""
+            style="background-image: url({{i.esassekil.url}});">
+            {% endfor %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-12">
+                        {% for i in esasyazilar %}
+                        <div class="page-title">
+                            <p class="small-text pb-15">{{ i.yazı_1 }}</p>
+                            <h1>{{ i.yazı_2 }}</h1>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero-area end -->
+        <!-- about-area start -->
+        <section class="about-area pt-120 pb-90">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-5">
+                        <div class="about-left-side pos-rel mb-30">
+                            {% for i in foto %}
+                            <div class="medical-icon-brand-2 medical-icon-brand-3">
+                                <img src="{{ i.ortafoto.url }}" alt="">
+                            </div>
+                            <div class="about-front-img pos-rel">
+                                <img src="{{ i.esasfoto.url }}" alt="">
+                                <a class="popup-video about-video-btn white-video-btn" href="{{ i.youtube_url }}"><i
+                                        class="fas fa-play"></i></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-7">
+                        <div class="about-title news-letter-title mb-70">
+                            <h5 class="pink-color">Qəbul formasını göndərdikdən sonra, sizin sorğunuz 24
+                                saat ərzində cavablanacaqdır</h5>
+                            <h1>Qəbula Yazıl</h1>
+                        </div>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Adınız</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" name="adtext">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Soyadınız</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="soyadtext">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Telefon Nömrəniz</label>
+                                <input type="number" class="form-control" id="exampleInputPassword1" name="number">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">E-mail</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="mal">
+                                <button id="butikk" style="margin-top: 1em;width: 100%;" type="submit"
+                                    class="btn btn-primary">Məlumatı Göndər</button>
+                            </div>
+                        </form>
+
+                    </div>
+        </section>
+        <!-- about-area end -->
+    </main>
+
+
+    <!-- footer start -->
+    <footer style="background-image: url({% static 'img/footer-map.png' %});" class="footer-20192">
+        <div class="site-section">
+            <div class="container">
+
+                <div class="cta d-block d-md-flex align-items-center px-5 sualsection">
+                    <div>
+                        <h2 class="mb-0">Sualınız var?</h2>
+                    </div>
+                    <div class="ml-auto">
+                        <a data-animation="fadeInLeft" data-delay=".6s" href=""
+                            class="btn btn-icon btn-icon-green ml-0"><span><i class="fas fa-phone"></i></span>Əlaqə
+                            Saxla</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm">
+                        {% for i in logosekil %}
+                        <a href="{% url 'homepage' %}"><img class="logofooter" src="{{ i.logosekilana.url }}"></a>
+                        {% endfor %}
+                        <h3 style="padding:22px; font-size: 15px;">Mammoloq, radioloq Günel Qəmbərova süd vəzi
+                            xərçənginin dəyərləndirilməsində,
+                            eləcə
+                            də xərçəng diaqnozunun qoyulmasında müstəsna rolu olan mammoqrafiya, ultrasəs,
+                            duktoqrafiya və biopsiya müayinələrini icra edir.</h3>
+                        <div class="footer-number">
+                            {% for numbers in numberemail %}
+                            <span style="font-size: 13px;"><i class="fas fa-phone"></i> +{{numbers.number}}</span>
+                            <span style="margin-left: 3em; font-size: 13px;"><i class="fas fa-envelope"></i>
+                                {{numbers.email}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-sm">
+                        <div class="footer-link">
+                            <h3 class="lin">Linklər</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="{% url 'contact' %}">Əlaqə bölməsi</a></li>
+                                <li><a href="{% url 'blog' %}">Bloq bölməsi</a></li>
+                                <li><a href="{% url 'media' %}">Media | TV</a></li>
+                                <li><a href="{% url 'xidmetler' %}">Xidmətlərimiz</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm futbloq">
+                        {% for i in footer_bloq %}
+                        <div class="futic">
+                            <div style="display: inline-grid; height: 10em;" class="signle-blog-feeds mb-20">
+                                <div class="blog-feeds-thumb">
+                                    <img class="copyright-img" style="width:15%" src="{{ i.foto.url }}">
+                                </div>
+                                <div class="blog-feeds-text">
+                                    <h4 style="color: white;"><a
+                                            href="{% url 'blog' %}">{{i.bloq_seyfenin_bashliq_postu}}</a></h4>
+                                    <span style="font-size: 15px;" class="feeds-date">{{ i.vaxt }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>VrProduction@2021</p>
+        </div>
+    </footer>
+
+    <!-- footer end -->
+
+    <!-- JS here -->
+
+
+
+    <script type="javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script type="javascript" src="{% static 'js/jquery-magnific-popup.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/566ead0cef.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="javascript" src="{% static 'js/tether.min.js' %}"></script>
+    <script type="javascript" src="https://kit.fontawesome.com/566ead0cef.js" crossorigin="anonymous"></script>
+    <script type="javascript" src="{% static 'js/popper.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/hero-slider-main.js' %}"></script>
+    <script type="javascript" src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/one-page-nav-min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/ajax-form.js' %}"></script>
+    <script type="javascript" src="{% static 'js/wow.min.js' %}"></script>
+    <script type="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script type="javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="javascript" src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/waypoints.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/plugins.js' %}"></script>
+    <script type="javascript" type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/46/6/common.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/46/6/util.js"></script>
+    <script>
+        $('#butikk').click(function () {
+            alert("Forum uğurla göndərildi.")
+        })
+
+    </script>
+    <script>
+
+            (function ($) {
+                $.fn.menumaker = function (options) {
+                    var cssmenu = $(this),
+                        settings = $.extend({
+                            format: "dropdown",
+                            sticky: false
+                        }, options);
+                    return this.each(function () {
+                        $(this).find(".button").on('click', function () {
+                            $(this).toggleClass('menu-opened');
+                            var mainmenu = $(this).next('ul');
+                            if (mainmenu.hasClass('open')) {
+                                mainmenu.slideToggle().removeClass('open');
+                            } else {
+
+                                mainmenu.slideToggle().addClass('open');
+                                if (settings.format === "dropdown") {
+                                    mainmenu.find('ul').show();
+                                }
+                            }
+                        });
+                        cssmenu.find('li ul').parent().addClass('has-sub');
+                        multiTg = function () {
+                            cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+                            cssmenu.find('.submenu-button').on('click', function () {
+                                $(this).toggleClass('submenu-opened');
+                                if ($(this).siblings('ul').hasClass('open')) {
+                                    $(this).siblings('ul').removeClass('open').slideToggle();
+                                } else {
+                                    $(this).siblings('ul').addClass('open').slideToggle();
+                                }
+                            });
+                        };
+                        if (settings.format === 'multitoggle') multiTg();
+                        else cssmenu.addClass('dropdown');
+                        if (settings.sticky === true) cssmenu.css('position', 'fixed');
+                        resizeFix = function () {
+                            var mediasize = 1000;
+                            if ($(window).width() > mediasize) {
+                                cssmenu.find('ul').show();
+
+                            }
+                            if ($(window).width() <= mediasize) {
+                                cssmenu.find('ul').hide().removeClass('open');
+                            }
+                        };
+                        resizeFix();
+                        return $(window).on('resize', resizeFix);
+                    });
+                };
+            })(jQuery);
+
+        (function ($) {
+            $(document).ready(function () {
+                $("#cssmenu").menumaker({
+                    format: "multitoggle"
+                });
+            });
+        })(jQuery);
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('<a href="#" class="scrollToTop"><span></span></a>').appendTo("body");
+
+            // Check to see if the window is top & if not then fade in button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1500) {
+                    $('.scrollToTop').fadeIn(300);
+                } else {
+                    $('.scrollToTop').fadeOut(300);
+                }
+            });
+
+            // Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300);
+                return false;
+            });
+
+        });
+    </script>
+
+
+
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            $(".filter-button").click(function () {
+                var value = $(this).attr("data-filter");
+
+                if (value == "all") {
+                    //$('.filter').removeClass('hidden');
+                    $(".filter").show('1000');
+                }
+                else {
+                    $(".filter").not('.' + value).hide('3000');
+                    $(".filter").filter('.' + value).show('3000');
+
+                }
+            });
+
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('<a href="#" class="scrollToTop"><span></span></a>').appendTo("body");
+
+            // Check to see if the window is top & if not then fade in button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1500) {
+                    $('.scrollToTop').fadeIn(300);
+                } else {
+                    $('.scrollToTop').fadeOut(300);
+                }
+            });
+
+            // Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300);
+                return false;
+            });
+
+        });
+    </script>
+
+
+
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+
+    <script>
+        function initMap() {
+            var options = {
+                zoom: 13,
+                center: { lat: 40.3979318, lng: 49.8209377 }
+            }
+
+            var map = new
+                google.maps.Map(document.getElementById('map'), options)
+        }
+    </script>
+
+
+
+</body>
+
+</html>

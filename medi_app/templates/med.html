@@ -1,0 +1,998 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% for i in baslig %}
+    <title>{{ i.bashlig }}</title>
+    {% endfor %}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    {% for photos in photobashlig %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ photos.bashligsekil.url }}">
+    {% endfor %}
+    <!-- Place favicon.png in the root directory -->
+
+    <!-- CSS here -->
+    <style>
+        .qebul-button {
+            border-radius: 30px;
+            padding-left: 40px;
+            padding-right: 35px;
+            background-color: rgb(225, 36, 84);
+            color: white !important;
+        }
+
+        .port-image {
+            width: 100%;
+        }
+
+        .col-md-3 {
+            margin-bottom: 20px;
+        }
+
+        .each-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .each-item:hover .cap2,
+        .each-item:hover .cap1 {
+            left: 0px;
+        }
+
+        .cap1 p {
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .cap1 h3 {
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        .cap1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.747);
+            top: 0px;
+            left: -100%;
+            padding: 10px;
+
+            transition: all .5s;
+        }
+
+        .cap2 {
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            background: rgba(0, 178, 255, 0.5);
+            bottom: 0px;
+            left: 100%;
+            padding: 10px;
+
+            transition: all .5s;
+        }
+
+        .banner a {
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 15px 40px;
+            background-color: yellow;
+            color: white;
+            border-radius: 50px;
+            font-family: sans-serif;
+            font-weight: bolder;
+        }
+
+        .mfp-fade.mfp-bg {
+            opacity: 0;
+            -webkit-transition: all 0.15s ease-out;
+            -moz-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+        }
+
+        .mfp-fade.mfp-bg.mfp-ready {
+            opacity: 0.8;
+        }
+
+        .mfp-fade.mfp-bg.mfp-removing {
+            opacity: 0;
+        }
+
+        .mfp-fade.mfp-wrap .mfp-content {
+            opacity: 0;
+            -webkit-transition: all 0.15s ease-out;
+            -moz-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+        }
+
+        .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+            opacity: 1;
+        }
+
+        .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+            opacity: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/carousel_reyler.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hero-slider-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mediares.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fotik.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media-futik.css'}" />
+
+
+    <style>
+        .tvik {
+            position: absolute;
+            margin-left: 8.5em;
+            margin-top: -15em;
+        }
+
+        .yutik {
+            margin-top: 0px;
+        }
+
+        .tvik {
+            margin-left: 8em;
+            margin-top: -15em;
+            background: #e92c50;
+            color: white;
+            border-radius: 50%;
+            padding: 1.5em;
+        }
+
+        .yutubik {
+            position: absolute;
+            margin-left: 8em;
+            margin-top: -7em;
+            background: #e92c50;
+            color: white;
+            border-radius: 50%;
+            padding: 1.5em;
+        }
+
+        .logo img {
+            max-width: 170px;
+            width: 55%;
+            position: absolute;
+            margin-top: -73px;
+            height: 13rem;
+            margin-left: -23px;
+        }
+
+        .footer-link .lin {
+            margin-left: 18px;
+        }
+
+        .ml-auto .fa-phone {
+            margin-top: 13px;
+        }
+
+        .footer-link {
+            margin-left: 125px;
+            margin-top: 45px;
+        }
+
+        .copyright p {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 1em;
+            background: darkgrey;
+            margin-top: 60px;
+        }
+
+        article .postbox__text {
+            height: 38em;
+        }
+
+        .dagaetraf {
+            margin-left: 4em !important;
+        }
+
+        .futic {
+            margin-left: 90px;
+        }
+
+        .footer-link {
+            margin-left: 3em;
+        }
+
+        .footer-number {
+            display: inline-flex;
+        }
+
+        .sualsection {
+            margin-top: 30px;
+            width: 60%;
+            margin-left: 16em;
+        }
+
+        .logofooter {
+            width: 50%;
+            margin-left: 85px;
+            margin-top: -95px;
+        }
+
+        .copyright {
+            margin-top: 60px;
+        }
+
+        .copyright-img {
+            width: 45%;
+            margin-left: 90px;
+            margin-top: -6px;
+        }
+
+        .futbloq {
+            font-size: 8px;
+        }
+
+        .blog-feeds-text {
+            margin-left: 185px;
+            margin-top: -75px;
+        }
+
+        .logo::before {
+            position: absolute;
+            content: "";
+            border: 47px solid #fff;
+            left: -35px;
+            width: 170px;
+            height: 170px;
+            top: -83px;
+            border-radius: 100%;
+            z-index: 1;
+        }
+
+        .qebul-button {
+            border-radius: 30px;
+            padding-left: 40px;
+            padding-right: 35px;
+            background-color: rgb(225, 36, 84);
+            color: white !important;
+        }
+
+        .footer-20192 {
+            background-size: contain;
+            margin-top: 5rem;
+            height: 76.3rem;
+            position: relative;
+            color: #fff;
+            padding: 7rem 0;
+            background-color: #141d2a;
+        }
+
+        .footer-text p {
+            text-align: center;
+        }
+
+        .mp {
+            border: 0;
+            width: 80%;
+            margin-left: 12em;
+            margin-top: 0em;
+            padding: 2em;
+            height: 35em;
+            border-radius: 35.0px;
+        }
+
+        .footer-top {
+            height: 37em;
+        }
+
+        .footer-title h3 {
+            margin-left: 2.5em
+        }
+
+        .footer-menu {
+            margin-left: -32em;
+            margin-top: -14em;
+        }
+
+        .futik {
+            margin-top: 28em !important;
+        }
+
+        .xidm {
+            margin-top: -48px;
+        }
+    </style>
+
+
+    <style>
+        .haqsekil {
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+            width: 30%;
+        }
+
+        .futu {
+            margin-top: 150em;
+        }
+
+        .linkler {
+            display: -webkit-box;
+            margin-left: -22em;
+            margin-top: 5em;
+        }
+
+        .card-text li {
+            padding-left: -8em;
+        }
+
+        .footer-top {
+            height: 44em;
+        }
+
+        .section-left {
+            margin-left: 13em;
+        }
+
+        .linkler {
+            margin-left: 2.5em;
+        }
+    </style>
+
+    <style>
+        @media screen and (min-width:320px) and (max-width:374px) {
+            #foot {
+                height: 52em;
+            }
+
+            .footer-contact-info {
+                margin-top: -30px !important;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+        }
+
+        @media screen and (min-width:375px) and (max-width:424px) {
+
+            .tvik {
+                position: absolute;
+                margin-left: 6.5em;
+                margin-top: -12em;
+            }
+
+            .yutubik {
+                position: absolute;
+                margin-left: 7em;
+                margin-top: -6em;
+                background: #e92c50;
+                color: white;
+                border-radius: 50%;
+                padding: 1.5em;
+            }
+
+            .breadcrumb-bg {
+                background-size: 180% 100%;
+            }
+
+            .yutik {
+                margin-top: 5px;
+            }
+
+
+
+            .pos-rel h2 {
+                font-size: 17px;
+            }
+
+            nav#cssmenu ul {
+                float: right;
+                margin-top: 60px;
+            }
+
+
+            .copyright p {
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding: 1em;
+                background: darkgrey;
+                margin-top: 0px;
+            }
+
+            .futic {
+                margin-left: 0em;
+            }
+
+            .postbox__thumb img {
+                margin-top: 45px;
+                width: 100%;
+            }
+
+            .right_info {
+                display: flex;
+                font-size: 13px;
+            }
+
+            .footer-20192 {
+                margin-top: 5rem;
+                height: 76.599rem;
+                position: relative;
+                color: #fff;
+                padding: 7rem 0;
+                background-color: #141d2a;
+            }
+
+            .futbloq {
+                margin-left: -70px;
+                margin-top: 40px;
+                width: 126%;
+            }
+
+            .footer-link {
+                margin-left: 125px;
+                margin-top: 45px;
+            }
+
+            .footer-number {
+                display: flex;
+            }
+
+            .sualsection {
+                width: 100%;
+                margin-left: 0em;
+                margin-top: 65px;
+            }
+
+            #qebulayazil {
+                display: none;
+            }
+
+            .right_info span {
+                margin-left: 12px;
+            }
+
+            .logo img {
+                max-width: 170px;
+                width: 33%;
+                position: absolute;
+                margin-top: -37px;
+                height: 8.2rem;
+                margin-left: -155px;
+            }
+
+            .logo::before {
+                position: absolute;
+                content: "";
+                border: 47px solid #fff;
+                left: -35px;
+                width: 145px;
+                height: 140px;
+                top: -49px;
+                border-radius: 100%;
+
+            }
+
+            nav#cssmenu ul {
+                float: right;
+                margin-top: 60px;
+            }
+
+            .right_info span {
+                margin-left: 12px;
+            }
+
+            .open {
+                margin-top: 70px;
+            }
+
+            .footer-20192 {
+                margin-top: 5rem;
+                height: 126rem;
+                position: relative;
+                color: #fff;
+                padding: 7rem 0;
+                background-color: #141d2a;
+            }
+
+            .copyright p {
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding: 1em;
+                background: darkgrey;
+                margin-top: 0px;
+            }
+
+
+            #foot {
+                height: 49em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+
+            .linkl {
+                margin-left: 3.5em !important;
+            }
+
+            .linkler {
+                display: block;
+                margin-left: -3em;
+            }
+        }
+
+        @media screen and (min-width:425px) and (max-width:767px) {
+            .footer-top {
+                height: 43em !important;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1439px) {
+
+            .sualsection {
+                margin-top: 20px;
+            }
+
+            .breadcrumb {
+                display: none;
+            }
+        }
+
+        .footer-title {
+            margin-left: -18px !important;
+            margin-top: 76px !important;
+        }
+
+        @media screen and (min-width: 1440px) and (max-width:2560px) {
+            .breadcrumb {
+                display: none;
+            }
+
+            .footer-title {
+                margin-left: -4px;
+            }
+
+            .linkler {
+                margin-left: -20em;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- header begin -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div style="color: #647589; font-size: 14px;" class="col-md-5 col-sm-12 right_info">
+                        {% for numbers in numberemail %}
+                        <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
+                        <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-7 col-sm-12 left_info">
+                        <div>
+                            <a style="top:-12px;" href="{% url 'appoinment' %}" id="qebulayazil" class="btn">Qəbula
+                                Yazıl</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 2em;" class="header-main">
+            <div class="container">
+                <nav id='cssmenu'>
+                    <div class="logo">
+                        {% for i in logosekil %}
+                        <a href="{% url 'homepage' %}"><img class="imges" style="position: absolute;"
+                                src="{{ i.logosekilana.url }}" alt=""></a>
+                        {% endfor %}
+                    </div>
+                    <div id="head-mobile"></div>
+                    <div class="header-social-icons f-right d-none d-xl-block">
+                        <ul style="display: flex;
+                        margin-top: -27px;
+                        margin-left: 20px;">
+                            {% for i in haqqimda %}
+                            <li><a href="{{ i.facebook_url }}" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ i.instagram_url }}" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li><a href="{{ i.youtube_url }}" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div style="background-color:rgb(225, 36, 84);" class="button"></div>
+                    <ul>
+                        <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
+                        <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
+                        <li><a href="{% url 'media' %}">Media</a></li>
+                        <li><a href="{% url 'blog' %}">Bloq</a></li>
+                        <li><a href="{% url 'contact' %}">Əlaqə</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <main>
+        <!-- hero-area start -->
+        {% for i in foto %}
+        <section class="breadcrumb-bg pt-200 pb-180" data-background="img/page/page-bg.jpg"
+            style="background-image: url({{ i.foto.url }});">
+            {% endfor %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9">
+                        <div class="page-title">
+                            {% for i in fotometn %}
+                            <p class="small-text pb-15">{{ i.yazı_1 }}</p>
+                            <h2>{{ i.yazı_2 }}</h2>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero-area end -->
+
+
+        <!-- START PORTFOLIO DESIGN AREA -->
+
+        <div style="padding: 3em;" class="container">
+
+
+            <div style="text-align: center;">
+                <button class="btn btn-default filter-button" data-filter="sekil">Müsahibə</button>
+                <button class="btn btn-default filter-button" data-filter="tv">Tv</button>
+                <button class="btn btn-default filter-button yutik" data-filter="youtube">Youtube</button>
+            </div>
+            <br />
+
+            <div class="row">
+                {% for i in musahibe %}
+                <div class="col-md-4 filter sekil">
+                    <div class="each-item">
+                        <a href="{{ i.link_musahibe }}"><img class="port-image" src="{{ i.foto.url }}" /> </a>
+
+                    </div>
+                </div>
+                {% endfor %}
+
+
+                {% for i in mediatv %}
+                <div class="col-md-4 filter tv">
+                    <div class="each-item">
+                        <img class="port-image" src="{{ i.foto.url }}" />
+                        <div class="modale">
+                            <a class="popup-youtube" href="{{ i.link_tv }}">
+                                <i class="fas fa-play tvik"></i>
+                            </a><br>
+                        </div>
+
+                    </div>
+
+                </div>
+                {% endfor %}
+
+
+                {% for i in mediayoutube %}
+                <div class="col-md-4 filter youtube">
+                    <div class="each-item">
+                        <img class="port-image" src="{{ i.foto.url }}" />
+                        <div class="modale">
+                            <a class="popup-youtube" href="{{ i.link_youtube }}">
+                                <i class="fas fa-play yutubik"></i>
+                            </a><br>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        </div>
+
+
+
+        <!-- / END PORTFOLIO DESIGN AREA -->
+
+    </main>
+
+    <!-- footer start -->
+    <footer style="background-image: url({% static 'img/footer-map.png' %});" class="footer-20192">
+        <div class="site-section">
+            <div class="container">
+
+                <div class="cta d-block d-md-flex align-items-center px-5 sualsection">
+                    <div>
+                        <h2 class="mb-0">Sualınız var?</h2>
+                    </div>
+                    <div class="ml-auto">
+                        <a data-animation="fadeInLeft" data-delay=".6s" href=""
+                            class="btn btn-icon btn-icon-green ml-0"><span><i class="fas fa-phone"></i></span>Əlaqə
+                            Saxla</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm">
+                        {% for i in logosekil %}
+                        <a href="{% url 'homepage' %}"><img class="logofooter" src="{{ i.logosekilana.url }}"></a>
+                        {% endfor %}
+                        <h3 style="padding:22px; font-size: 15px;">Mammoloq, radioloq Günel Qəmbərova süd vəzi
+                            xərçənginin dəyərləndirilməsində,
+                            eləcə
+                            də xərçəng diaqnozunun qoyulmasında müstəsna rolu olan mammoqrafiya, ultrasəs,
+                            duktoqrafiya və biopsiya müayinələrini icra edir.</h3>
+                        <div class="footer-number">
+                            {% for numbers in numberemail %}
+                            <span style="font-size: 13px;"><i class="fas fa-phone"></i> +{{numbers.number}}</span>
+                            <span style="margin-left: 3em; font-size: 13px;"><i class="fas fa-envelope"></i>
+                                {{numbers.email}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-sm">
+                        <div class="footer-link">
+                            <h3 class="lin">Linklər</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="{% url 'contact' %}">Əlaqə bölməsi</a></li>
+                                <li><a href="{% url 'blog' %}">Bloq bölməsi</a></li>
+                                <li><a href="{% url 'media' %}">Media | TV</a></li>
+                                <li><a href="{% url 'xidmetler' %}">Xidmətlərimiz</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm futbloq">
+                        {% for i in footer_bloq %}
+                        <div class="futic">
+                            <div style="display: inline-grid; height: 10em;" class="signle-blog-feeds mb-20">
+                                <div class="blog-feeds-thumb">
+                                    <img class="copyright-img" style="width:15%" src="{{ i.foto.url }}">
+                                </div>
+                                <div class="blog-feeds-text">
+                                    <h4 style="color: white;"><a
+                                            href="{% url 'blog' %}">{{i.bloq_seyfenin_bashliq_postu}}</a></h4>
+                                    <span style="font-size: 15px;" class="feeds-date">{{ i.vaxt }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>VrProduction@2021</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- JS here -->
+    <script type="javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script type="javascript" src="{% static 'js/jquery-magnific-popup.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/566ead0cef.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="javascript" src="{% static 'js/tether.min.js' %}"></script>
+    <script type="javascript" src="https://kit.fontawesome.com/566ead0cef.js" crossorigin="anonymous"></script>
+    <script type="javascript" src="{% static 'js/popper.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/hero-slider-main.js' %}"></script>
+    <script type="javascript" src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/one-page-nav-min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/ajax-form.js' %}"></script>
+    <script type="javascript" src="{% static 'js/wow.min.js' %}"></script>
+    <script type="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script type="javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="javascript" src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/waypoints.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script type="javascript" src="{% static 'js/plugins.js' %}"></script>
+    <script type="javascript" type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/46/6/common.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://maps.googleapis.com/maps-api-v3/api/js/46/6/util.js"></script>
+
+
+
+    <script>
+
+        (function ($) {
+            $.fn.menumaker = function (options) {
+                var cssmenu = $(this),
+                    settings = $.extend({
+                        format: "dropdown",
+                        sticky: false
+                    }, options);
+                return this.each(function () {
+                    $(this).find(".button").on('click', function () {
+                        $(this).toggleClass('menu-opened');
+                        var mainmenu = $(this).next('ul');
+                        if (mainmenu.hasClass('open')) {
+                            mainmenu.slideToggle().removeClass('open');
+                        } else {
+
+                            mainmenu.slideToggle().addClass('open');
+                            if (settings.format === "dropdown") {
+                                mainmenu.find('ul').show();
+                            }
+                        }
+                    });
+                    cssmenu.find('li ul').parent().addClass('has-sub');
+                    multiTg = function () {
+                        cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+                        cssmenu.find('.submenu-button').on('click', function () {
+                            $(this).toggleClass('submenu-opened');
+                            if ($(this).siblings('ul').hasClass('open')) {
+                                $(this).siblings('ul').removeClass('open').slideToggle();
+                            } else {
+                                $(this).siblings('ul').addClass('open').slideToggle();
+                            }
+                        });
+                    };
+                    if (settings.format === 'multitoggle') multiTg();
+                    else cssmenu.addClass('dropdown');
+                    if (settings.sticky === true) cssmenu.css('position', 'fixed');
+                    resizeFix = function () {
+                        var mediasize = 1000;
+                        if ($(window).width() > mediasize) {
+                            cssmenu.find('ul').show();
+
+                        }
+                        if ($(window).width() <= mediasize) {
+                            cssmenu.find('ul').hide().removeClass('open');
+                        }
+                    };
+                    resizeFix();
+                    return $(window).on('resize', resizeFix);
+                });
+            };
+        })(jQuery);
+
+        (function ($) {
+            $(document).ready(function () {
+                $("#cssmenu").menumaker({
+                    format: "multitoggle"
+                });
+            });
+        })(jQuery);
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('<a href="#" class="scrollToTop"><span></span></a>').appendTo("body");
+
+            // Check to see if the window is top & if not then fade in button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1500) {
+                    $('.scrollToTop').fadeIn(300);
+                } else {
+                    $('.scrollToTop').fadeOut(300);
+                }
+            });
+
+            // Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300);
+                return false;
+            });
+
+        });
+    </script>
+
+
+
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            $(".filter-button").click(function () {
+                var value = $(this).attr("data-filter");
+
+                if (value == "all") {
+                    //$('.filter').removeClass('hidden');
+                    $(".filter").show('1000');
+                }
+                else {
+                    $(".filter").not('.' + value).hide('3000');
+                    $(".filter").filter('.' + value).show('3000');
+
+                }
+            });
+
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('<a href="#" class="scrollToTop"><span></span></a>').appendTo("body");
+
+            // Check to see if the window is top & if not then fade in button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1500) {
+                    $('.scrollToTop').fadeIn(300);
+                } else {
+                    $('.scrollToTop').fadeOut(300);
+                }
+            });
+
+            // Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300);
+                return false;
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
