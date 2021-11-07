@@ -106,12 +106,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = '194.50.170.192'
-EMAIL_HOST_USER = 'emka6451@gmail.com' 
-EMAIL_HOST_PASSWORD = '050662058614em'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 'emin@mpy.az'
+EMAIL_HOST_PASSWORD = 'orfbtoqfmlmrfiau'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
 
 
 

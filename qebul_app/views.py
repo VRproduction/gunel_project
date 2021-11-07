@@ -39,25 +39,33 @@ def appoinment(request):
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
 
     if request.method == 'POST':
-       adtext = request.POST.get('adtext')
-       soyadtext = request.POST.get('soyadtext')
-       telefon = request.POST.get('number')
-       mal = request.POST.get('mal')
-       
-       data = {
-           'adtext' : adtext,
-           'soyadtext' : soyadtext,
-           'telefon' : telefon,
-           'mal' : mal,
-           
-       }
-       adtext = '''
+        adtext = request.POST.get('adtext')
+        soyadtext = request.POST.get('soyadtext')
+        telefon = request.POST.get('number')
+        mal = request.POST.get('mal')
+
+        data = {
+            'adtext': adtext,
+            'soyadtext': soyadtext,
+            'telefon': telefon,
+            'mal': mal,
+
+        }
+        adtext = '''
            Ad: {}
            Soyad: {}
            telefon: {}
            Email: {}
        '''.format(data['adtext'], data['soyadtext'], data['telefon'], data['mal'])
-       send_mail(data['adtext'], adtext, '',[settings.EMAIL_HOST_USER])
+        # sehf yazmisan bax buna
+        send_mail(
+            "Müştəri tərəfindən sizə mesaj gəlib",            
+            adtext,
+            settings.EMAIL_HOST_USER,  # birde yoxala
+            ['emka6451@gmail.com'],
+            fail_silently=False
+        )
+
 
 
     return render(request, 'appoinment.html', {
