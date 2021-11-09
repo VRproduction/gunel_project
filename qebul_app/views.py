@@ -13,12 +13,17 @@ from django.utils.translation import gettext_lazy as _
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from medical_project.settings import EMAIL_HOST_USER
+from medical_project.settings import *
 from .models import *
 from blog_app.models import SosialŞəbəkəLinkləri
+import smtplib
+import ssl
+from email.mime.multipart import MIMEMultipart
 
 
 # Create your views here.
+
+
 def appoinment(request):
     footer_bloq = Footer_Bloq.objects.all()
     xerite_url = QəbulXəritə.objects.all()
@@ -49,7 +54,6 @@ def appoinment(request):
             'soyadtext': soyadtext,
             'telefon': telefon,
             'mal': mal,
-
         }
         adtext = '''
            Ad: {}
@@ -57,14 +61,16 @@ def appoinment(request):
            telefon: {}
            Email: {}
        '''.format(data['adtext'], data['soyadtext'], data['telefon'], data['mal'])
-        # sehf yazmisan bax buna
-        send_mail(
-            "Müştəri tərəfindən sizə mesaj gəlib",            
+
+        server = smtplib.SMTP(settings.EMAIL_HOST, settings.EMAIL_PORT)
+        server.login (settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD) 
+        server.sendmail(
+            "Müştəri tərəfindən sizə mesaj gəlib",
             adtext,
-            settings.EMAIL_HOST_USER,  # birde yoxala
-            ['emka6451@gmail.com'],
-            fail_silently=False
-        )
+            settings.EMAIL_HOST_USER, 
+            ['emka6451@gmail.com'], 
+            message.as_string ()
+            )
 
 
 
@@ -88,3 +94,23 @@ def appoinment(request):
         'footer_bloq': footer_bloq,
 
     })
+
+
+
+
+
+#     }
+    #     adtext = '''
+    #        Ad: {}
+    #        Soyad: {}
+    #        telefon: {}
+    #        Email: {}
+    #    '''.format(data['adtext'], data['soyadtext'], data['telefon'], data['mal'])
+    #     
+    #     send_mail(
+    #         "Müştəri tərəfindən sizə mesaj gəlib",
+    #         adtext,
+    #         settings.EMAIL_HOST_USER,
+    #         ['emka6451@gmail.com'],
+    #         fail_silently=False
+    #     )
