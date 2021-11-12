@@ -61,16 +61,20 @@ def appoinment(request):
            telefon: {}
            Email: {}
        '''.format(data['adtext'], data['soyadtext'], data['telefon'], data['mal'])
+        adtext = '''
+           Ad: {}
+           Soyad: {}
+           telefon: {}
+           Email: {}
+       '''.format(data['adtext'], data['soyadtext'], data['telefon'], data['mal'])
 
-        server = smtplib.SMTP(settings.EMAIL_HOST, settings.EMAIL_PORT)
-        server.login (settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD) 
-        server.sendmail(
+        send_mail(
             "Müştəri tərəfindən sizə mesaj gəlib",
             adtext,
-            settings.EMAIL_HOST_USER, 
-            ['emka6451@gmail.com'], 
-            message.as_string ()
-            )
+            settings.EMAIL_HOST_USER,
+            ['emka6451@gmail.com'],
+            fail_silently = False
+        )
 
 
 
@@ -114,3 +118,14 @@ def appoinment(request):
     #         ['emka6451@gmail.com'],
     #         fail_silently=False
     #     )
+
+
+    # server = smtplib.SMTP(settings.EMAIL_HOST, settings.EMAIL_PORT)
+    #     server.login (settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD) 
+    #     server.sendmail(
+    #         "Müştəri tərəfindən sizə mesaj gəlib",
+    #         adtext,
+    #         settings.EMAIL_HOST_USER, 
+    #         ['emka6451@gmail.com'], 
+    #         message.as_string ()
+    #         )
