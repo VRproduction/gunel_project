@@ -45,35 +45,30 @@ def appoinment(request):
 
     if request.method == 'POST':
         adtext = request.POST.get('adtext')
-        soyadtext = request.POST.get('soyadtext')
-        telefon = request.POST.get('number')
+        telefon = request.POST.get('telefon')
         mal = request.POST.get('mal')
+        subject = request.POST.get('subject')
 
         data = {
             'adtext': adtext,
-            'soyadtext': soyadtext,
             'telefon': telefon,
             'mal': mal,
-        }
-        adtext = '''
-           Ad: {}
-           Soyad: {}
-           telefon: {}
-           Email: {}
-       '''.format(data['adtext'], data['soyadtext'], data['telefon'], data['mal'])
-        adtext = '''
-           Ad: {}
-           Soyad: {}
-           telefon: {}
-           Email: {}
-       '''.format(data['adtext'], data['soyadtext'], data['telefon'], data['mal'])
+            'subject': subject,
 
+        }
+    #     adtext = '''
+    #        Ad və Soyad: {}
+    #        telefon: {}
+    #        Email: {}
+    #        Mesaj: {}
+    #    '''.format(data['adtext'], data['telefon'], data['mal'], data['subject'])
+        message = render_to_string('mail.html', data)
         send_mail(
             "Müştəri tərəfindən sizə mesaj gəlib",
-            adtext,
+            message,
             settings.EMAIL_HOST_USER,
             ['emka6451@gmail.com'],
-            fail_silently = False
+            fail_silently=False, html_message=message
         )
 
 
