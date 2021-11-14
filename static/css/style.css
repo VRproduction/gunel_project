@@ -3755,7 +3755,7 @@ li.price-del i {
 
 .breadcrumb-bg {
 
-	background-size: 100% 100%;
+	background-size: 100% 90%;
 	background-repeat: no-repeat;
 	background-position: center center;
 
@@ -3763,7 +3763,7 @@ li.price-del i {
 
 .small-text {
 
-	color: #647589;
+	color: #f0f0f0;
 
 	font-size: 18px;
 
