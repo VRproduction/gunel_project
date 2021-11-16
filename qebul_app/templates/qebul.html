@@ -101,8 +101,8 @@
     <main>
         <!-- hero-area start -->
         {% for i in esasfoto %}
-        <section class="breadcrumb-bg pt-200 pb-180"  style="background-image: url({{ i.esas_foto.url }});">
-        {% endfor %}
+        <section class="breadcrumb-bg pt-200 pb-180" style="background-image: url({{ i.esas_foto.url }});">
+            {% endfor %}
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-9 col-12">
@@ -113,7 +113,8 @@
                         </div>
                         {% endfor %}
                     </div>
-                    <div class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">
+                    <div
+                        class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">
                         <div class="page-breadcumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb ">
@@ -130,7 +131,8 @@
         </section>
         <!-- hero-area end -->
         <!-- calculate-area start -->
-        <section class="appointment-area appointment-area-3 pos-rel pt-115 pb-120" data-background="img/appoinment/appointment-bg.jpg">
+        <section class="appointment-area appointment-area-3 pos-rel pt-115 pb-120"
+            data-background="img/appoinment/appointment-bg.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-7 col-lg-8">
@@ -144,39 +146,42 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <label for="">Adınız</label>
-                                            <input type="text" name="adtext" >
-                                        </form>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <label for="">Soyadınız</label>
-                                            <input type="text" name="soyadtext">
-                                        </form>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <label for="">Telefon nömrəniz</label>
-                                            <input type="text" name="telefon">
-                                        </form>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <label for="">E-poçt</label>
-                                            <input type="text" name="mal">
-                                        </form>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <form class="calculate-form appointment-form-3 mb-20" action="#">
-                                            <label for="">Müraciyyət</label>
-                                            <textarea name="subject" cols="30" rows="10" ></textarea>
-                                        </form>
-                                    </div>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <form class="calculate-form appointment-form-3 mb-20" action="#">
+                                                <label for="">Adınız</label>
+                                                <input type="text" name="adtext">
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <form class="calculate-form appointment-form-3 mb-20" action="#">
+                                                <label for="">Soyadınız</label>
+                                                <input type="text" name="soyadtext">
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <form class="calculate-form appointment-form-3 mb-20" action="#">
+                                                <label for="">Telefon nömrəniz</label>
+                                                <input type="text" name="telefon">
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <form class="calculate-form appointment-form-3 mb-20" action="#">
+                                                <label for="">E-poçt</label>
+                                                <input type="text" name="mal">
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-12">
+                                            <form class="calculate-form appointment-form-3 mb-20" action="#">
+                                                <label for="">Müraciyyət</label>
+                                                <textarea name="subject" cols="30" rows="10"></textarea>
+                                            </form>
+                                        </div>
+                                        <button class="btn btn-icon ml-0" type="submit"><span>+</span>Göndər</button>
+                                    </form>
                                 </div>
                             </div>
-                            <button class="btn btn-icon ml-0" type="submit"><span>+</span>Göndər</button>
                         </div>
                     </div>
                 </div>
@@ -255,8 +260,10 @@
                             <div class="h4events-list mb-30">
                                 <ul>
                                     {% for i in acilish_vaxt %}
-                                    <li><i class="fal fa-clock"></i><span>{{ i.hefteler }} <span>{{ i.vaxt_1 }}</span></span></li>
-                                    <li><i class="fal fa-times-square"></i><span>{{ i.istirahet_gunleri }} <span>{{ i.vaxt_2 }}</span></span></li>
+                                    <li><i class="fal fa-clock"></i><span>{{ i.hefteler }} <span>{{ i.vaxt_1
+                                                }}</span></span></li>
+                                    <li><i class="fal fa-times-square"></i><span>{{ i.istirahet_gunleri }} <span>{{
+                                                i.vaxt_2 }}</span></span></li>
                                     {% endfor %}
                                 </ul>
                             </div>
