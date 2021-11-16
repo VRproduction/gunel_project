@@ -15,6 +15,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from medical_project.settings import EMAIL_HOST_USER
 from blog_app.models import SosialŞəbəkəLinkləri, PostPaylaşılma
+from blog_app.models import *
 
 def homepage(request):
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
