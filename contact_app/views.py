@@ -37,7 +37,7 @@ def contact(request):
         # 'tecilielektron' : tecilielektron,
         # 'teciliinfo' : teciliinfo,
         'haqqimda' : haqqimda,
-        'footer_bloq' : footer_bloq
+        'footer_bloq' : footer_bloq,
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
     })
