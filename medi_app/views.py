@@ -15,7 +15,7 @@ def med(request):
     foto = MediaƏsasŞəkil.objects.all()
     fotometn = ƏsasŞəkilin_ÜstMətini.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
-    return render(request, 'med.html', {
+    return render(request, 'media.html', {
         'foto' : foto,
         'fotometn' : fotometn,
         'bashlig' : bashlig ,

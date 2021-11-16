@@ -17,6 +17,8 @@ from medical_project.settings import EMAIL_HOST_USER
 from blog_app.models import SosialŞəbəkəLinkləri, PostPaylaşılma
 
 def homepage(request):
+    acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
+    footer_yazi = Footer_Yazısı.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
     tezverilenfoto = Tez_Tez_VerilənSualların_Foto.objects.all()
@@ -40,7 +42,7 @@ def homepage(request):
     photobashlig = SaytınBaşlığıFoto.objects.all()
     bashlig = SaytınBaşlığı.objects.all()
     slayderyazi = GirişŞəkilYazılar.objects.all()
-    return render(request, "homepage.html", {
+    return render(request, "home.html", {
         'tezverilenfoto' : tezverilenfoto,
         'tezverilensuallar' : tezverilensuallar,
         'baslig': bashlig,
@@ -64,6 +66,8 @@ def homepage(request):
         'reyler' : reyler,
         'haqqimda' : haqqimda,
         'footer_bloq' : footer_bloq,
+        'footer_yazi' : footer_yazi,
+        'acilish_vaxt' : acilish_vaxt,
     })
 
 

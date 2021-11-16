@@ -37,3 +37,35 @@ class Hekayə(models.Model):
 
     def __str__(self):
         return self.hekaye
+
+class Haqqımda_Məlumat(models.Model):
+    foto = models.ImageField(upload_to='media/')
+    ad_soyad = models.CharField(max_length=150, help_text="Maksimum 150 hərif")
+    kicik_metn = models.TextField(max_length=1000, help_text="Maksimum 1000 hərif")
+
+    def __str__(self):
+        return self.ad_soyad
+
+class Digər_Bloqlar(models.Model):
+    foto = models.ImageField(upload_to='media/')
+    bashliq = models.TextField(max_length=1000)
+    vaxt = models.DateTimeField()
+
+    def __str__(self):
+        return self.bashliq
+
+class İnstagram_Postları(models.Model):
+    post_link = models.TextField(max_length=1000, help_text="Instagram Postun Linki")
+    foto = models.ImageField(upload_to='media/')
+
+class Footer_Yazısı(models.Model):
+    metn = models.TextField(max_length=2000, help_text="Maksimum 2000 hərif")
+
+    def __str__(self):
+        return self.metn
+
+class Footer_Açılış_Vaxtları(models.Model):
+    hefteler = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
+    vaxt_1 = models.TimeField()
+    istirahet_gunleri = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
+    vaxt_2 = models.TimeField()

@@ -73,7 +73,7 @@ def appoinment(request):
 
 
 
-    return render(request, 'appoinment.html', {
+    return render(request, 'qebul.html', {
         'photobashlig': photobashlig,
         'bashlig': bashlig,
         'numberemail': numberemail,

@@ -28,6 +28,8 @@ from blog_app.views import blog
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name="homepage"),
+    path('',include('blog_app.urls', namespace='blog_app')),
+    path('',include('xidmetler_app.urls', namespace='xidmetler_app')),
     path('qəbulayazıl/', appoinment, name="appoinment"),
     path('əlaqə/', contact, name="contact"),
     path('xidmətlərimiz/', bizim_xidmetler, name="xidmetler"),

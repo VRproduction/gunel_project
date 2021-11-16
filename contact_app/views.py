@@ -20,7 +20,7 @@ def contact(request):
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
     photobashlig = SaytınBaşlığıFoto.objects.all()
-    return render(request, "contact.html", {
+    return render(request, "elaqe.html", {
         'bashlig' : bashlig,
         'photobashlig' : photobashlig,
         'numberemail' : numberemail,
