@@ -45,12 +45,14 @@ def appoinment(request):
 
     if request.method == 'POST':
         adtext = request.POST.get('adtext')
+        soyadtext = request.POST.get('soyadtext')
         telefon = request.POST.get('telefon')
         mal = request.POST.get('mal')
         subject = request.POST.get('subject')
 
         data = {
             'adtext': adtext,
+            'soyadtext' : soyadtext,
             'telefon': telefon,
             'mal': mal,
             'subject': subject,

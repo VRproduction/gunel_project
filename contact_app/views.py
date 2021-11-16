@@ -23,6 +23,37 @@ def contact(request):
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
     photobashlig = SaytınBaşlığıFoto.objects.all()
+
+    if request.method == 'POST':
+        adtext = request.POST.get('adtext')
+        soyadtext = request.POST.get('soyadtext')
+        telefon = request.POST.get('telefon')
+        mal = request.POST.get('mal')
+        subject = request.POST.get('subject')
+
+        data = {
+            'adtext': adtext,
+            'soyadtext' : soyadtext,
+            'telefon': telefon,
+            'mal': mal,
+            'subject': subject,
+
+        }
+    #     adtext = '''
+    #        Ad və Soyad: {}
+    #        telefon: {}
+    #        Email: {}
+    #        Mesaj: {}
+    #    '''.format(data['adtext'], data['telefon'], data['mal'], data['subject'])
+        message = render_to_string('mail.html', data)
+        send_mail(
+            "Müştəri tərəfindən sizə mesaj gəlib",
+            message,
+            settings.EMAIL_HOST_USER,
+            ['emka6451@gmail.com'],
+            fail_silently=False, html_message=message
+        )
+
     return render(request, "elaqe.html", {
         'bashlig' : bashlig,
         'photobashlig' : photobashlig,
