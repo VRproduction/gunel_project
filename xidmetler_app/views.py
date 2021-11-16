@@ -23,7 +23,7 @@ def bizim_xidmetler(request):
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
     photobashlig = SaytınBaşlığıFoto.objects.all()
     
-    return render(request, 'xidmetler.html',{
+    return render(request, 'xidmet.html',{
         'bashlig' : bashlig,
         'photobashlig' : photobashlig,
         'numberemail' : numberemail,
