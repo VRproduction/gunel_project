@@ -36,8 +36,8 @@ urlpatterns = [
    # path('ckeditor/', include('ckeditor_uploader.urls')),
     path('blog/', blog, name="blog"),
     path('medi/', med , name="media"), 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 
 if settings.DEBUG:
-	static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+	static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
