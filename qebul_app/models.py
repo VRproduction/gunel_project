@@ -38,3 +38,6 @@ class QəbulXəritə(models.Model):
 
 class Qəbula_Yazıl_Forma_Arxa_Foto(models.Model):
     foto = models.ImageField(upload_to='media/')
+
+class Əsas_Şəkil(models.Model):
+    esassekil = models.ImageField(upload_to='media/')

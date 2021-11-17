@@ -26,6 +26,7 @@ from blog_app.models import *
 
 
 def appoinment(request):
+    sekil = Əsas_Şəkil.objects.all()
     input_arxasekil = Qəbula_Yazıl_Forma_Arxa_Foto.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     footer_yazi = Footer_Yazısı.objects.all()
@@ -99,6 +100,7 @@ def appoinment(request):
         'footer_bloq' : footer_bloq,
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
+        'sekil' : sekil,
 
     })
 
