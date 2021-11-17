@@ -3566,35 +3566,6 @@ ul.cat li a:hover {
   border: 0;
 }
 
-.form-box::before {
-	position: absolute;
-	content: "\f0e0";
-	font-family: "Font Awesome 5 Free";
-	font-weight: 700;
-	display: inline-block;
-	font-size: 14px;
-	text-align: center;
-	left: 45px;
-	color: #756563;
-	top: 29px;
-	z-index: 99;
-}
-
-.user-icon::before {
-  content: "\f007";
-}
-
-.email-icon::before {
-  content: "\f0e0";
-}
-
-.phone-icon::before {
-  content: "\f095";
-}
-
-.subject-icon::before {
-  content: "\f0a6";
-}
 
 .contact-form input::-moz-placeholder, .contact-form input::placeholder {
   color: #aab5ca;

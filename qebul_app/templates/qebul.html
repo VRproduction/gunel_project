@@ -133,8 +133,10 @@
         </section>
         <!-- hero-area end -->
         <!-- calculate-area start -->
+        {% for i in input_arxasekil %}
         <section class="appointment-area appointment-area-3 pos-rel pt-115 pb-120"
-            data-background="img/appoinment/appointment-bg.jpg">
+            style="background-image:url({{ i.foto.url }})">
+            {% endfor %}
             <div class="container">
                 <div class="row">
                     <div class="col-xl-7 col-lg-8">
@@ -182,7 +184,7 @@
                                                    <textarea class="form-control" name="subject"></textarea>
                                                    
                                                    </div>
-                                                   <div class="contact-btn text-center">
+                                                   <div class="contact-btn text-center pb-40">
                                                        <button id="butikk" style="margin-top: 1em;width: 50%;" type="submit"
                                                        class="btn btn-primary">Məlumatı Göndər</button>
                                                    </div>
@@ -198,7 +200,6 @@
         </section>
         <!-- calculate-area end -->
     </main>
-
     <!-- footer start -->
     <footer>
         <div class="footer-top primary-bg footer-map pos-rel pt-120 pb-80">

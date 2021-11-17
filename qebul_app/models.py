@@ -39,3 +39,6 @@ class QəbulXəritə(models.Model):
     def __str__(self):
         return self.xerite_url
 
+class Qəbula_Yazıl_Forma_Arxa_Foto(models.Model):
+    foto = models.ImageField(upload_to='media/')
+

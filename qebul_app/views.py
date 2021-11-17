@@ -26,6 +26,7 @@ from blog_app.models import *
 
 
 def appoinment(request):
+    input_arxasekil = Qəbula_Yazıl_Forma_Arxa_Foto.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     footer_yazi = Footer_Yazısı.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
@@ -84,6 +85,7 @@ def appoinment(request):
         'bashlig': bashlig,
         'numberemail': numberemail,
         'logosekil': logosekil,
+        'input_arxasekil' : input_arxasekil,
         'sekil': sekil,
         'esasyazilar': esasyazilar,
         'foto': foto,
