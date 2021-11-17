@@ -7,6 +7,9 @@ from django.views.generic import DetailView
 
 # Create your views here.
 def bizim_xidmetler(request):
+    xidmetlerimiz = Xidmətlər_Postları.objects.all()
+    acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
+    footer_yazi = Footer_Yazısı.objects.all()
     melumat_sektoru = Məlumat_Sektoru.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
@@ -37,8 +40,11 @@ def bizim_xidmetler(request):
         # 'teciliinfo' : teciliinfo,
         # 'tecilielektron' : tecilielektron,
         'haqqimda' : haqqimda,
-        'footer_bloq' : footer_bloq,
         'melumat_sektoru' : melumat_sektoru,
+        'footer_bloq' : footer_bloq,
+        'footer_yazi' : footer_yazi,
+        'acilish_vaxt' : acilish_vaxt,
+        'xidmetlerimiz' : xidmetlerimiz,
     })
 
 
@@ -55,6 +61,9 @@ class NewsDetailView(DetailView):
         context['haqqimda_melumat'] = Haqqımda_Məlumat.objects.all()
         context['instagram_post'] = İnstagram_Postları.objects.all()
         context['diger_bloq'] = Digər_Bloqlar.objects.all()
+        context['acilish_vaxt'] = Footer_Açılış_Vaxtları.objects.all()
+        context['footer_yazi'] = Footer_Yazısı.objects.all()
+        context['footer_bloq'] = Footer_Bloq.objects.all()
         return context
 
     

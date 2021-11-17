@@ -28,3 +28,7 @@ class BizəZəng(models.Model):
 
     def __str__(self):
         return self.nomre
+
+
+class Üst_Şəkil(models.Model):
+    img = models.ImageField('media/')

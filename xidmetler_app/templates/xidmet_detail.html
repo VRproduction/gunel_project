@@ -18,6 +18,7 @@
     <!-- Place favicon.png in the root directory -->
 
     <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
@@ -28,7 +29,6 @@
     <link rel="stylesheet" href="{% static 'css/default.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
 </head>
 
@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-xl-5 col-lg-5 col-md-4">
                         <div class="header-top-right-btn f-right">
-                            <a href="appoinment.html" class="btn">Qəbula Yazıl</a>
+                            <a href="{% url 'appoinment' %}" class="btn">Qəbula Yazıl</a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="section-text pos-rel">
                                     <h5 class="green-color text-up-case">{{ haqqimizdameli.haqqimizda_ust_yazi_1 }}</h5>
-                                    <h1><img src="" alt="" srcset="">{{ haqqimizdameli.haqqimizda_ust_yazi_2 }}</h1>
+                                    <h2><img src="" alt="" srcset="">{{ haqqimizdameli.haqqimizda_ust_yazi_2 }}</h2>
                                 </div>
                                 <div class="section-line pos-rel">
                                     <img src="{% static 'img/shape/section-title-line.png' %}" alt="">
@@ -165,10 +165,10 @@
                                 {% for i in diger_bloq %}
                                 <li>
                                     <div class="widget-posts-image">
-                                        <a href="#"><img src="{{ i.foto.url }}" alt=""></a>
+                                        <a href="{% url 'blog' %}"><img src="{{ i.foto.url }}" alt=""></a>
                                     </div>
                                     <div class="widget-posts-body">
-                                        <h6 class="widget-posts-title"><a href="#">{{ i.bashliq }}</a></h6>
+                                        <h6 class="widget-posts-title"><a href="{% url 'blog' %}">{{ i.bashliq }}</a></h6>
                                         <div class="widget-posts-meta">{{ i.vaxt }}</div>
                                     </div>
                                 </li>
@@ -199,6 +199,12 @@
                                 {% endfor %}
                             </ul>
                         </div>
+                        <div class="widget mb-40">
+                            <div class="widget-title-box mb-30">
+                            </div>
+                            <ul id="Instafeed">
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -226,8 +232,8 @@
                             <div class="footer-emailing">
                                 <ul>
                                     {% for numbers in numberemail %}
-                                    <li><i class="far fa-phone"></i>+{{numbers.number}}</li>
-                                    <li><i class="far fa-envelope"></i>{{numbers.email}}</li>
+                                    <li style="font-size:15px !important"><i class="far fa-phone"></i>+{{numbers.number}}</li>
+                                    <li style="font-size:15px !important"><i class="far fa-envelope"></i>{{numbers.email}}</li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -254,18 +260,46 @@
                                 <h3>Bloq</h3>
                             </div>
                             <div class="blog-feeds pr-15">
-                                {% for i in footer_bloq %}
-                                <div class="signle-blog-feeds mb-20">
-                                    <div class="blog-feeds-thumb">
-                                        <a href="news-details.html"><img src="{{ i.foto.url }}" alt=""></a>
+                                    <div class="signle-blog-feeds mb-20">
+                                        <div class="blog-feeds-thumb">
+                                            {% for i in footer_bloq %}
+                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_1.url }}" alt=""></a>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="blog-feeds-text">
+                                            {% for i in footer_bloq %}
+                                            <h5><a href="{% url 'blog' %}">{{ i.bloq_1_seyfenin_bashliq_postu }}</a></h5>
+                                            <span class="feeds-date">{{ i.vaxt_1 }}</span>
+                                            {% endfor %}
+                                        </div>
                                     </div>
-                                    <div class="blog-feeds-text">
-                                        <h5><a href="news-details.html">{{ i.bloq_seyfenin_bashliq_postu }}</a></h5>
-                                        <span class="feeds-date">{{ i.vaxt }}</span>
+                                    <div class="signle-blog-feeds mb-20">
+                                        <div class="blog-feeds-thumb">
+                                            {% for i in footer_bloq %}
+                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt=""></a>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="blog-feeds-text">
+                                            {% for i in footer_bloq %}
+                                            <h5><a href="{% url 'blog' %}">{{ i.bloq_2_seyfenin_bashliq_postu }}</a></h5>
+                                            <span class="feeds-date">{{ i.vaxt_2 }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="signle-blog-feeds  mb-20">
+                                        <div class="blog-feeds-thumb">
+                                            {% for i in footer_bloq %}
+                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt=""></a>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="blog-feeds-text">
+                                            {% for i in footer_bloq %}
+                                            <h5><a href="{% url 'blog' %}">{{i.bloq_3_seyfenin_bashliq_postu}}</a></h5>
+                                            <span class="feeds-date">{{i.vaxt_3}}</span>
+                                            {% endfor %}
+                                        </div>
                                     </div>
                                 </div>
-                                {% endfor %}
-                            </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6">
@@ -276,18 +310,16 @@
                             <div class="h4events-list mb-30">
                                 <ul>
                                     {% for i in acilish_vaxt %}
-                                    <li><i class="fal fa-clock"></i><span>{{ i.hefteler }} <span>{{ i.vaxt_1 }}</span></span></li>
-                                    <li><i class="fal fa-times-square"></i><span>{{ i.istirahet_gunleri }} <span>{{ i.vaxt_2 }}</span></span></li>
-                                    {% endfor %}
+                                        <li><i class="fal fa-clock"></i><span>{{ i.hefteler }} <span>{{ i.acilis_vaxti }} - {{ i.baglanan_vaxt }} </span></span></li>
+                                        <li><i class="fal fa-times-square"></i><span>{{ i.istirahet_gunleri }}</span></li>
+                                        {% endfor %}
                                 </ul>
                             </div>
                             <div class="h4footer-social">
                                 <ul class="list-inline">
                                     {% for i in haqqimda %}
-                                    <li><a href="{{ i.facebook_url }}" title="Facebook"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="{{ i.instagram_url }}" title="Instagram"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                    <li><a href="{{ i.facebook_url }}" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="{{ i.instagram_url }}" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                                     <li><a href="{{ i.youtube_url }}" title="Youtube"><i class="fab fa-youtube"></i></a>
                                     </li>
                                     {% endfor %}

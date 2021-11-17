@@ -3,9 +3,6 @@ from django.db.models.fields.files import ImageField
 
 # Create your models here.
 
-class Əsas_Şəkil(models.Model):
-    esassekil = models.ImageField(upload_to='media/')
-
 class Əsas_Şəkilin_Yazıları(models.Model):
     yazı_1 = models.CharField(max_length=80, help_text="Maksimum 80 simvol")
     yazı_2 = models.CharField(max_length=35, help_text="Maksimum 35 simvol")
@@ -41,4 +38,3 @@ class QəbulXəritə(models.Model):
 
 class Qəbula_Yazıl_Forma_Arxa_Foto(models.Model):
     foto = models.ImageField(upload_to='media/')
-

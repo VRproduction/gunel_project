@@ -46,3 +46,11 @@ class Məlumat_Sektoru(models.Model):
 
     def __str__(self):
         return self.bashliq
+
+class Xidmətlər_Postları(models.Model):
+    foto = models.ImageField(upload_to='media/')
+    bashliq = models.TextField(max_length=1000)
+    vaxt = models.DateTimeField()
+
+    def __str__(self):
+        return self.bashliq

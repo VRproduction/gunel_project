@@ -13,6 +13,7 @@ def contact(request):
     footer_bloq = Footer_Bloq.objects.all()
     xerite_url = QəbulXəritə.objects.all()
     esasfoto = ƏsasFoto.objects.all()
+    sekil = Üst_Şəkil.objects.all()
     gmail = Gmail.objects.all()
     esasfotometn = ƏsasFotoMətnlər.objects.all()
     # tecilielektron = TəciliElektron_Əlaqe.objects.all()
@@ -64,7 +65,7 @@ def contact(request):
         'mekan' : mekan,
         'bizezeng' : bizezeng,
         'esasfotometn' : esasfotometn,
-        'esasfoto' : esasfoto,
+        'sekil' : sekil,
         'xerite_url' : xerite_url,
         # 'tecilielektron' : tecilielektron,
         # 'teciliinfo' : teciliinfo,

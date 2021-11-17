@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-xl-5 col-lg-5 col-md-4">
                         <div class="header-top-right-btn f-right">
-                            <a href="appoinment.html" class="btn">Qəbula Yazıl</a>
+                            <a href="{% url 'appoinment' %}" class="btn">Qəbula Yazıl</a>
                         </div>
                     </div>
                 </div>
@@ -142,13 +142,6 @@
                     <div class="col-xl-7 col-lg-8">
                         <div class="calculate-box white-bg">
                             <div class="calculate-content">
-                                <div class="row">
-                                    <div class="col-xl-12">
-                                        <div class="about-title news-letter-title mb-70">
-                                            <h1>Qəbula Yazıl</h1>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <form method="post" id="contact-form">
                                         {% csrf_token %} 

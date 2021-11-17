@@ -41,7 +41,6 @@ def appoinment(request):
     haqqimizda = SosialŞəbəkəLinkləri.objects.all()
     foto = Qəbul_Haqqımızda_foto.objects.all()
     esasyazilar = Əsas_Şəkilin_Yazıları.objects.all()
-    sekil = Əsas_Şəkil.objects.all()
     photobashlig = SaytınBaşlığıFoto.objects.all()
     bashlig = SaytınBaşlığı.objects.all()
     numberemail = BaşlıqNömrəEpoct.objects.all()
@@ -86,7 +85,6 @@ def appoinment(request):
         'numberemail': numberemail,
         'logosekil': logosekil,
         'input_arxasekil' : input_arxasekil,
-        'sekil': sekil,
         'esasyazilar': esasyazilar,
         'foto': foto,
         'haqqimizda': haqqimizda,

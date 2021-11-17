@@ -8,4 +8,5 @@ admin.site.register(Xidmətlərimiz_Haqqında)
 # admin.site.register(DigərServislər)
 # admin.site.register(Sagbaner)
 admin.site.register(Məlumat_Sektoru)
+admin.site.register(Xidmətlər_Postları)
 

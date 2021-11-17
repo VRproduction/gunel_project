@@ -181,6 +181,25 @@
                         <div class="widget mb-40">
                             <div class="widget-title-box mb-30">
                                 <span class="animate-border"></span>
+                                <h3 class="widget-title">Xidmətlər</h3>
+                            </div>
+                            <ul class="recent-posts">
+                                {% for i in xidmetlerimiz %}
+                                <li>
+                                    <div class="widget-posts-image">
+                                        <a href="{% url 'xidmetler' %}"><img src="{{ i.foto.url }}" alt=""></a>
+                                    </div>
+                                    <div class="widget-posts-body">
+                                        <h6 class="widget-posts-title"><a href="{% url 'xidmetler' %}">{{ i.bashliq }}</a></h6>
+                                        <div class="widget-posts-meta">{{ i.vaxt }}</div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="widget mb-40">
+                            <div class="widget-title-box mb-30">
+                                <span class="animate-border"></span>
                                 <h3 class="widget-title">Sosial Şəbəkə</h3>
                             </div>
                             <div class="social-profile">

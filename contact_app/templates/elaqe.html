@@ -105,9 +105,9 @@
 
     <main>
         <!-- hero-area start -->
-        {% for i in esasfoto %}
+        {% for i in sekil %}
         <section class="breadcrumb-bg pt-200 pb-180"
-            style="background-image: url({{ i.foto.url }});">
+            style="background-image: url({{ i.img.url }});">
         {% endfor %}
             <div class="container">
                 <div class="row">
@@ -179,7 +179,7 @@
                         </div>
                         <div class="col-xl-4 col-lg-3 d-none d-xl-block ">
                             <div class="section-link mb-80 text-right">
-                                <a data-animation="fadeInLeft" data-delay=".6s" href="appoinment.html" class="btn btn-icon ml-0"><span>+</span>Qəbula Yazıl</a>
+                                <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'appoinment' %}" class="btn btn-icon ml-0"><span>+</span>Qəbula Yazıl</a>
                             </div>
                         </div>
                     </div>
