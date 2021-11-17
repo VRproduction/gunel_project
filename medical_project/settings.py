@@ -24,7 +24,7 @@ SECRET_KEY = 'akrv%=34*cluys2tlmwh08*o#e$a%2n_0rmcvq$j%f-qada_ot'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','sudvezixercengi.az','194.50.170.192','194.50.170.192:80']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
