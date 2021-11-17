@@ -19,14 +19,18 @@ from blog_app.models import SosialŞəbəkəLinkləri
 import smtplib
 import ssl
 from email.mime.multipart import MIMEMultipart
+from blog_app.models import *
 
 
 # Create your views here.
 
 
 def appoinment(request):
+    acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
+    footer_yazi = Footer_Yazısı.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
     xerite_url = QəbulXəritə.objects.all()
+    haqqimda = SosialŞəbəkəLinkləri.objects.all()
     # tecilielektron = TəciliElektron_Əlaqe.objects.all()
     haqqimizdayazi = HaqqımızdaYazılar.objects.all()
     # bloqsolmetn = BloqSolMətn.objects.all()
@@ -80,7 +84,7 @@ def appoinment(request):
         'bashlig': bashlig,
         'numberemail': numberemail,
         'logosekil': logosekil,
-        'esassekil': sekil,
+        'sekil': sekil,
         'esasyazilar': esasyazilar,
         'foto': foto,
         'haqqimizda': haqqimizda,
@@ -91,8 +95,10 @@ def appoinment(request):
         'haqqimizdayazi': haqqimizdayazi,
         # 'tecilielektron' : tecilielektron,
         'xerite_url': xerite_url,
-        # 'haqqimda' : haqqimda,
-        'footer_bloq': footer_bloq,
+        'haqqimda' : haqqimda,
+        'footer_bloq' : footer_bloq,
+        'footer_yazi' : footer_yazi,
+        'acilish_vaxt' : acilish_vaxt,
 
     })
 
