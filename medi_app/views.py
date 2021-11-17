@@ -4,6 +4,8 @@ from medical_app.models import *
 from blog_app.models import *
 
 def med(request):
+    acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
+    footer_yazi = Footer_Yazısı.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
     mediayoutube = MediaYouTube.objects.all()
     mediatv = MediaTvProqramları.objects.all()
@@ -28,5 +30,7 @@ def med(request):
         'mediayoutube' : mediayoutube,
         'haqqimda' : haqqimda,
         'footer_bloq' : footer_bloq,
+        'footer_yazi' : footer_yazi,
+        'acilish_vaxt' : acilish_vaxt,
     })
 

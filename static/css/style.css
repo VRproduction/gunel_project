@@ -174,7 +174,7 @@ li {
 }
 
 p {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: normal;
     line-height: 26px;
     color: #647589;
@@ -478,14 +478,14 @@ label {
 }
 .logo-circle::before {
 	position: absolute;
-	content: "";
-	border: 47px solid #fff;
-	left: -35px;
-	width: 150px;
-	height: 150px;
-	top: -35px;
-	border-radius: 100%;
-	z-index: 1;
+    content: "";
+    border: 47px solid #fff;
+    left: -70px;
+    width: 150px;
+    height: 176px;
+    top: -37px;
+    border-radius: 100%;
+    z-index: 1;
 }
 .header__menu ul li {
 	display: inline-block;
@@ -1760,7 +1760,7 @@ li.price-del i {
 	padding-right: 20px;
 }
 .footer-emailing ul li {
-	font-size: 18px;
+	font-size: 17px !important;
 	color: #647589;
 	margin-bottom: 12px;
 }
@@ -3547,7 +3547,7 @@ ul.cat li a:hover {
   background: #ffffff;
   height: 80px;
   width: 100%;
-  padding: 0 80px;
+  padding: 0 20px;
   padding-right: 30px;
   border: 0;
   color: #aab5ca;

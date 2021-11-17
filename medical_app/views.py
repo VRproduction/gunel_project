@@ -14,10 +14,10 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from medical_project.settings import EMAIL_HOST_USER
-from blog_app.models import SosialŞəbəkəLinkləri, PostPaylaşılma
 from blog_app.models import *
 
 def homepage(request):
+    youtube_link_esas = Youtube_Link_Əsas.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     footer_yazi = Footer_Yazısı.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
@@ -44,6 +44,7 @@ def homepage(request):
     bashlig = SaytınBaşlığı.objects.all()
     slayderyazi = GirişŞəkilYazılar.objects.all()
     return render(request, "home.html", {
+        'youtube_link_esas' : youtube_link_esas,
         'tezverilenfoto' : tezverilenfoto,
         'tezverilensuallar' : tezverilensuallar,
         'baslig': bashlig,

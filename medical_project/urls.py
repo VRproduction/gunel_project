@@ -25,6 +25,7 @@ from xidmetler_app.views import bizim_xidmetler
 from medi_app.views import med
 from blog_app.views import blog
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name="homepage"),

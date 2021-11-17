@@ -7,8 +7,8 @@ from django.views.generic import DetailView
 # Create your views here.
 
 def blog(request):
-    acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     footer_yazi = Footer_Yazısı.objects.all()
+    acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     instagram_post = İnstagram_Postları.objects.all()
     haqqimda_melumat = Haqqımda_Məlumat.objects.all()
     diger_bloq = Digər_Bloqlar.objects.all()
@@ -34,10 +34,10 @@ def blog(request):
         'haqqimda' : haqqimda,
         'hekaye' : hekaye,
         # 'baner' : baner,
-        'footer_bloq' : footer_bloq,
         'haqqimda_melumat' : haqqimda_melumat,
         'diger_bloq' : diger_bloq,
         'instagram_post' : instagram_post,
+        'footer_bloq' : footer_bloq,
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
     })
@@ -55,6 +55,11 @@ class BlogDetailView(DetailView):
         context['haqqimda_melumat'] = Haqqımda_Məlumat.objects.all()
         context['instagram_post'] = İnstagram_Postları.objects.all()
         context['diger_bloq'] = Digər_Bloqlar.objects.all()
+        context['logosekil'] = LogoŞəkilAnaSəhifə.objects.all()
+        context['acilish_vaxt'] = Footer_Açılış_Vaxtları.objects.all()
+        context['footer_yazi'] = Footer_Yazısı.objects.all()
+        context['footer_bloq'] = Footer_Bloq.objects.all()
+        
         return context
 
     

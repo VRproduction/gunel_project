@@ -66,6 +66,6 @@ class Footer_Yazısı(models.Model):
 
 class Footer_Açılış_Vaxtları(models.Model):
     hefteler = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
-    vaxt_1 = models.TimeField()
+    acilis_vaxti = models.TimeField()
+    baglanan_vaxt = models.TimeField()
     istirahet_gunleri = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
-    vaxt_2 = models.TimeField()

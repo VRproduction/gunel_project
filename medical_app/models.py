@@ -142,9 +142,17 @@ class Tez_Tez_VerilənSuallar(models.Model):
 
 
 class Footer_Bloq(models.Model):
-    foto = models.ImageField(upload_to='media/')
-    bloq_seyfenin_bashliq_postu = models.TextField(max_length=300, help_text="Maksimum 300 hərif")
-    vaxt = models.DateField()
+    foto_1 = models.ImageField(upload_to='media/')
+    bloq_1_seyfenin_bashliq_postu = models.TextField(max_length=300, help_text="Maksimum 300 hərif")
+    vaxt_1 = models.DateField()
 
-    def __str__(self):
-       return self.bloq_seyfenin_bashliq_postu
+    foto_2 = models.ImageField(upload_to='media/')
+    bloq_2_seyfenin_bashliq_postu = models.TextField(max_length=300, help_text="Maksimum 300 hərif")
+    vaxt_2 = models.DateField()
+
+    foto_3 = models.ImageField(upload_to='media/')
+    bloq_3_seyfenin_bashliq_postu = models.TextField(max_length=300, help_text="Maksimum 300 hərif")
+    vaxt_3 = models.DateField()
+
+class Youtube_Link_Əsas(models.Model):
+    youtube_link = models.TextField(max_length=5000, help_text="Youtube Video Linki")
