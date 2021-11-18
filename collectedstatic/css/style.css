@@ -483,7 +483,7 @@ label {
     left: -70px;
     width: 150px;
     height: 176px;
-    top: -37px;
+    top: -50px;
     border-radius: 100%;
     z-index: 1;
 }
@@ -3559,9 +3559,8 @@ ul.cat li a:hover {
   color: #aab5ca;
   font-weight: 500;
   letter-spacing: 2px;
-  text-transform: uppercase;
   width: 100%;
-  padding: 30px 80px;
+  padding: 30px 20px;
   border: 0;
 }
 

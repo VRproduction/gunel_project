@@ -1098,7 +1098,8 @@
 	display: none;
 }
 .logo img {
-	width: 200px;
+	width: 30%;
+	margin-left: -15px;
 }
 .single-satisfied h1 {
 	float: none;
