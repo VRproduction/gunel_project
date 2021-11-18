@@ -64,6 +64,7 @@ class NewsDetailView(DetailView):
         context['acilish_vaxt'] = Footer_Açılış_Vaxtları.objects.all()
         context['footer_yazi'] = Footer_Yazısı.objects.all()
         context['footer_bloq'] = Footer_Bloq.objects.all()
+        context['logosekil'] = LogoŞəkilAnaSəhifə.objects.all()
         return context
 
     

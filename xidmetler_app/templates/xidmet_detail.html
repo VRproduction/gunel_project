@@ -164,7 +164,9 @@
 
     <main>
         <!-- hero-area start -->
-        <section class="breadcrumb-bg pt-200 pb-180" data-background="img/page/page-bg.jpg">
+        {% for i in esasfoto %}
+        <section class="breadcrumb-bg pt-200 pb-180" style="background-image: url({{ i.esas_foto.url }});">
+        {% endfor %}
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
@@ -260,12 +262,6 @@
                                 {% for i in instagram_post %}
                                 <li><a href="{{ i.post_link }}"><img src="{{ i.foto.url }}" alt=""></a></li>
                                 {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="widget mb-40">
-                            <div class="widget-title-box mb-30">
-                            </div>
-                            <ul id="Instafeed">
                             </ul>
                         </div>
                     </div>
