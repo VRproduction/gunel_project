@@ -480,8 +480,8 @@ label {
 	position: absolute;
     content: "";
     border: 47px solid #fff;
-    left: -70px;
-    width: 150px;
+    left: -85px;
+    width: 170px;
     height: 176px;
     top: -50px;
     border-radius: 100%;
@@ -5799,6 +5799,7 @@ p.checkout-coupon input[type="text"] {
 /* fact end */
 
 .blog-slider {
+	margin-top: 60px !important;
 	width: 95%;
 	position: relative;
 	max-width: 800px;
