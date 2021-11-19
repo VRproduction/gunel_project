@@ -160,7 +160,7 @@
     <main>
         <!-- hero-area start -->
         {% for i in esasfoto %}
-        <section class="breadcrumb-bg pt-200 pb-180" style="background-image: url({{ i.esas_foto.url }});">
+        <section class="breadcrumb-bg pt-200 pb-180" style="background-image: url({{ i.esas_foto.url }}); background-size:100%; background-repeat:no-repeat;">
             {% endfor %}
             <div class="container">
                 <div class="row">
@@ -172,8 +172,7 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <div
-                        class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">
+                    <div class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">
                         <div class="page-breadcumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb ">

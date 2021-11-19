@@ -15,6 +15,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from medical_project.settings import EMAIL_HOST_USER
 from blog_app.models import *
+from xidmetler_app.models import *
 
 def homepage(request):
     youtube_link_esas = Youtube_Link_Əsas.objects.all()
@@ -43,6 +44,7 @@ def homepage(request):
     photobashlig = SaytınBaşlığıFoto.objects.all()
     bashlig = SaytınBaşlığı.objects.all()
     slayderyazi = GirişŞəkilYazılar.objects.all()
+    haqqimizdamel = Xidmətlərimiz_Haqqında.objects.all()
     return render(request, "home.html", {
         'youtube_link_esas' : youtube_link_esas,
         'tezverilenfoto' : tezverilenfoto,
@@ -70,6 +72,7 @@ def homepage(request):
         'footer_bloq' : footer_bloq,
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
+        'haqqimizdamel' : haqqimizdamel,
     })
 
 

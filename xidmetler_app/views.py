@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from medical_app.views import *
 from .models import *
-from blog_app.models import *
 from django.urls import reverse
 from django.views.generic import DetailView
 
@@ -15,7 +14,7 @@ def bizim_xidmetler(request):
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
     # baner = Sagbaner.objects.all()
     # digerservis = DigərServislər.objects.all()
-    esasfoto = ƏsasFoto.objects.all()
+    esasfotos = ƏsasFoto.objects.all()
     esasfotoyazilar = ƏsasFoto_ÜstYazılar.objects.all()
     haqqimizdamel = Xidmətlərimiz_Haqqında.objects.all()
     bashlig = SaytınBaşlığı.objects.all()
@@ -31,7 +30,7 @@ def bizim_xidmetler(request):
         'photobashlig' : photobashlig,
         'numberemail' : numberemail,
         'logosekil' : logosekil,
-        'esasfoto' : esasfoto,
+        'esasfotos' : esasfotos,
         'esasfotoyazilar' : esasfotoyazilar,
         'haqqimizdamel' : haqqimizdamel,
         # 'servismelumat' : servismelumat,
