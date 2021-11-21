@@ -175,7 +175,7 @@
         <!-- hero-area start -->
         {% for i in sekil %}
         <section class="breadcrumb-bg pt-200 pb-180"
-            style="background-image: url({{ i.img.url }});">
+            style="background-image: url({{ i.img.url }}); background-size:100% 100%; background-repeat:no-repeat;">
         {% endfor %}
             <div class="container">
                 <div class="row">
@@ -324,8 +324,8 @@
                                 <div class="footer-emailing">
                                     <ul>
                                         {% for numbers in numberemail %}
-                                        <li style="font-size:15px !important">><i class="far fa-phone"></i>+{{numbers.number}}</li>
-                                        <li style="font-size:15px !important">><i class="far fa-envelope"></i>{{numbers.email}}</li>
+                                        <li style="font-size:15px !important"><i class="far fa-phone"></i>+{{numbers.number}}</li>
+                                        <li style="font-size:15px !important"><i class="far fa-envelope"></i>{{numbers.email}}</li>
                                         {% endfor %}
                                     </ul>
                                 </div>
