@@ -1099,6 +1099,7 @@
 }
 .logo img {
 	width: 30%;
+	margin-top: 1px;
 	margin-left: -15px;
 }
 .single-satisfied h1 {

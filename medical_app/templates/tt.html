@@ -37,9 +37,10 @@
         }
 
         .logoimg {
-            width: 9%;
-            margin-left: 91px;
+            width: 44%;
+            margin-left: -4.1em;
             margin-top: -18px;
+            ;
         }
 
         .footerlogoimg {
@@ -102,6 +103,7 @@
 
         }
 
+        /* START MENU BAR */
         @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
         .content {
@@ -110,15 +112,17 @@
 
         header {
             width: 100%;
-            background-color: azure;
+            background-color: #2F2F2F;
             /* position: fixed; */
             z-index: 999;
         }
 
         .logo {
-            color: #647589;;
+            color: #5FC0DC;
+            text-transform: uppercase;
             text-decoration: none;
             font-size: 36px;
+            font-weight: bold;
         }
 
         .toggler {
@@ -133,7 +137,6 @@
         nav {
             width: 100%;
             display: none;
-            text-align: center;
         }
 
         nav ul {
@@ -142,33 +145,45 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #647589;
+            color: #F2F2F2;
             font-size: 18px;
             line-height: 40px;
             transition: 0.3s ease-out;
         }
 
         nav ul li a:hover {
-            color: #7c92a8;
+            color: #5FC0DC;
         }
 
         .active {
-            color: #7c92a8;
+            color: #5FC0DC;
         }
 
         .side-nav {
-            margin-left: 18px;
+            text-align: center;
         }
 
         .side-nav a {
             text-decoration: none;
-            color: #7c92a8;
+            color: #5FC0DC;
             padding-right: 15px;
             line-height: 40px;
-            font-size: 15px;
         }
 
         /* END NAVIGATION */
+        section {
+            margin-top: 500px;
+            text-align: center;
+            font-size: 10px;
+            color: #2F2F2F;
+            margin-bottom: 20px;
+        }
+
+        section:after {
+            content: 'Jan/2018';
+            font-size: 12px;
+            font-weight: bold;
+        }
 
         #info {
             padding-top: 200px;
@@ -192,7 +207,7 @@
                 position: relative;
                 width: auto;
                 float: right;
-                padding: 33px 250px;
+                padding: 5px 0;
             }
 
             nav ul {
@@ -213,95 +228,31 @@
 </head>
 
 <body>
-    <!-- header begin -->
     <header>
-        <div class="top-bar d-none d-md-block">
-            <div class="container">
-                <div class="row d-flex align-items-center">
-                    <div class="col-xl-6 offset-xl-1 col-lg-6 offset-lg-1 col-md-7 offset-md-1">
-                        <div class="header-info">
-                            {% for numbers in numberemail %}
-                            <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
-                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-5 col-md-4">
-                        <div class="header-top-right-btn f-right">
-                            <a href="{% url 'appoinment' %}" class="btn">Qəbula Yazıl</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- menu-area -->
         <div class="content">
-            <div class="logo logo-circle pos-rel">
-                {% for i in logosekil %}
-                <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
-                {% endfor %}
-                <div class="toggler"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
 
-                <!-- Start Navigation -->
-                <nav>
-                    <ul>
-                        <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
-                        <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
-                        <li><a href="{% url 'media' %}">Media</a></li>
-                        <li><a href="{% url 'blog' %}">Bloq</a></li>
-                        <li><a href="{% url 'contact' %}">Əlaqə</a></li>
-                    </ul>
+            <a class="logo" href="#">Logo</a>
+            <div class="toggler"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
 
-                    <!-- Side navigation on desktop -->
-                    <div class="side-nav">
-                        {% for i in haqqimda %}
-                        <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
-                        <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a>
-                        {% endfor %}
-                    </div>
-                </nav>
+            <!-- Start Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Accomodation</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Reservations</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
 
-            </div>
-            <!-- <div class="col-xl-3 col-lg-3 col-md-5 d-flex align-items-center">
-                        <div class="logo logo-circle pos-rel">
-                            {% for i in logosekil %}
-                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="col-xl-9 col-lg-9 col-md-9">
-                        <div class="header-right f-right">
-                            <div class="header-social-icons f-right d-none d-xl-block">
-                                <ul>
-                                    {% for i in haqqimda %}
-                                    <li><a target="_blank" href="{{ i.facebook_url }}"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li><a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
-                                    </li>
-                                    <li><a target="_blank" href="{{ i.instagram_url }}"><i
-                                                class="fab fa-instagram"></i></a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="header__menu f-right">
-                            <nav id="mobile-menu">
-                                <ul>
-                                    <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
-                                    <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
-                                    <li><a href="{% url 'media' %}">Media</a></li>
-                                    <li><a href="{% url 'blog' %}">Bloq</a></li>
-                                    <li><a href="{% url 'contact' %}">Əlaqə</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="mobile-menu"></div>
-                    </div> -->
+                <!-- Side navigation on desktop -->
+                <div class="side-nav">
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                </div>
+            </nav>
+
         </div>
-
     </header>
     <!-- header end -->
     <main>
@@ -809,7 +760,6 @@
                 $('nav').slideToggle(500);
             });
         });
-
     </script>
 </body>
 
