@@ -235,38 +235,13 @@
             </div>
         </div>
         <!-- menu-area -->
-        <div class="content">
-            <div class="logo logo-circle pos-rel">
-                {% for i in logosekil %}
-                <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
-                {% endfor %}
-                <div class="toggler"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></div>
-
-                <!-- Start Navigation -->
-                <nav>
-                    <ul>
-                        <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
-                        <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
-                        <li><a href="{% url 'media' %}">Media</a></li>
-                        <li><a href="{% url 'blog' %}">Bloq</a></li>
-                        <li><a href="{% url 'contact' %}">Əlaqə</a></li>
-                    </ul>
-
-                    <!-- Side navigation on desktop -->
-                    <div class="side-nav">
-                        {% for i in haqqimda %}
-                        <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
-                        <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a>
-                        {% endfor %}
-                    </div>
-                </nav>
-
-            </div>
-            <!-- <div class="col-xl-3 col-lg-3 col-md-5 d-flex align-items-center">
+        <div class="header-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-5 d-flex align-items-center">
                         <div class="logo logo-circle pos-rel">
                             {% for i in logosekil %}
-                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
+                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}" alt=""></a>
                             {% endfor %}
                         </div>
                     </div>
@@ -275,12 +250,9 @@
                             <div class="header-social-icons f-right d-none d-xl-block">
                                 <ul>
                                     {% for i in haqqimda %}
-                                    <li><a target="_blank" href="{{ i.facebook_url }}"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li><a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
-                                    </li>
-                                    <li><a target="_blank" href="{{ i.instagram_url }}"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                    <li><a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -299,9 +271,10 @@
                     </div>
                     <div class="col-12">
                         <div class="mobile-menu"></div>
-                    </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
-
     </header>
     <!-- header end -->
     <main>
