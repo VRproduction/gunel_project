@@ -479,11 +479,11 @@ label {
 .logo-circle::before {
 	position: absolute;
     content: "";
-    border: 47px solid #fff;
-    left: -85px;
-    width: 170px;
-    height: 176px;
-    top: -50px;
+    border: 47px solid azure;
+    left: 79px;
+    width: 190px;
+    height: 200px;
+    top: -38px;
     border-radius: 100%;
     z-index: 1;
 }
@@ -6047,3 +6047,6 @@ p.checkout-coupon input[type="text"] {
 	  width: 30px;
    }
  }
+
+
+ 
