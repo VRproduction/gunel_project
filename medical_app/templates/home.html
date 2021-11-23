@@ -27,17 +27,11 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
     <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 
     <style>
         .ustfoto_yazisi {
             font-size: 56px;
-        }
-        
-        .logoimg {
-            width: 9%;
-            margin-left: 90px;
-            margin-top: -4px;
-            padding: 7px;
         }
         
         .footerlogoimg {
@@ -84,147 +78,18 @@
                 margin-top: -60px;
                 padding: 8px 9px;
                 position: absolute;
-                right: 25px !important;
+                right: 13px;
                 text-decoration: none;
                 top: -15px;
                 width: 34px;
             }
-            .side-nav {
-                margin-left: 148px;
-            }
-        }
-        
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-        .content {
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: azure;
-        }
-        /* .logo {
-            color: #5FC0DC;
-            text-decoration: none;
-            font-size: 36px;
-        } */
-        
-        .toggler {
-            color: #5FC0DC;
-            cursor: pointer;
-            position: absolute;
-            top: 8px;
-            right: 50px;
-        }
-        
-        nav {
-            width: 100%;
-            display: none;
-        }
-        
-        nav ul {
-            list-style: none;
-            text-align: center;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #647589;
-            font-size: 18px;
-            line-height: 40px;
-            transition: 0.3s ease-out;
-        }
-        
-        nav ul li a:hover {
-            color: #505050;
-        }
-        
-        .active {
-            color: #5FC0DC;
-        }
-        
-        .side-nav {
-            margin-left: 40px;
-        }
-        
-        .side-nav a {
-            text-decoration: none;
-            color: #647589;
-            padding-right: 15px;
-            line-height: 40px;
-            font-size: 18px;
-        }
-        
-        section {
-            margin-top: 2px;
-            font-size: 10px;
-            color: #2F2F2F;
-            margin-bottom: 20px;
-        }
-        
-        #info {
-            padding-top: 200px;
-            text-align: center;
-            color: #5FC0DC;
-        }
-        
-        @media screen and (min-width: 872px) {
-            .content {
-                padding: 0 50px;
-            }
-            .toggler {
-                display: none;
-            }
-            nav {
-                display: inline-block !important;
-                position: relative;
-                width: auto;
-                float: right;
-                padding: 50px 160px;
-            }
-            nav ul {
-                float: left;
-            }
-            nav ul li {
-                display: inline-block;
-                padding-right: 20px;
-            }
-            .side-nav {
-                float: right;
-            }
-        }
-        
-        .toggler {
-            border: 1px solid #E12454;
-            color: #E12454;
-            cursor: pointer;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1px;
-            font-weight: 700;
-            height: 52px;
-            line-height: 37px;
-            margin-top: 60px;
-            padding: 8px 8px;
-            position: absolute;
-            right: 5px !important;
-            text-decoration: none;
-            top: -35px;
-            width: 50px;
-        }
-        
-        .toggler span {
-            background: #E12454;
-            display: block;
-            height: 4px;
-            margin-top: 5px;
-            position: relative;
-            top: 1px;
         }
     </style>
+
 
 </head>
 
 <body>
-    <!-- header begin -->
     <header>
         <div class="top-bar d-none d-md-block">
             <div class="container">
@@ -244,40 +109,38 @@
                 </div>
             </div>
         </div>
-        <!-- menu-area -->
-        <div class="content">
-            <div class="logo logo-circle pos-rel">
-                {% for i in logosekil %}
-                <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
-                {% endfor %}
-                <div class="toggler">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
 
-                <!-- Start Navigation -->
-                <nav class="mainob">
-                    <ul class="maenlops">
+        <div class="header-main">
+            <div class="container">
+                <nav id='cssmenu'>
+                    <div class="logo">
+                        <div class="logo logo-circle pos-rel">
+                            {% for i in logosekil %}
+                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="head-mobile"></div>
+                    <div class="button"></div>
+                    <ul>
                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                         <li><a href="{% url 'media' %}">Media</a></li>
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
-                    </ul>
 
-                    <!-- Side navigation on desktop -->
-                    <div class="side-nav">
+                    </ul>
+                    <ul class="socialico">
                         {% for i in haqqimda %}
                         <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
                         <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
                         <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
-                    </div>
+                    </ul>
                 </nav>
-
             </div>
-
+        </div>
     </header>
+
     <!-- header end -->
     <main>
         <!-- hero-area start -->
@@ -294,8 +157,7 @@
                                         <div class="hero-slider-caption ">
                                             {% for yazi in slayderyazi %}
                                             <h5 data-animation="fadeInUp" data-delay=".2s" style="animation-delay: 0.2s;" class="">{{yazi.yazi_1}}</h5>
-                                            <h2 data-animation="fadeInUp" data-delay=".4s" style="animation-delay: 0.4s;" class="ustfoto_yazisi">{{yazi.yazi_2}}
-                                            </h2>
+                                            <h2 data-animation="fadeInUp" data-delay=".4s" style="animation-delay: 0.4s;" class="ustfoto_yazisi">{{yazi.yazi_2}}</h2>
                                             <p data-animation="fadeInUp" data-delay=".6s" style="animation-delay: 0.6s;" class="">{{yazi.yazi_3}}</p>
                                             {% endfor %}
                                         </div>
@@ -409,8 +271,7 @@
                                 </a>
                                 <p>{{i.servis_kicik_melumat|slice:97}}...</p>
                             </div>
-                            <a class="service-link" href="{% url 'xidmetler_app:news-detail' pk=i.id %}">Daha
-                                Ətraflı</a>
+                            <a class="service-link" href="{% url 'xidmetler_app:news-detail' pk=i.id %}">Daha Ətraflı</a>
                         </div>
                     </div>
                     {% endfor %}
@@ -639,8 +500,7 @@
                                 <div class="h4events-list mb-30">
                                     <ul>
                                         {% for i in acilish_vaxt %}
-                                        <li><i class="fal fa-clock"></i><span>{{ i.hefteler }} <span>{{ i.acilis_vaxti
-                                                    }} - {{ i.baglanan_vaxt }} </span></span>
+                                        <li><i class="fal fa-clock"></i><span>{{ i.hefteler }} <span>{{ i.acilis_vaxti }} - {{ i.baglanan_vaxt }} </span></span>
                                         </li>
                                         <li><i class="fal fa-times-square"></i><span>{{ i.istirahet_gunleri }}</span>
                                         </li>
@@ -758,11 +618,63 @@
                 disableOnInteraction: false,
             }
         });
-        $(function() {
-            $('.toggler').on('click', function() {
-                $('nav').slideToggle(500);
+        (function($) {
+            $.fn.menumaker = function(options) {
+                var cssmenu = $(this),
+                    settings = $.extend({
+                        format: "dropdown",
+                        sticky: false
+                    }, options);
+                return this.each(function() {
+                    $(this).find(".button").on('click', function() {
+                        $(this).toggleClass('menu-opened');
+                        var mainmenu = $(this).next('ul');
+                        if (mainmenu.hasClass('open')) {
+                            mainmenu.slideToggle().removeClass('open');
+                        } else {
+                            mainmenu.slideToggle().addClass('open');
+                            if (settings.format === "dropdown") {
+                                mainmenu.find('ul').show();
+                            }
+                        }
+                    });
+                    cssmenu.find('li ul').parent().addClass('has-sub');
+                    multiTg = function() {
+                        cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+                        cssmenu.find('.submenu-button').on('click', function() {
+                            $(this).toggleClass('submenu-opened');
+                            if ($(this).siblings('ul').hasClass('open')) {
+                                $(this).siblings('ul').removeClass('open').slideToggle();
+                            } else {
+                                $(this).siblings('ul').addClass('open').slideToggle();
+                            }
+                        });
+                    };
+                    if (settings.format === 'multitoggle') multiTg();
+                    else cssmenu.addClass('dropdown');
+                    if (settings.sticky === true) cssmenu.css('position', 'fixed');
+                    resizeFix = function() {
+                        var mediasize = 1000;
+                        if ($(window).width() > mediasize) {
+                            cssmenu.find('ul').show();
+                        }
+                        if ($(window).width() <= mediasize) {
+                            cssmenu.find('ul').hide().removeClass('open');
+                        }
+                    };
+                    resizeFix();
+                    return $(window).on('resize', resizeFix);
+                });
+            };
+        })(jQuery);
+
+        (function($) {
+            $(document).ready(function() {
+                $("#cssmenu").menumaker({
+                    format: "multitoggle"
+                });
             });
-        });
+        })(jQuery);
     </script>
 </body>
 

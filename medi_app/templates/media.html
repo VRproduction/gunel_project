@@ -27,16 +27,11 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
     <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 
     <style>
         .ustfoto_yazisi {
             font-size: 56px;
-        }
-        
-        .logoimg {
-            width: 9%;
-            margin-left: 91px;
-            margin-top: -18px;
         }
         
         .footerlogoimg {
@@ -83,154 +78,18 @@
                 margin-top: -60px;
                 padding: 8px 9px;
                 position: absolute;
-                right: 25px !important;
+                right: 13px;
                 text-decoration: none;
                 top: -15px;
                 width: 34px;
             }
         }
-        
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-        .content {
-            padding: 0 20px;
-        }
-        
-        header {
-            width: 100%;
-            background-color: azure;
-            /* position: fixed; */
-            z-index: 999;
-        }
-        
-        .logo {
-            color: #647589;
-            ;
-            text-decoration: none;
-            font-size: 36px;
-        }
-        
-        .toggler {
-            border: 1px solid #E12454;
-            color: #E12454;
-            cursor: pointer;
-            display: block;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1px;
-            font-weight: 700;
-            height: 57px;
-            line-height: 37px;
-            margin-top: 60px;
-            padding: 10px 10px;
-            position: absolute;
-            right: 25px !important;
-            text-decoration: none;
-            top: -35px;
-            width: 55px;
-        }
-        /* START NAVIGATION */
-        
-        nav {
-            width: 100%;
-            display: none;
-            text-align: center;
-        }
-        
-        nav ul {
-            list-style: none;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #647589;
-            font-size: 18px;
-            line-height: 40px;
-            transition: 0.3s ease-out;
-        }
-        
-        nav ul li a:hover {
-            color: #7c92a8;
-        }
-        
-        .active {
-            color: #7c92a8;
-        }
-        
-        .side-nav {
-            margin-left: 18px;
-        }
-        
-        .side-nav a {
-            text-decoration: none;
-            color: #7c92a8;
-            padding-right: 15px;
-            line-height: 40px;
-            font-size: 15px;
-        }
-        /* END NAVIGATION */
-        
-        #info {
-            padding-top: 200px;
-            text-align: center;
-            color: #5FC0DC;
-        }
-        
-        @media screen and (min-width: 872px) {
-            .content {
-                padding: 0 50px;
-            }
-            .toggler {
-                display: none;
-            }
-            nav {
-                display: inline-block !important;
-                /* prevent the nav to hide when resize */
-                position: relative;
-                width: auto;
-                float: right;
-                padding: 33px 250px;
-            }
-            nav ul {
-                float: left;
-            }
-            nav ul li {
-                display: inline-block;
-                padding-right: 20px;
-            }
-            .side-nav {
-                float: right;
-            }
-        }
-        
-        .toggler span {
-            background: #E12454;
-            display: block;
-            height: 4px;
-            margin-top: 5px;
-            position: relative;
-            top: 1px;
-        }
-        
-        .meanlopsi a {
-            border-top: 1px solid rgba(255, 255, 255, 0.5);
-            display: block;
-            text-decoration: none;
-            color: #fff;
-            width: 100%;
-            font-size: 12px;
-        }
-        
-        .meannav {
-            background: #0c1923;
-            margin-top: 15px;
-            width: 100%;
-            text-transform: uppercase;
-        }
     </style>
+
 
 </head>
 
 <body>
-    <!-- header begin -->
     <header>
         <div class="top-bar d-none d-md-block">
             <div class="container">
@@ -250,32 +109,36 @@
                 </div>
             </div>
         </div>
-        <!-- menu-area -->
-        <div class="content">
-            <div class="logo logo-circle pos-rel">
-                {% for i in logosekil %}
-                <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
-                {% endfor %}
-                <div class="toggler">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
 
-                <!-- Start Navigation -->
-                <nav class="meannav">
-                    <ul class="meanlopsi">
+        <div class="header-main">
+            <div class="container">
+                <nav id='cssmenu'>
+                    <div class="logo">
+                        <div class="logo logo-circle pos-rel">
+                            {% for i in logosekil %}
+                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="head-mobile"></div>
+                    <div class="button"></div>
+                    <ul>
                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                         <li><a href="{% url 'media' %}">Media</a></li>
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
+
+                    </ul>
+                    <ul class="socialico">
+                        {% for i in haqqimda %}
+                        <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
                     </ul>
                 </nav>
-
             </div>
         </div>
-
     </header>
     <!-- header end -->
 
