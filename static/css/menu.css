@@ -441,7 +441,7 @@ nav#cssmenu ul {
         border: 0;
         height: 2px;
         width: 19px;
-        background: #fff;
+        background: red;
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -450,7 +450,7 @@ nav#cssmenu ul {
     }
     .button.menu-opened:before {
         top: 23px;
-        background: #fff;
+        background: red;
         width: 19px;
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
