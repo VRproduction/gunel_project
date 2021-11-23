@@ -223,6 +223,7 @@
                 float: right;
             }
         }
+        
     </style>
 
 </head>
@@ -764,3 +765,636 @@
 </body>
 
 </html>
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% for bashlig in baslig %}
+    <title>{{ bashlig }}</title>
+    {% endfor %}
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="manifest" href="site.webmanifest">
+    {% for photos in photobashlig %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{photos.bashligsekil.url}}">
+    {% endfor %}
+    <!-- Place favicon.png in the root directory -->
+
+    <!-- CSS here -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/homepageres.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fotik.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animated.css' %}" />
+
+
+
+    <style>
+
+        article .postbox__text {
+            height: 38em;
+        }
+
+        .dagaetraf {
+            margin-left: 4em !important;
+        }
+
+        .futic {
+            margin-left: 90px;
+        }
+
+        .footer-link {
+            margin-left: 5em;
+        }
+
+        .footer-number {
+            display: inline;
+        }
+
+        .sualsection {
+            width: 60%;
+            margin-left: 16em;
+        }
+
+        .logofooter {
+            width: 50%;
+            margin-left: 85px;
+            margin-top: -95px;
+        }
+
+        .copyright {
+            margin-top: 60px;
+        }
+
+        .copyright-img {
+            width: 45%;
+            margin-left: 90px;
+            margin-top: -6px;
+        }
+
+        .futbloq {
+            font-size: 8px;
+        }
+
+        .blog-feeds-text {
+            margin-left: 185px;
+            margin-top: -75px;
+        }
+
+        .logo::before {
+            position: absolute;
+            content: "";
+            border: 47px solid #fff;
+            left: -35px;
+            width: 170px;
+            height: 170px;
+            top: -83px;
+            border-radius: 100%;
+            z-index: 1;
+        }
+
+        .qebul-button {
+            border-radius: 30px;
+            padding-left: 40px;
+            padding-right: 35px;
+            background-color: rgb(225, 36, 84);
+            color: white !important;
+        }
+
+        .about-front-img img {
+            width: 100% !important;
+
+        }
+
+        .medical-icon-brand-2 img {
+
+            margin-left: 32em;
+        }
+
+        .mp {
+            border: 0;
+            width: 80%;
+            margin-left: 12em;
+            margin-top: 0em;
+            padding: 2em;
+            height: 35em;
+            border-radius: 35px;
+        }
+
+        .footer-top {
+            height: 37em;
+        }
+
+        .footer-title h3 {
+            margin-left: 2.5em
+        }
+
+        .footer-menu {
+            margin-left: -32em;
+            margin-top: -14em;
+        }
+
+        .futik {
+            margin-top: 28em !important;
+        }
+
+        .xidm {
+            margin-top: -48px;
+        }
+
+        .copyright p {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            padding: 1em;
+            background: darkgrey;
+            margin-top: 60px;
+        }
+    </style>
+
+
+    <style>
+        .haqsekil {
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+            width: 30%;
+        }
+
+        .futu {
+            margin-top: 150em;
+        }
+
+        .linkler {
+            display: -webkit-box;
+            margin-left: -22em;
+            margin-top: 5em;
+        }
+
+        .card-text li {
+            padding-left: 4em;
+        }
+
+        .footer-top {
+            height: 44em;
+        }
+
+        .section-left {
+            margin-left: 13em;
+        }
+
+        .linkler {
+            margin-left: 2.5em;
+        }
+    </style>
+
+
+    <style>
+        @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+            .btn.gray-btn-border {
+
+                padding: 23px 60px;
+
+            }
+
+            .btn.green-bg-btn {
+
+                padding: 23px 60px;
+
+            }
+
+            .h4hero-content>p {
+
+                padding-right: 0;
+
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+        }
+
+        @media screen and (min-width:375px) and (max-width:767px) {
+
+            .pos-rel h2 {
+                font-size: 17px;
+            }
+
+            nav#cssmenu ul {
+                float: right;
+                margin-top: 60px;
+            }
+
+
+            .copyright p {
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                padding: 1em;
+                background: darkgrey;
+                margin-top: 0px;
+            }
+
+            .futic {
+                margin-left: 0em;
+            }
+
+            .postbox__thumb img {
+                margin-top: 45px;
+                width: 100%;
+            }
+
+            .right_info {
+                display: contents;
+            }
+
+            .footer-20192 {
+                margin-top: 5rem;
+                height: 76.599rem;
+                position: relative;
+                color: #fff;
+                padding: 7rem 0;
+                background-color: #141d2a;
+            }
+
+            .futbloq {
+                margin-left: -70px;
+                margin-top: 40px;
+                width: 126%;
+            }
+
+            .footer-link {
+                margin-left: 125px;
+                margin-top: 45px;
+            }
+
+            .footer-number {
+                display: flex;
+            }
+
+            .sualsection {
+                width: 100%;
+                margin-left: 0em;
+            }
+
+            #qebulayazil {
+                display: none;
+            }
+
+            .right_info span {
+                margin-left: 12px;
+            }
+
+            .logo img {
+                max-width: 170px;
+                width: 32%;
+                position: absolute;
+                margin-top: -35px;
+                height: 5rem;
+                margin-left: -165px;
+            }
+
+            .logo::before {
+                position: absolute;
+                content: "";
+                border: 47px solid #fff;
+                left: -35px;
+                width: 145px;
+                height: 140px;
+                top: -49px;
+                border-radius: 100%;
+
+            }
+
+            .card-text {
+                text-align: center;
+            }
+
+            .linkler {
+                display: block;
+                margin-left: -3em;
+                margin-top: 2em;
+            }
+
+            .faq-left-box {
+                margin-top: -20em;
+            }
+
+            .single-slider {
+                margin-left: -48em;
+            }
+
+            .footer-title h3 {
+                display: none;
+            }
+
+            .anaseh {
+                margin-top: 6em;
+            }
+
+            .footer-contact-info {
+                margin-top: -4em;
+            }
+
+            .footer-top {
+                height: 64em;
+            }
+
+            .hero-slider-caption h5 {
+                margin-left: 25px;
+            }
+
+            .hero-slider-caption h2 {
+                font-size: 17px;
+            }
+
+            .play-btn {
+                margin-left: -60px !important;
+                margin-top: -61px !important;
+            }
+
+
+            .about-title {
+                margin-top: 10em;
+                text-align: center;
+            }
+
+            .faq-left-img img {
+                margin-top: 10em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+
+        }
+
+        @media screen and (min-width:425px) and (max-width:767px) {
+            .footer-top {
+                height: 58em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+        }
+
+        @media screen and (min-width:570px) and (max-width: 767px) {
+            .footer-menu ul li {
+                display: inline-block;
+                margin-left: 2em;
+            }
+
+            .footer-top {
+                height: 43em;
+            }
+
+            .qebul-button {
+                background: white;
+                border-radius: 0%;
+            }
+        }
+
+        @media screen and (min-width:768px) and (max-width:991px) {
+            .single-slider {
+                margin-left: -30em;
+            }
+
+            .section-left {
+                margin-left: 0em;
+            }
+
+            #linkler {
+                margin-left: 3.4em;
+                margin-top: 4em;
+            }
+
+            .fa-facebook-square:before {
+                content: "\f082";
+
+            }
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1439px) {
+            .linkler {
+                margin-left: 3.4em;
+                margin-top: 3em;
+            }
+
+            .sosial {
+                margin-left: 40px;
+                margin-top: 3em;
+            }
+
+            .footer-top {
+                height: 38em;
+            }
+
+            #blog {
+                left: 30em;
+            }
+
+            .single-slider {
+                margin-left: -22em;
+            }
+
+            .section-left {
+                margin-left: 0em;
+            }
+
+            .section-text {
+                margin-top: -65em !important;
+            }
+        }
+
+        @media screen and (min-width:1440px) and (max-width:2560px) {
+            .linkler {
+                margin-left: -23em;
+            }
+
+            .card-text {
+                text-align: center;
+            }
+        }
+
+        @media screen and (min-width:1200px) and (max-width:1438px) {
+
+            .dagaetraf {
+                margin-left: 26px !important;
+            }
+
+            article .postbox__text {
+                height: 45em;
+            }
+
+            .hero-slider-caption {
+
+                margin-left: 100px;
+                font-weight: bold;
+                color: black;
+            }
+
+            .hero-slider-btn .btn-icon {
+                margin-left: 7em !important;
+            }
+
+            .pulse {
+                margin-left: 9.2em !important;
+                margin-top: 5.1em !important;
+            }
+
+            .play-btn img {
+                width: 72px;
+                margin-left: -1px;
+                margin-top: 1.6px;
+            }
+
+            .linkler {
+                margin-left: -24em;
+            }
+
+            .section-text {
+                margin-top: 0em !important;
+            }
+
+            .section-button #blog {
+                margin-left: 65em !important;
+            }
+
+            .single-slider {
+                width: 75% !important;
+            }
+        }
+    </style>
+
+
+    <style>
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+
+    <style>
+        .col-sm h3 {
+            color: #fff;
+            margin-left: 11px;
+        }
+
+        .col-sm p {
+            color: #899dab;
+        }
+
+        .lin {
+            color: #fff;
+        }
+
+        .list-unstyled li {
+            color: #899dab;
+        }
+
+        .sos {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12 right_info">
+                        {% for numbers in numberemail %}
+                        <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
+                        <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-7 col-sm-12 left_info">
+                        <div>
+                            <a style="top:-12px;" href="{% url 'appoinment' %}" id="qebulayazil" class="btn">Qəbula
+                                Yazıl</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="padding: 2em;" class="header-main">
+            <div class="container">
+                <nav id='cssmenu'>
+                    <div class="logo">
+                        {% for i in logosekil %}
+                        <a href="{% url 'homepage' %}"><img class="imges" style="position: absolute;"
+                                src="{{ i.logosekilana.url }}" alt=""></a>
+                        {% endfor %}
+                    </div>
+                    <div id="head-mobile"></div>
+                    <div class="header-social-icons f-right d-none d-xl-block">
+                        <ul style="display: flex;
+                        margin-top: -27px;
+                        margin-left: 20px;">
+                            {% for i in haqqimda %}
+                            <li><a href="{{ i.facebook_url }}" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ i.instagram_url }}" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li><a href="{{ i.youtube_url }}" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div style="background-color:rgb(225, 36, 84);" class="button"></div>
+                    <ul>
+                        <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
+                        <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
+                        <li><a href="{% url 'media' %}">Media</a></li>
+                        <li><a href="{% url 'blog' %}">Bloq</a></li>
+                        <li><a href="{% url 'contact' %}">Əlaqə</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
