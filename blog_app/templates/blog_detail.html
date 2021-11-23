@@ -1,25 +1,21 @@
 {% load static %}
-<!doctype html>
+<!Doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    {% for bashlig in baslig %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"> {% for bashlig in baslig %}
     <title>{{ bashlig }}</title>
     {% endfor %}
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="manifest" href="site.webmanifest">
-    {% for photos in photobashlig %}
-    <link rel="shortcut icon" type="image/x-icon" href="{{photos.bashligsekil.url}}">
-    {% endfor %}
+    <link rel="manifest" href="site.webmanifest"> {% for photos in photobashlig %}
+    <link rel="shortcut icon" href="{{photos.bashligsekil.url}}"> {% endfor %}
     <!-- Place favicon.png in the root directory -->
 
     <!-- CSS here -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
@@ -30,69 +26,210 @@
     <link rel="stylesheet" href="{% static 'css/default.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+
     <style>
-        .logoimg {
-            width: 41%;
-            margin-left: -3.5em;
-            margin-top: -14px;;
+        .ustfoto_yazisi {
+            font-size: 56px;
         }
+        
+        .logoimg {
+            width: 9%;
+            margin-left: 91px;
+            margin-top: -18px;
+        }
+        
+        .footerlogoimg {
+            width: 55%;
+            margin-left: 50px;
+        }
+        
         @media screen and (min-width:375px) and (max-width:767px) {
             .fa-times-square {
                 left: auto !important;
             }
-
             .fa-clock {
                 left: auto !important;
             }
-
             .footerlogoimg {
                 width: 55%;
                 margin-left: 70px;
             }
-
             .footer-contact-content p {
                 text-align: center;
             }
-
             .footer-emailing ul {
                 text-align: center;
             }
-
             .col-xl-2 .footer-widget {
                 text-align: center;
             }
-
             .col-xl-3 .footer-widget {
                 text-align: center;
             }
             .logoimg {
-                width:30%;
+                width: 30%;
             }
             .mean-container a.meanmenu-reveal {
-	            border: 1px solid #E12454;
-	            color: #E12454;
-	            cursor: pointer;
-	            display: block;
-	            font-family: Arial,Helvetica,sans-serif;
-	            font-size: 1px;
-	            font-weight: 700;
-	            height: 40px;
-	            line-height: 37px;
-	            margin-top: -60px;
-	            padding: 8px 9px;
-	            position: absolute;
-	            right: 13px;
-	            text-decoration: none;
-	            top: -15px;
-	            width: 34px;
+                border: 1px solid #E12454;
+                color: #E12454;
+                cursor: pointer;
+                display: block;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1px;
+                font-weight: 700;
+                height: 40px;
+                line-height: 37px;
+                margin-top: -60px;
+                padding: 8px 9px;
+                position: absolute;
+                right: 25px !important;
+                text-decoration: none;
+                top: -15px;
+                width: 34px;
             }
         }
+        
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+        .content {
+            padding: 0 20px;
+        }
+        
+        header {
+            width: 100%;
+            background-color: azure;
+            /* position: fixed; */
+            z-index: 999;
+        }
+        
+        .logo {
+            color: #647589;
+            ;
+            text-decoration: none;
+            font-size: 36px;
+        }
+        
+        .toggler {
+            border: 1px solid #E12454;
+            color: #E12454;
+            cursor: pointer;
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1px;
+            font-weight: 700;
+            height: 57px;
+            line-height: 37px;
+            margin-top: 60px;
+            padding: 10px 10px;
+            position: absolute;
+            right: 25px !important;
+            text-decoration: none;
+            top: -35px;
+            width: 55px;
+        }
+        /* START NAVIGATION */
+        
+        nav {
+            width: 100%;
+            display: none;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #647589;
+            font-size: 18px;
+            line-height: 40px;
+            transition: 0.3s ease-out;
+        }
+        
+        nav ul li a:hover {
+            color: #7c92a8;
+        }
+        
+        .active {
+            color: #7c92a8;
+        }
+        
+        .side-nav {
+            margin-left: 18px;
+        }
+        
+        .side-nav a {
+            text-decoration: none;
+            color: #7c92a8;
+            padding-right: 15px;
+            line-height: 40px;
+            font-size: 15px;
+        }
+        /* END NAVIGATION */
+        
+        #info {
+            padding-top: 200px;
+            text-align: center;
+            color: #5FC0DC;
+        }
+        
+        @media screen and (min-width: 872px) {
+            .content {
+                padding: 0 50px;
+            }
+            .toggler {
+                display: none;
+            }
+            nav {
+                display: inline-block !important;
+                /* prevent the nav to hide when resize */
+                position: relative;
+                width: auto;
+                float: right;
+                padding: 33px 250px;
+            }
+            nav ul {
+                float: left;
+            }
+            nav ul li {
+                display: inline-block;
+                padding-right: 20px;
+            }
+            .side-nav {
+                float: right;
+            }
+        }
+        
+        .toggler span {
+            background: #E12454;
+            display: block;
+            height: 4px;
+            margin-top: 5px;
+            position: relative;
+            top: 1px;
+        }
+        
+        .meanlopsi a {
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            width: 100%;
+            font-size: 12px;
+        }
+        
+        .meannav {
+            background: #0c1923;
+            margin-top: 15px;
+            width: 100%;
+            text-transform: uppercase;
+        }
     </style>
+
 </head>
 
-
 <body>
-
     <!-- header begin -->
     <header>
         <div class="top-bar d-none d-md-block">
@@ -102,8 +239,7 @@
                         <div class="header-info">
                             {% for numbers in numberemail %}
                             <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
-                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span>
-                            {% endfor %}
+                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span> {% endfor %}
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-5 col-md-4">
@@ -115,46 +251,31 @@
             </div>
         </div>
         <!-- menu-area -->
-        <div class="header-menu-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-5 d-flex align-items-center">
-                        <div class="logo logo-circle pos-rel">
-                            {% for i in logosekil %}
-                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}" alt=""></a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="col-xl-9 col-lg-9 col-md-9">
-                        <div class="header-right f-right">
-                            <div class="header-social-icons f-right d-none d-xl-block">
-                                <ul>
-                                    {% for i in haqqimda %}
-                                    <li><a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a></li>
-                                    <li><a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="header__menu f-right">
-                            <nav id="mobile-menu">
-                                <ul>
-                                    <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
-                                    <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
-                                    <li><a href="{% url 'media' %}">Media</a></li>
-                                    <li><a href="{% url 'blog' %}">Bloq</a></li>
-                                    <li><a href="{% url 'contact' %}">Əlaqə</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="mobile-menu"></div>
-                    </div>
+        <div class="content">
+            <div class="logo logo-circle pos-rel">
+                {% for i in logosekil %}
+                <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
+                {% endfor %}
+                <div class="toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
+
+                <!-- Start Navigation -->
+                <nav class="meannav">
+                    <ul class="meanlopsi">
+                        <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
+                        <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
+                        <li><a href="{% url 'media' %}">Media</a></li>
+                        <li><a href="{% url 'blog' %}">Bloq</a></li>
+                        <li><a href="{% url 'contact' %}">Əlaqə</a></li>
+                    </ul>
+                </nav>
+
             </div>
         </div>
+
     </header>
     <!-- header end -->
 
@@ -437,6 +558,13 @@
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        $(function() {
+            $('.toggler').on('click', function() {
+                $('nav').slideToggle(500);
+            });
+        });
+    </script>
 </body>
 
 </html>
