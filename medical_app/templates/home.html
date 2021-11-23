@@ -35,8 +35,9 @@
         
         .logoimg {
             width: 9%;
-            margin-left: 91px;
-            margin-top: -18px;
+            margin-left: 90px;
+            margin-top: -4px;
+            padding: 7px;
         }
         
         .footerlogoimg {
@@ -88,6 +89,9 @@
                 top: -15px;
                 width: 34px;
             }
+            .side-nav {
+                margin-left: 148px;
+            }
         }
         
         @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -96,47 +100,30 @@
         }
         
         header {
-            width: 100%;
             background-color: azure;
-            /* position: fixed; */
-            z-index: 999;
         }
-        
-        .logo {
-            color: #647589;
-            ;
+        /* .logo {
+            color: #5FC0DC;
             text-decoration: none;
             font-size: 36px;
-        }
+        } */
         
         .toggler {
-            border: 1px solid #E12454;
-            color: #E12454;
+            color: #5FC0DC;
             cursor: pointer;
-            display: block;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1px;
-            font-weight: 700;
-            height: 57px;
-            line-height: 37px;
-            margin-top: 60px;
-            padding: 10px 10px;
             position: absolute;
-            right: 25px !important;
-            text-decoration: none;
-            top: -35px;
-            width: 55px;
+            top: 8px;
+            right: 50px;
         }
-        /* START NAVIGATION */
         
         nav {
             width: 100%;
             display: none;
-            text-align: center;
         }
         
         nav ul {
             list-style: none;
+            text-align: center;
         }
         
         nav ul li a {
@@ -148,25 +135,31 @@
         }
         
         nav ul li a:hover {
-            color: #7c92a8;
+            color: #505050;
         }
         
         .active {
-            color: #7c92a8;
+            color: #5FC0DC;
         }
         
         .side-nav {
-            margin-left: 18px;
+            margin-left: 40px;
         }
         
         .side-nav a {
             text-decoration: none;
-            color: #7c92a8;
+            color: #647589;
             padding-right: 15px;
             line-height: 40px;
-            font-size: 15px;
+            font-size: 18px;
         }
-        /* END NAVIGATION */
+        
+        section {
+            margin-top: 2px;
+            font-size: 10px;
+            color: #2F2F2F;
+            margin-bottom: 20px;
+        }
         
         #info {
             padding-top: 200px;
@@ -183,11 +176,10 @@
             }
             nav {
                 display: inline-block !important;
-                /* prevent the nav to hide when resize */
                 position: relative;
                 width: auto;
                 float: right;
-                padding: 33px 250px;
+                padding: 50px 160px;
             }
             nav ul {
                 float: left;
@@ -201,6 +193,24 @@
             }
         }
         
+        .toggler {
+            border: 1px solid #E12454;
+            color: #E12454;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1px;
+            font-weight: 700;
+            height: 52px;
+            line-height: 37px;
+            margin-top: 60px;
+            padding: 8px 8px;
+            position: absolute;
+            right: 5px !important;
+            text-decoration: none;
+            top: -35px;
+            width: 50px;
+        }
+        
         .toggler span {
             background: #E12454;
             display: block;
@@ -208,22 +218,6 @@
             margin-top: 5px;
             position: relative;
             top: 1px;
-        }
-        
-        .meanlopsi a {
-            border-top: 1px solid rgba(255, 255, 255, 0.5);
-            display: block;
-            text-decoration: none;
-            color: #fff;
-            width: 100%;
-            font-size: 12px;
-        }
-        
-        .meannav {
-            background: #0c1923;
-            margin-top: 15px;
-            width: 100%;
-            text-transform: uppercase;
         }
     </style>
 
@@ -263,18 +257,25 @@
                 </div>
 
                 <!-- Start Navigation -->
-                <nav class="meannav">
-                    <ul class="meanlopsi">
+                <nav class="mainob">
+                    <ul class="maenlops">
                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                         <li><a href="{% url 'media' %}">Media</a></li>
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                     </ul>
+
+                    <!-- Side navigation on desktop -->
+                    <div class="side-nav">
+                        {% for i in haqqimda %}
+                        <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
+                    </div>
                 </nav>
 
             </div>
-        </div>
 
     </header>
     <!-- header end -->
