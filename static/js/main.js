@@ -4,7 +4,7 @@
 // meanmenu
 $('#mobile-menu').meanmenu({
 	meanMenuContainer: '.mobile-menu',
-	meanScreenWidth: "992"
+	meanScreenWidth: "992",
 });
 
 // One Page Nav
