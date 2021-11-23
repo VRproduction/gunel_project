@@ -4,6 +4,11 @@
     margin-left: 6px;
 }
 
+ul a i {
+    margin-top: 45px;
+    padding: 0px 11px;
+}
+
 a,
 a:hover,
 a:focus,
@@ -110,7 +115,7 @@ nav#cssmenu ul {
 
 .logo img {
     max-width: 130px;
-    margin-left: -124px;
+    margin-left: -75px;
     margin-top: -15px;
 }
 
@@ -315,6 +320,13 @@ nav#cssmenu ul {
     .logo2 {
         display: none
     }
+    #cssmenu>ul>li>a {
+        padding: 10px 15px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: #647589;
+    }
     nav {
         width: 100%;
     }
@@ -393,6 +405,9 @@ nav#cssmenu ul {
         z-index: 12399994;
         border: 1px solid red;
         margin-top: 18px;
+    }
+    ul a {
+        display: none;
     }
     .button:after {
         position: absolute;
