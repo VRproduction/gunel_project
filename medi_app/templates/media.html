@@ -130,7 +130,7 @@
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
                         <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
                         <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
                     </ul>
                     
@@ -349,7 +349,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="footer-widget h4footer-widget mb-40">
                                 <div class="footer-title">
-                                    <h3>Açılış Vaxtı</h3>
+                                    <h3>İş Vaxtı</h3>
                                 </div>
                                 <div class="h4events-list mb-30">
                                     <ul>
@@ -364,7 +364,7 @@
                                     <ul class="list-inline">
                                         {% for i in haqqimda %}
                                         <li><a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a></li>
                                         <li><a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a></li>
                                         {% endfor %}
                                     </ul>

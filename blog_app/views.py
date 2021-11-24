@@ -1,9 +1,12 @@
+from django.core import paginator
 from django.shortcuts import render
 from medical_app.models import *
 from medical_app.views import *
 from xidmetler_app.models import *
 from .models import *
 from django.views.generic import DetailView
+from xidmetler_app.views import NewsDetailView,detail
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def blog(request):
@@ -20,6 +23,23 @@ def blog(request):
     esasfoto_metn = ƏsasFoto_ÜstMətn.objects.all()
     esasfoto = ƏsasFoto.objects.all()
     posts = PostPaylaşılma.objects.all()
+
+    number_items = 2
+    page = request.GET.get('page')
+    paginator = Paginator(posts, number_items)
+    try:
+        items = paginator.page(page)
+    except PageNotAnInteger:
+        items = paginator.page(1)
+    except EmptyPage:
+        items = paginator.page(paginator.num_pages)
+    
+    index = items.number - 4
+    max_index = len(paginator.page_range)
+    start_index = index - 5 if index >= 5 else 0
+    end_index = index + 5 if index <= max_index - 5 else max_index
+    page_range = paginator.page_range[start_index:end_index]
+
     bashlig = SaytınBaşlığı.objects.all()
     numberemail = BaşlıqNömrəEpoct.objects.all()
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
@@ -42,6 +62,8 @@ def blog(request):
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
         'xidmetlerimiz' : xidmetlerimiz,
+        'page_range' : page_range,
+        'items' : items,
     })
 
 class BlogDetailView(DetailView):

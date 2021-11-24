@@ -130,7 +130,7 @@
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
                         <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
                         <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
                     </ul>
                 </nav>
@@ -196,11 +196,11 @@
                     </div>
                 </div>
                 <div class="row pt-60">
-                    {% for i in haqqimizdamel %}
+                    {% for i in items %}
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="service-box service-box-border text-center mb-30">
                             <div class="service-thumb">
-                                <img src="{{ i.esas_foto.url }}" alt="">
+                                <img style="border-radius:8%;" src="{{ i.esas_foto.url }}" alt="">
                             </div>
                             <div class="service-content">
                                 <h3><a href="{% url 'xidmetler_app:news-detail' pk=i.id %}">{{ i.haqqimizda_ust_yazi_1 }}</a></h3>
@@ -210,9 +210,40 @@
                         </div>
                     </div>
                     {% endfor %}
-                    
                 </div>
             </div>
+            {% if items.has_other_pages %}
+                        <nav aria-label="" style="margin-left:65em">
+                            <ul class="pagination">
+                                {% if items.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ items.previous_page_number }}">
+                                        <<</a>
+                                </li>
+                                {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link"><span><<</span></a>
+                                </li>
+                                {% endif %} {% for i in page_range %} {% if items.number == i %}
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">{{i}} <span class="sr-only">(current)</span></a>
+                                </li>
+                                {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{i}}">{{i}}</a>
+                                </li>
+                                {% endif %} {% endfor %} {% if items.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="Next" href="?page={{ items.next_page_number }}">>></a>
+                                </li>
+                                {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link"><span>>></span></a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        {% endif %}
         </section>
         <!-- about-area end -->
     </main>
@@ -310,7 +341,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="footer-widget h4footer-widget mb-40">
                             <div class="footer-title">
-                                <h3>Açılış Vaxtı</h3>
+                                <h3>İş Vaxtı</h3>
                             </div>
                             <div class="h4events-list mb-30">
                                 <ul>

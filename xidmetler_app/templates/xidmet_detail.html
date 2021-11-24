@@ -130,7 +130,7 @@
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
                         <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
                         <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
                     </ul>
                 </nav>
@@ -207,10 +207,10 @@
                                 {% for i in diger_bloq %}
                                 <li>
                                     <div class="widget-posts-image">
-                                        <a href="{% url 'blog' %}"><img src="{{ i.foto.url }}" alt=""></a>
+                                        <a href="{% url 'blog_app:blog-detail' pk=i.id %}"><img src="{{ i.foto.url }}" alt=""></a>
                                     </div>
                                     <div class="widget-posts-body">
-                                        <h6 class="widget-posts-title"><a href="{% url 'blog' %}">{{ i.bashliq }}</a></h6>
+                                        <h6 class="widget-posts-title"><a href="{% url 'blog_app:blog-detail' pk=i.id %}">{{ i.bashliq }}</a></h6>
                                         <div class="widget-posts-meta">{{ i.vaxt }}</div>
                                     </div>
                                 </li>
@@ -226,7 +226,7 @@
                                 {% for i in haqqimda %}
                                 <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
                                 <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
+                                <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
                                 {% endfor %}
                             </div>
                         </div>
@@ -341,7 +341,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6">
                         <div class="footer-widget h4footer-widget mb-40">
                             <div class="footer-title">
-                                <h3>Açılış Vaxtı</h3>
+                                <h3>İş Vaxtı</h3>
                             </div>
                             <div class="h4events-list mb-30">
                                 <ul>

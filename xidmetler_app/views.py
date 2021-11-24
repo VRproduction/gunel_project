@@ -3,6 +3,8 @@ from medical_app.views import *
 from .models import *
 from django.urls import reverse
 from django.views.generic import DetailView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 # Create your views here.
 def bizim_xidmetler(request):
@@ -17,6 +19,27 @@ def bizim_xidmetler(request):
     esasfotos = ƏsasFoto.objects.all()
     esasfotoyazilar = ƏsasFoto_ÜstYazılar.objects.all()
     haqqimizdamel = Xidmətlərimiz_Haqqında.objects.all()
+
+    number_items = 5
+    page = request.GET.get('page')
+    paginator = Paginator(haqqimizdamel, number_items)
+    try:
+        items = paginator.page(page)
+    except PageNotAnInteger:
+        items = paginator.page(1)
+    except EmptyPage:
+        items = paginator.page(paginator.num_pages)
+    
+    index = items.number - 4
+    max_index = len(paginator.page_range)
+    start_index = index - 5 if index >= 5 else 0
+    end_index = index + 5 if index <= max_index - 5 else max_index
+    page_range = paginator.page_range[start_index:end_index]
+
+    bashlig = SaytınBaşlığı.objects.all()
+    numberemail = BaşlıqNömrəEpoct.objects.all()
+    logosekil = LogoŞəkilAnaSəhifə.objects.all()
+    photobashlig = SaytınBaşlığıFoto.objects.all()
     bashlig = SaytınBaşlığı.objects.all()
     # servismelumat = ServisMəlumat.objects.all()
     # teciliinfo = TəciliInfo.objects.all()
@@ -44,6 +67,8 @@ def bizim_xidmetler(request):
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
         'xidmetlerimiz' : xidmetlerimiz,
+        'page_range' : page_range,
+        'items' : items,
     })
 
 

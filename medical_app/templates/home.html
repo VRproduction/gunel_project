@@ -94,14 +94,15 @@
         <div class="top-bar d-none d-md-block">
             <div class="container">
                 <div class="row d-flex align-items-center">
-                    <div class="col-xl-6 offset-xl-1 col-lg-6 offset-lg-1 col-md-7 offset-md-1">
+                    <div class="col-xl-8 offset-xl-1 col-lg-6 offset-lg-1 col-md-7 offset-md-1">
                         <div class="header-info">
                             {% for numbers in numberemail %}
                             <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
-                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span> {% endfor %}
+                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span> 
+                            <span><i class="fas fa-clock"></i> {{numbers.clock}}</span>{% endfor %}
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-5 col-md-4">
+                    <div class="col-xl-4 col-lg-5 col-md-4" style="margin-left:-150px">
                         <div class="header-top-right-btn f-right">
                             <a href="{% url 'appoinment' %}" class="btn">Qəbula Yazıl</a>
                         </div>
@@ -122,7 +123,7 @@
                     </div>
                     <div id="head-mobile"></div>
                     <div class="button"></div>
-                    <ul>
+                    <ul class="socialico">
                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                         <li><a href="{% url 'media' %}">Media</a></li>
@@ -130,11 +131,10 @@
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
                         <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube.url }}"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
                         <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
 
                     </ul>
-                    <ul class="socialico">
 
                     </ul>
                 </nav>
@@ -177,7 +177,7 @@
         </section>
         <!-- hero-area end -->
         <!-- about-area start -->
-        <section class="about-area pt-120 pb-90">
+        <section id="scrol" class="about-area pt-120 pb-90">
             <div class="container">
                 <div class="row">
                     {% for i in haqqimizdasekil %}
@@ -188,7 +188,9 @@
                         <div class="about-left-side pos-rel mb-30">
                             <div class="about-front-img">
                                 <img src="{{ i.esas_sekil.url }}" alt="">
-
+                            </div>
+                            <div class="about-shape">
+                                <img style="height:60em" src="https://www.devsnews.com/wp/medidove/wp-content/themes/medidove/img/about/about-shape.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -356,7 +358,7 @@
                     </div>
                     <div class="col-xl-6 col-lg-5 d-none d-lg-block">
                         <div class="section-button text-right pt-80">
-                            <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'blog' %}" class="btn btn-icon ml-0"><span>+</span>Bloq</a>
+                            <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'blog' %}" class="btn btn-icon ml-0"><span>+</span>Bloqlar</a>
                         </div>
                     </div>
                 </div>
@@ -394,7 +396,7 @@
                                     <!-- <span><a href="#" class="news-tag">{{ i.kicikmetn }}</a></span> -->
                                     <span class="meta-date"><i class="far fa-calendar"></i>{{ i.vaxt }}</span>
                                 </div>
-                                <h3><a href="{% url 'blog' %}">{{ i.metinin_bashligi }}</a></h3>
+                                <h3><a href="{% url 'blog_app:blog-detail' pk=i.id %}">{{ i.metinin_bashligi }}</a></h3>
                                 <p>{{ i.metn|slice:200 }} ...</p>
                             </div>
                         </div>
@@ -455,7 +457,7 @@
                                     <div class="signle-blog-feeds mb-20">
                                         <div class="blog-feeds-thumb">
                                             {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_1.url }}" alt=""></a>
+                                            <a href="{% url 'blog_app:blog-detail' pk=i.id %}"><img src="{{ i.foto_1.url }}" alt=""></a>
                                             {% endfor %}
                                         </div>
                                         <div class="blog-feeds-text">
@@ -496,7 +498,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="footer-widget h4footer-widget mb-40">
                                 <div class="footer-title">
-                                    <h3>Açılış Vaxtı</h3>
+                                    <h3>İş Vaxtı</h3>
                                 </div>
                                 <div class="h4events-list mb-30">
                                     <ul>
@@ -514,7 +516,7 @@
                                         {% for i in haqqimda %}
                                         <li><a target="_blank" href="{{ i.facebook_url }}"><i
                                                     class="fab fa-facebook-f"></i></a></li>
-                                        <li><a target="_blank" href="{{ i.youtube.url }}"><i
+                                        <li><a target="_blank" href="{{ i.youtube_url }}"><i
                                                     class="fab fa-youtube"></i></a></li>
                                         <li><a target="_blank" href="{{ i.instagram_url }}"><i
                                                     class="fab fa-instagram"></i></a></li>
@@ -562,6 +564,38 @@
     <script src="{% static 'js/main.js' %}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
 
+    {% if items.has_other_pages %}
+    <nav aria-label="">
+        <ul class="pagination">
+            {% if items.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?səhifə={{ items.previous_page_number }}">
+                    <<</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link"><span><<</span></a>
+            </li>
+            {% endif %} {% for i in page_range %} {% if items.number == i %}
+            <li class="page-item active">
+                <a class="page-link" href="#">{{i}} <span class="sr-only">(current)</span></a>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{i}}">{{i}}</a>
+            </li>
+            {% endif %} {% endfor %} {% if items.has_next %}
+            <li class="page-item">
+                <a class="page-link" aria-label="Next" href="?page={{ items.next_page_number }}">>></a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link"><span>>></span></a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 
     <script>
         var faq = document.getElementsByClassName("faq-page");

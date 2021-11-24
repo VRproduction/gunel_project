@@ -22,6 +22,7 @@ class LogoŞəkilAnaSəhifə(models.Model):
 class BaşlıqNömrəEpoct(models.Model):
     number = models.CharField(max_length=20, help_text="Maksimum 20 hərif")
     email = models.CharField(max_length=30, help_text="Maksimum 30 hərif")
+    clock = models.CharField(max_length=200,help_text="Maksimum 200 hərif")
 
     def __str__(self):
         return self.email
