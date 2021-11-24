@@ -94,14 +94,15 @@
         <div class="top-bar d-none d-md-block">
             <div class="container">
                 <div class="row d-flex align-items-center">
-                    <div class="col-xl-6 offset-xl-1 col-lg-6 offset-lg-1 col-md-7 offset-md-1">
+                    <div class="col-xl-8 offset-xl-1 col-lg-6 offset-lg-1 col-md-7 offset-md-1">
                         <div class="header-info">
                             {% for numbers in numberemail %}
                             <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
-                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span> {% endfor %}
+                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span> 
+                            <span><i class="fas fa-clock"></i> {{numbers.clock}}</span>{% endfor %}
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-5 col-md-4">
+                    <div class="col-xl-4 col-lg-5 col-md-4" style="margin-left:-150px">
                         <div class="header-top-right-btn f-right">
                             <a href="{% url 'appoinment' %}" class="btn">Qəbula Yazıl</a>
                         </div>
@@ -122,16 +123,19 @@
                     </div>
                     <div id="head-mobile"></div>
                     <div class="button"></div>
-                    <ul>
+                    <ul class="socialico">
                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                         <li><a href="{% url 'media' %}">Media</a></li>
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
-                        <a class="socialiso" target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a class="socialiso" target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
-                        <a class="socialiso" target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
+                        <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
+
+                    </ul>
+
                     </ul>
                 </nav>
             </div>
@@ -430,6 +434,15 @@
                 $('nav').slideToggle(500);
             });
         });
+    </script>
+    <script>
+        (function($) {
+            $(document).ready(function() {
+                $("#cssmenu").menumaker({
+                    format: "multitoggle"
+                });
+            });
+        })(jQuery);
     </script>
 </body>
 
