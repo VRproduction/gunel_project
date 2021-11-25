@@ -19,7 +19,7 @@ from django.urls.conf import include
 from django.conf.urls.static import static
 from django.conf import settings
 from qebul_app.views import appoinment
-from medical_app.views import homepage, abouscroll
+from medical_app.views import homepage, abouscroll,test
 from contact_app.views import contact
 from xidmetler_app.views import bizim_xidmetler
 from medi_app.views import med
@@ -32,6 +32,7 @@ urlpatterns = [
     path('',include('blog_app.urls', namespace='blog_app')),
     path('',include('xidmetler_app.urls', namespace='xidmetler_app')),
     path('qəbulayazıl/', appoinment, name="appoinment"),
+    path('test/',test),
     path('əlaqə/', contact, name="contact"),
     path('xidmətlərimiz/', bizim_xidmetler, name="xidmetler"),
     path('haqqımda/', abouscroll, name="abouscroll"),

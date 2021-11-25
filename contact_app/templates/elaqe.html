@@ -98,7 +98,7 @@
                         <div class="header-info">
                             {% for numbers in numberemail %}
                             <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
-                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span> 
+                            <span><i class="fas fa-envelope"></i> {{numbers.email}}</span> 
                             <span><i class="fas fa-clock"></i> {{numbers.clock}}</span>{% endfor %}
                         </div>
                     </div>
@@ -157,10 +157,10 @@
                             <h2>Biznən Əlaqə Saxlayın</h2>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">
+                    <div class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center" style="left:-160px">
                         <div class="page-breadcumb">
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb ">
+                                <ol  class="breadcrumb ">
                                     <li class="breadcrumb-item">
                                         <a href="{% url 'homepage' %}">Ana səhifə</a>
                                     </li>
@@ -400,7 +400,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="footer-copyright footer-copyright-3 text-center">
-                                <p>Copyright  @VrProduction  -  2021</p>
+                                <p>Copyright  <a style="color:#9aacbb" target="_blank" href="https://vrproduction.az/">@VRProduction</a> -  2021</p>
                             </div>
                         </div>
                     </div>
