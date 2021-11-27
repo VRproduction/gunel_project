@@ -204,38 +204,40 @@
                                 </div>
                             </div>
                         </article>
-                        {% endfor %} {% if items.has_other_pages %}
-                        <nav aria-label="" style="margin-left:38em">
-                            <ul class="pagination">
-                                {% if items.has_previous %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{ items.previous_page_number }}">
-                                        <<</a>
-                                </li>
-                                {% else %}
-                                <li class="page-item disabled">
-                                    <a class="page-link"><span><<</span></a>
-                                </li>
-                                {% endif %} {% for i in page_range %} {% if items.number == i %}
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">{{i}} <span class="sr-only">(current)</span></a>
-                                </li>
-                                {% else %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{i}}">{{i}}</a>
-                                </li>
-                                {% endif %} {% endfor %} {% if items.has_next %}
-                                <li class="page-item">
-                                    <a class="page-link" aria-label="Next" href="?page={{ items.next_page_number }}">>></a>
-                                </li>
-                                {% else %}
-                                <li class="page-item disabled">
-                                    <a class="page-link"><span>>></span></a>
-                                </li>
-                                {% endif %}
-                            </ul>
-                        </nav>
-                        {% endif %}
+                        {% endfor %} 
+                        <div class="basic-pagination basic-pagination-2 mb-40">
+                            {% if items.has_other_pages %}
+                            <nav aria-label="" style="margin-left:18em">
+                                <ul class="pagination">
+                                    {% if items.has_previous %}
+                                    <li class="page-item">
+                                        <a href="?page={{ items.previous_page_number }}"><i class="fas fa-angle-double-left"></i></a>
+                                    </li>
+                                    {% else %}
+                                    <li class="page-item disabled">
+                                        <a ><i class="fas fa-angle-double-left"></i></a>
+                                    </li>
+                                    {% endif %} {% for i in page_range %} {% if items.number == i %}
+                                    <li class="page-item active">
+                                        <a href="#">{{i}} <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    {% else %}
+                                    <li class="page-item">
+                                        <a href="?page={{i}}">{{i}}</a>
+                                    </li>
+                                    {% endif %} {% endfor %} {% if items.has_next %}
+                                    <li class="page-item">
+                                        <a aria-label="Next" href="?page={{ items.next_page_number }}"><i class="fas fa-angle-double-right"></i></a>
+                                    </li>
+                                    {% else %}
+                                    <li class="page-item disabled">
+                                        <a><i class="fas fa-angle-double-right"></i></a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                            {% endif %}
+                        </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="widget mb-40">

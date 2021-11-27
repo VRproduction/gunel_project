@@ -37,7 +37,6 @@ def appoinment(request):
     haqqimizdayazi = HaqqımızdaYazılar.objects.all()
     # bloqsolmetn = BloqSolMətn.objects.all()
     # bloqxeber = Bloq_YeniXəbərlər_AnaSehifə.objects.all()
-    bloqanaseyfefoto = Bloq_AnaSəhifə_SolArxaFoto.objects.all()
     arxasekilform = Qəbul_Form_Arxa_Foto.objects.all()
     haqqimizda = SosialŞəbəkəLinkləri.objects.all()
     foto = Qəbul_Haqqımızda_foto.objects.all()
@@ -90,7 +89,6 @@ def appoinment(request):
         'foto': foto,
         'haqqimizda': haqqimizda,
         'arxasekilform': arxasekilform,
-        'bloqanaseyfefoto': bloqanaseyfefoto,
         # 'bloqxeber' : bloqxeber,
         # 'bloqsolmetn' : bloqsolmetn,
         'haqqimizdayazi': haqqimizdayazi,

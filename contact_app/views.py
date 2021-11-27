@@ -12,7 +12,6 @@ def contact(request):
     footer_yazi = Footer_Yazısı.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
     xerite_url = QəbulXəritə.objects.all()
-    esasfoto = ƏsasFoto.objects.all()
     sekil = Üst_Şəkil.objects.all()
     gmail = Gmail.objects.all()
     esasfotometn = ƏsasFotoMətnlər.objects.all()

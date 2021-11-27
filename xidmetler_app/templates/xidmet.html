@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 
     <style>
+        .basic-pagination nav {
+            margin-left:58em;
+        }
         .ustfoto_yazisi {
             font-size: 56px;
         }
@@ -38,8 +41,17 @@
             width: 55%;
             margin-left: 50px;
         }
+        @media screen and (min-width:1024px) and (max-width: 1600px){
+            .basic-pagination nav {
+                margin-left:43em;
+            }
+        }
         
         @media screen and (min-width:375px) and (max-width:767px) {
+            .basic-pagination nav {
+                margin-left:0em;
+                padding:40px
+            }
             .fa-times-square {
                 left: auto !important;
             }
@@ -84,6 +96,7 @@
                 width: 34px;
             }
         }
+
     </style>
 
 
@@ -216,38 +229,39 @@
                     {% endfor %}
                 </div>
             </div>
-            {% if items.has_other_pages %}
-                        <nav aria-label="" style="margin-left:54em">
-                            <ul class="pagination">
-                                {% if items.has_previous %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{ items.previous_page_number }}">
-                                        <<</a>
-                                </li>
-                                {% else %}
-                                <li class="page-item disabled">
-                                    <a class="page-link"><span><<</span></a>
-                                </li>
-                                {% endif %} {% for i in page_range %} {% if items.number == i %}
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">{{i}} <span class="sr-only">(current)</span></a>
-                                </li>
-                                {% else %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{i}}">{{i}}</a>
-                                </li>
-                                {% endif %} {% endfor %} {% if items.has_next %}
-                                <li class="page-item">
-                                    <a class="page-link" aria-label="Next" href="?page={{ items.next_page_number }}">>></a>
-                                </li>
-                                {% else %}
-                                <li class="page-item disabled">
-                                    <a class="page-link"><span>>></span></a>
-                                </li>
-                                {% endif %}
-                            </ul>
-                        </nav>
+            <div class="basic-pagination basic-pagination-2 mb-40">
+                {% if items.has_other_pages %}
+                <nav aria-label="">
+                    <ul class="pagination">
+                        {% if items.has_previous %}
+                        <li class="page-item">
+                            <a href="?page={{ items.previous_page_number }}"><i class="fas fa-angle-double-left"></i></a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a ><i class="fas fa-angle-double-left"></i></a>
+                        </li>
+                        {% endif %} {% for i in page_range %} {% if items.number == i %}
+                        <li class="page-item active">
+                            <a href="#">{{i}} <span class="sr-only">(current)</span></a>
+                        </li>
+                        {% else %}
+                        <li class="page-item">
+                            <a href="?page={{i}}">{{i}}</a>
+                        </li>
+                        {% endif %} {% endfor %} {% if items.has_next %}
+                        <li class="page-item">
+                            <a aria-label="Next" href="?page={{ items.next_page_number }}"><i class="fas fa-angle-double-right"></i></a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </li>
                         {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
         </section>
         <!-- about-area end -->
     </main>

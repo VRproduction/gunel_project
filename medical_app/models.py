@@ -56,13 +56,6 @@ class Haqqımızdamüəllif(models.Model):
     vezife = models.CharField(max_length=30, help_text="Maksimum 30 hərif")
 
 
-class Komanda_Haqqında_yazılar(models.Model):
-    komanda = models.CharField(max_length=20, help_text="Maksimum 20 hərif")
-    komandayazi = models.CharField(max_length=30, help_text="Maksimum 30 hərif")
-
-    def __str__(self):
-        return self.komanda
-
 class Servis_Üst_Yazılar(models.Model):
     yazi_1 = models.CharField(max_length=15, help_text="Maksimum 15 hərif")
     yazi_2 = models.CharField(max_length=30, help_text="Maksimum 30 hərif")
@@ -96,9 +89,6 @@ class MükafatSektoru(models.Model):
 
     def __str__ (self):
         return self.baslig_1
-
-class Bloq_AnaSəhifə_SolArxaFoto(models.Model):
-    arxafonfoto = models.ImageField(upload_to='media/')
 
 
 
@@ -157,3 +147,6 @@ class Footer_Bloq(models.Model):
 
 class Youtube_Link_Əsas(models.Model):
     youtube_link = models.TextField(max_length=5000, help_text="Youtube Video Linki")
+
+class MobileFoto(models.Model):
+    foto_res = models.ImageField(upload_to='media/')

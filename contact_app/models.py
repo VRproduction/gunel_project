@@ -1,8 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class ƏsasFoto(models.Model):
-    foto = models.ImageField(upload_to='media/')
 
 class ƏsasFotoMətnlər(models.Model):
     metn_1 = models.TextField(max_length=80, help_text='Maksimum 80 hərif')

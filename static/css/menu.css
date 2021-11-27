@@ -406,7 +406,7 @@ nav#cssmenu ul {
         border: 1px solid red;
         margin-top: 18px;
     }
-    ul a {
+    ul .rotate {
         display: none;
     }
     .button:after {

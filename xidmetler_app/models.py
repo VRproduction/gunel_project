@@ -5,11 +5,10 @@ class ƏsasFoto(models.Model):
     esas_foto = models.ImageField(upload_to="media/")
 
 class ƏsasFoto_ÜstYazılar(models.Model):
-    metn_1 = models.TextField(max_length=100, help_text="Maksimum 100 hərif")
     metn_2 = models.TextField(max_length=80, help_text="Maksimum 100 hərif")
 
     def __str__(self):
-        return self.metn_1
+        return self.metn_2
 
 
 class Xidmətlərimiz_Haqqında(models.Model):

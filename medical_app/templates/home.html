@@ -30,6 +30,13 @@
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 
     <style>
+        .hero-area { 
+            {% for i in slidersekil %}
+            background-image: url({{ i.image.url }});
+            {% endfor %}
+            background-size:100%; 
+            background-repeat: no-repeat; 
+        }
         .ustfoto_yazisi {
             font-size: 56px;
         }
@@ -40,6 +47,31 @@
         }
         
         @media screen and (min-width:375px) and (max-width:767px) {
+            .hero-area { 
+                {% for i in mobileres %}
+                background-image: url({{ i.foto_res.url }}) ;
+                {% endfor %}
+                background-size:100%; 
+                background-repeat: no-repeat; 
+            }
+            .blog-slider {
+                margin-top: 240px !important;
+            }
+            
+            .footer-menu-2 ul li{
+                display: block;
+            }
+            .hero-slider-caption  {
+                margin-top: -300px;
+            }
+
+            .hero-slider-caption  h2 {
+                font-size: 30px;
+            }
+
+            #scrol {
+                margin-top: -240px;
+            }
             .fa-times-square {
                 left: auto !important;
             }
@@ -87,6 +119,48 @@
         .service-content h4:hover {
             color:
         }
+
+        .hero-slider-btn .btn-icon {
+            left: -50px;
+            top: 111px;
+            border-radius: 30px;
+            padding-left: 60px;
+            padding-right: 11px;
+            padding-top: 24px;
+            padding-bottom: 22px;
+            background-color: rgb(225, 36, 84);
+            box-shadow: 0px 8px 16px 0px rgb(225 36 84 / 20%);
+            }
+        .play-btn.popup-video {
+            margin-left: 200px;
+            margin-top: 52px;
+        }
+
+        .hero-slider-caption h5 {
+            animation-delay: 0.2s;
+            width: 180px;
+            margin-top: 91px;
+            text-align: left;
+        }
+
+        .hero-slider-caption h2 {
+            animation-delay: 0.4s;
+            width: 165px;
+            margin-left: -1px;
+            text-align: initial;
+            margin-top: -17px;
+        }
+
+        .section-button .btn-icon{
+            border-radius: 30px;
+            padding-left: 60px;
+            padding-right: 11px;
+            padding-top: 24px;
+            padding-bottom: 22px;
+            background-color: rgb(225, 36, 84);
+            box-shadow: 0px 8px 16px 0px rgb(225 36 84 / 20%);
+        }
+        
     </style>
 
 
@@ -133,9 +207,9 @@
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
-                        <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
-                        <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
+                        <a class="rotate" target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+                        <a class="rotate" target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
+                        <a class="rotate" target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
 
                     </ul>
 
@@ -151,9 +225,7 @@
         <section class="hero-area">
             <div class="hero-slider">
                 <div class="slider-active">
-                    {% for i in slidersekil %}
-                    <div class="single-slider slider-height d-flex align-items-center" style="background-image: url({{ i.image.url }}); background-size:100%; background-repeat: no-repeat;">
-                        {% endfor %}
+                    <div class="single-slider slider-height d-flex align-items-center">
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-6 col-lg-8 col-md-10">
@@ -162,13 +234,14 @@
                                             {% for yazi in slayderyazi %}
                                             <h5 data-animation="fadeInUp" data-delay=".2s" style="animation-delay: 0.2s;" class="">{{yazi.yazi_1}}</h5>
                                             <h2 data-animation="fadeInUp" data-delay=".4s" style="animation-delay: 0.4s;" class="ustfoto_yazisi">{{yazi.yazi_2}}</h2>
-                                            <p data-animation="fadeInUp" data-delay=".6s" style="animation-delay: 0.6s;" class="">{{yazi.yazi_3}}</p>
                                             {% endfor %}
                                         </div>
                                         <div class="hero-slider-btn">
-                                            <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'appoinment' %}" class="btn btn-icon ml-0"><span>+</span>Qəbula Yazıl</a> {% for i in youtube_link_esas %}
+                                            <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'appoinment' %}" class="btn btn-icon ml-0"><span>+</span>Qəbula Yazıl</a> 
+                                            {% for i in youtube_link_esas %}
                                             <a data-animation="fadeInRight" data-delay="1.0s" href="{{ i.youtube_link }}" class="play-btn popup-video"><i
-                                                    class="fas fa-play"></i></a> {% endfor %}
+                                                class="fas fa-play"></i></a> 
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>
@@ -343,7 +416,7 @@
         </div>
         <!-- fact-area end -->
         <!-- latest-news-area start -->
-        <section class="latest-news-area pt-115 pb-20 mt-130" style="background: #f3f6ff;">
+        <section class="latest-news-area pt-70 pb-20 mt-130" style="background: #f3f6ff; height:18em;">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-7">
@@ -360,7 +433,7 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-5 d-none d-lg-block">
-                        <div class="section-button text-right pt-80">
+                        <div class="section-button text-right pt-60">
                             <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'blog' %}" class="btn btn-icon ml-0"><span>+</span>Bloqlar</a>
                         </div>
                     </div>
@@ -420,7 +493,7 @@
                                                                     <div class="h4service-box white-bg mb-30 text-left">
                                                                         <div class="service-thumb pos-rel mb-0">
                                                                             <img
-                                                                                width="700" height="300"
+                                                                                width="700" height="250"
                                                                                 src="{{ i.foto_post.url }}"
                                                                                 class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
                                                                                 alt="" loading="lazy"
@@ -484,7 +557,7 @@
                                     <h3>Linklər</h3>
                                 </div>
                                 <div class="footer-menu footer-menu-2 h4footer-menu">
-                                    <ul>
+                                    <ul style="display: block !important;">
                                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
                                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                                         <li><a href="{% url 'media' %}">Media</a></li>
