@@ -8,6 +8,7 @@ from blog_app.models import *
 # Create your views here.
 
 def contact(request):
+    mobilefoto = MobileƏsasFoto.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     footer_yazi = Footer_Yazısı.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
@@ -72,5 +73,6 @@ def contact(request):
         'footer_bloq' : footer_bloq,
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
+        'mobilefoto' : mobilefoto,
         
     })

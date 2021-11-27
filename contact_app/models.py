@@ -30,3 +30,6 @@ class BizəZəng(models.Model):
 
 class Üst_Şəkil(models.Model):
     img = models.ImageField('media/')
+
+class MobileƏsasFoto(models.Model):
+    img = models.ImageField('media/')

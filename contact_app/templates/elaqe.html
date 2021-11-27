@@ -30,6 +30,13 @@
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 
     <style>
+
+        .breadcrumb-bg {
+            {% for i in sekil %}
+            background-image: url({{ i.img.url }});
+            {% endfor %}
+    
+        }
         .ustfoto_yazisi {
             font-size: 56px;
         }
@@ -40,6 +47,11 @@
         }
         
         @media screen and (min-width:375px) and (max-width:767px) {
+            .breadcrumb-bg {
+                {% for i in mobilefoto %}
+                background-image: url({{ i.img.url }});
+                {% endfor %}
+            }
             .fa-times-square {
                 left: auto !important;
             }
@@ -130,9 +142,9 @@
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
-                        <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
-                        <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
+                        <a class="rotate" target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+                        <a class="rotate" target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
+                        <a class="rotate" target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
 
                     </ul>
 
@@ -213,8 +225,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-8 col-lg-8">
                             <div class="section-title mb-55">
-                                <p><span></span> Anything On your Mind</p>
-                                <h1>Estimate Your Idea</h1>
+                                <h3>Müraciyyət bölməsi</h3>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-3 d-none d-xl-block ">

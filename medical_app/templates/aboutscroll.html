@@ -30,6 +30,13 @@
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 
     <style>
+        .hero-area { 
+            {% for i in slidersekil %}
+            background-image: url({{ i.image.url }});
+            {% endfor %}
+            background-size:100%; 
+            background-repeat: no-repeat; 
+        }
         .ustfoto_yazisi {
             font-size: 56px;
         }
@@ -40,6 +47,31 @@
         }
         
         @media screen and (min-width:375px) and (max-width:767px) {
+            .hero-area { 
+                {% for i in mobileres %}
+                background-image: url({{ i.foto_res.url }}) ;
+                {% endfor %}
+                background-size:100%; 
+                background-repeat: no-repeat; 
+            }
+            .blog-slider {
+                margin-top: 240px !important;
+            }
+            
+            .footer-menu-2 ul li{
+                display: block;
+            }
+            .hero-slider-caption  {
+                margin-top: -300px;
+            }
+
+            .hero-slider-caption  h2 {
+                font-size: 30px;
+            }
+
+            #scrol {
+                margin-top: -240px;
+            }
             .fa-times-square {
                 left: auto !important;
             }
@@ -83,7 +115,53 @@
                 top: -15px;
                 width: 34px;
             }
+            .service-content h4:hover {
+            color:
+            }
+
+            .hero-slider-btn .btn-icon {
+            left: -50px;
+            top: 111px;
+            border-radius: 30px;
+            padding-left: 60px;
+            padding-right: 11px;
+            padding-top: 24px;
+            padding-bottom: 22px;
+            background-color: rgb(225, 36, 84);
+            box-shadow: 0px 8px 16px 0px rgb(225 36 84 / 20%);
+            }
+            .play-btn.popup-video {
+            margin-left: 200px;
+            margin-top: 52px;
+        } 
+
+        .hero-slider-caption h5 {
+            animation-delay: 0.2s;
+            width: 180px;
+            margin-top: 91px;
+            text-align: left;
         }
+
+        .hero-slider-caption h2 {
+            animation-delay: 0.4s;
+            width: 165px;
+            margin-left: -1px;
+            text-align: initial;
+            margin-top: -17px;
+        }
+
+        .section-button .btn-icon{
+            border-radius: 30px;
+            padding-left: 60px;
+            padding-right: 11px;
+            padding-top: 24px;
+            padding-bottom: 22px;
+            background-color: rgb(225, 36, 84);
+            box-shadow: 0px 8px 16px 0px rgb(225 36 84 / 20%);
+        }
+    }
+        
+        
     </style>
 
 
@@ -98,7 +176,7 @@
                         <div class="header-info">
                             {% for numbers in numberemail %}
                             <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
-                            <span style="margin-left: 3em;"><i class="fas fa-envelope"></i> {{numbers.email}}</span> 
+                            <span><i class="fas fa-envelope"></i> {{numbers.email}}</span> 
                             <span><i class="fas fa-clock"></i> {{numbers.clock}}</span>{% endfor %}
                         </div>
                     </div>
@@ -130,9 +208,9 @@
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
-                        <a target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
-                        <a target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
+                        <a class="rotate" target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+                        <a class="rotate" target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
+                        <a class="rotate" target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
 
                     </ul>
 
@@ -148,9 +226,7 @@
         <section class="hero-area">
             <div class="hero-slider">
                 <div class="slider-active">
-                    {% for i in slidersekil %}
-                    <div class="single-slider slider-height d-flex align-items-center" style="background-image: url({{ i.image.url }}); background-size:100%; background-repeat: no-repeat;">
-                        {% endfor %}
+                    <div class="single-slider slider-height d-flex align-items-center">
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-6 col-lg-8 col-md-10">
@@ -159,13 +235,14 @@
                                             {% for yazi in slayderyazi %}
                                             <h5 data-animation="fadeInUp" data-delay=".2s" style="animation-delay: 0.2s;" class="">{{yazi.yazi_1}}</h5>
                                             <h2 data-animation="fadeInUp" data-delay=".4s" style="animation-delay: 0.4s;" class="ustfoto_yazisi">{{yazi.yazi_2}}</h2>
-                                            <p data-animation="fadeInUp" data-delay=".6s" style="animation-delay: 0.6s;" class="">{{yazi.yazi_3}}</p>
                                             {% endfor %}
                                         </div>
                                         <div class="hero-slider-btn">
-                                            <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'appoinment' %}" class="btn btn-icon ml-0"><span>+</span>Qəbula Yazıl</a> {% for i in youtube_link_esas %}
+                                            <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'appoinment' %}" class="btn btn-icon ml-0"><span>+</span>Qəbula Yazıl</a> 
+                                            {% for i in youtube_link_esas %}
                                             <a data-animation="fadeInRight" data-delay="1.0s" href="{{ i.youtube_link }}" class="play-btn popup-video"><i
-                                                    class="fas fa-play"></i></a> {% endfor %}
+                                                class="fas fa-play"></i></a> 
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +340,7 @@
                     {% for i in servismelumat %}
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="service-box text-center mb-30">
-                            <div style="margin-top:-70px" class="service-thumb">
+                            <div class="service-thumb">
                                 <img style="width: 35%;" src="{{ i.balaca_sekil_hecmi_244_x_80.url }}" />
                             </div>
                             <div class="service-content">
@@ -340,7 +417,7 @@
         </div>
         <!-- fact-area end -->
         <!-- latest-news-area start -->
-        <section class="latest-news-area pt-115 pb-20 mt-130" style="background: #f3f6ff;">
+        <section class="latest-news-area pt-70 pb-20 mt-130" style="background: #f3f6ff; height:18em;">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-7">
@@ -357,7 +434,7 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-5 d-none d-lg-block">
-                        <div class="section-button text-right pt-80">
+                        <div class="section-button text-right pt-60">
                             <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'blog' %}" class="btn btn-icon ml-0"><span>+</span>Bloqlar</a>
                         </div>
                     </div>
@@ -385,26 +462,69 @@
                     </div> -->
                 </div>
                 <div class="row">
-                    {% for i in posts %}
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="latest-news-box mb-30">
-                            <div class="latest-news-thumb mb-35">
-                                <img src="{{ i.foto_post.url }}" alt="">
-                            </div>
-                            <div class="latest-news-content">
-                                <div class="news-meta mb-10">
-                                    <!-- <span><a href="#" class="news-tag">{{ i.kicikmetn }}</a></span> -->
-                                    <span class="meta-date"><i class="far fa-calendar"></i>{{ i.vaxt }}</span>
-                                </div>
-                                <h3><a href="{% url 'blog_app:blog-detail' pk=i.id %}">{{ i.metinin_bashligi }}</a></h3>
-                                <p>{{ i.metn|slice:200 }} ...</p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
+                    
                 </div>
             </div>
         </section>
+        <section
+                        class="elementor-section elementor-top-section elementor-element elementor-element-b2fd08f elementor-section-full_width elementor-section-height-default elementor-section-height-default mt-50"
+                        data-id="b2fd08f" data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-no">
+                            <div class="elementor-row">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-afcc651"
+                                    data-id="afcc651" data-element_type="column">
+                                    <div class="elementor-column-wrap elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-7d4d804 elementor-align-left elementor-widget elementor-widget-bdevs-service-post"
+                                                data-id="7d4d804" data-element_type="widget"
+                                                data-widget_type="bdevs-service-post.default">
+                                                <div class="elementor-widget-container">
+
+
+                                                    <!-- services-area start -->
+                                                    <section class="services-area pos-rel pb-160">
+                                                        <span class="h4services-bg">
+                                                            <img src="https://www.devsnews.com/wp/medidove/wp-content/uploads/2019/11/services__overlay__bg.png"
+                                                                alt="Overlay Image">
+                                                        </span>
+                                                        <div class="container">
+                                                            <div class="row h4service-active">
+                                                                {% for i in posts %}
+                                                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                                                    <div class="h4service-box white-bg mb-30 text-left">
+                                                                        <div class="service-thumb pos-rel mb-0">
+                                                                            <img
+                                                                                width="700" height="250"
+                                                                                src="{{ i.foto_post.url }}"
+                                                                                class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                                                                alt="" loading="lazy"
+                                                                                sizes="(max-width: 700px) 100vw, 700px" />
+                                                                            <a class="h4services-tag green-bg white-color text-uppercase f-700"
+                                                                                href="">{{ i.vaxt }}</a>
+
+                                                                        </div>
+                                                                        <div class="service-content h4services-content">
+                                                                            <h3><a href="{% url 'blog_app:blog-detail' pk=i.id %}">{{ i.metinin_bashligi }}</a></h3>
+                                                                            <p>{{ i.metn|slice:200 }} ...</p>
+                                                                            <a href="{% url 'blog_app:blog-detail' pk=i.id %}"
+                                                                                class="service-link">Daha Ətraflı<i class="fas fa-angle-double-right"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <!-- services-area end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
         <!-- latest-news-area end -->
         <footer>
             <div class="footer-top primary-bg footer-map pos-rel pt-120 pb-80">
@@ -438,7 +558,7 @@
                                     <h3>Linklər</h3>
                                 </div>
                                 <div class="footer-menu footer-menu-2 h4footer-menu">
-                                    <ul>
+                                    <ul style="display: block !important;">
                                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
                                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                                         <li><a href="{% url 'media' %}">Media</a></li>
@@ -533,7 +653,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="footer-copyright footer-copyright-3 text-center">
-                                <p>Copyright @VrProduction - 2021</p>
+                                <p>Copyright  <a style="color:#9aacbb" target="_blank" href="https://vrproduction.az/">@VRProduction</a> -  2021</p>
                             </div>
                         </div>
                     </div>
@@ -563,7 +683,7 @@
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-    
+
     <script>
         var faq = document.getElementsByClassName("faq-page");
         var i;
@@ -677,11 +797,6 @@
                 });
             });
         })(jQuery);
-    </script>
-    <script>
-        document.getElementById('scrol').scrollIntoView({
-            behavior: 'smooth'
-        });
     </script>
 </body>
 

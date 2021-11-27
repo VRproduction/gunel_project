@@ -74,6 +74,7 @@ def homepage(request):
     })
 
 def abouscroll(request):
+    mobileres = MobileFoto.objects.all()
     youtube_link_esas = Youtube_Link_Əsas.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     footer_yazi = Footer_Yazısı.objects.all()
@@ -121,6 +122,7 @@ def abouscroll(request):
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
         'haqqimizdamel' : haqqimizdamel,
+        'mobileres' : mobileres,
     })
 
 

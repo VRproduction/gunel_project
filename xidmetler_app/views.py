@@ -20,7 +20,7 @@ def bizim_xidmetler(request):
     esasfotoyazilar = ƏsasFoto_ÜstYazılar.objects.all()
     haqqimizdamel = Xidmətlərimiz_Haqqında.objects.all()
 
-    number_items = 3
+    number_items = 6
     page = request.GET.get('page')
     paginator = Paginator(haqqimizdamel, number_items)
     try:
