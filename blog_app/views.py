@@ -17,7 +17,6 @@ def blog(request):
     haqqimda_melumat = Haqqımda_Məlumat.objects.all()
     diger_bloq = Digər_Bloqlar.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
-    hekaye = Hekayə.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
     # baner = Sagbaner.objects.all()
     esasfoto_metn = ƏsasFoto_ÜstMətn.objects.all()
@@ -53,7 +52,6 @@ def blog(request):
         'esasfoto' : esasfoto,
         'posts' : posts,
         'haqqimda' : haqqimda,
-        'hekaye' : hekaye,
         # 'baner' : baner,
         'haqqimda_melumat' : haqqimda_melumat,
         'diger_bloq' : diger_bloq,

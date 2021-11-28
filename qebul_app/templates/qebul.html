@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 
     <style>
+        #butik {
+            width: 50%;
+        }
         .ustfoto_yazisi {
             font-size: 56px;
         }
@@ -40,8 +43,23 @@
         }
         
         @media screen and (min-width:375px) and (max-width:767px) {
+            .breadcrumb-bg {
+                padding-top: 16px;
+                padding-bottom: 140px;
+            }
+            .page-title h1 {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
             .fa-times-square {
                 left: auto !important;
+            }
+            .small-text {
+                color: #647589;
+                font-size: 16px;
+                font-weight: 500;
+                width: 245px;
+                margin-bottom: 0;
             }
             .fa-clock {
                 left: auto !important;
@@ -223,8 +241,8 @@
                                                    
                                                    </div>
                                                    <div class="contact-btn text-center pb-40">
-                                                       <button id="butikk" style="margin-top: 1em;width: 50%;" type="submit"
-                                                       class="btn btn-primary">Məlumatı Göndər</button>
+                                                       <button id="butikk" style="margin-top: 1em; type="submit"
+                                                       class="btn btn-primary">Göndər</button>
                                                    </div>
                                                </div>
                                            </div>

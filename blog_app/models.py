@@ -31,13 +31,6 @@ class SosialŞəbəkəLinkləri(models.Model):
         return self.facebook_url
 
 
-class Hekayə(models.Model):
-    hekaye = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
-    muellif = models.CharField(max_length=80, help_text="Maksimum 80 hərif")
-
-    def __str__(self):
-        return self.hekaye
-
 class Haqqımda_Məlumat(models.Model):
     foto = models.ImageField(upload_to='media/')
     ad_soyad = models.CharField(max_length=150, help_text="Maksimum 150 hərif")
