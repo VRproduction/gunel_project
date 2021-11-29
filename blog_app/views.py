@@ -23,7 +23,7 @@ def blog(request):
     esasfoto = ƏsasFoto.objects.all()
     posts = PostPaylaşılma.objects.all()
 
-    number_items = 2
+    number_items = 3
     page = request.GET.get('page')
     paginator = Paginator(posts, number_items)
     try:

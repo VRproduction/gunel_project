@@ -23,7 +23,7 @@ class Müsahibe(models.Model):
 
 class MediaTvProqramları(models.Model):
     foto = models.ImageField(upload_to='media/', help_text="Fotonun həcmi 570 uzunluğu 700 enni olmalıdır (570x700)")
-    link_tv = models.CharField(max_length=40, help_text="Maksimum 40 simvol")
+    link_tv = models.CharField(max_length=10000, help_text="Maksimum 40 simvol")
     metn = models.TextField(max_length=1000, help_text="Kicik metn")
 
     def __str__(self):
@@ -31,7 +31,7 @@ class MediaTvProqramları(models.Model):
 
 class MediaYouTube(models.Model):
     foto = models.ImageField(upload_to='media/', help_text="Fotonun həcmi 570 uzunluğu 700 enni olmalıdır (570x700)")
-    link_youtube = models.TextField(max_length=200, help_text="Videonuzun Linkini Yükləyin")
+    link_youtube = models.TextField(max_length=20000, help_text="Videonuzun Linkini Yükləyin")
     metn = models.TextField(max_length=1000, help_text="Kicik metn")
 
     def __str__(self):

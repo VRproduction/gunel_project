@@ -18,6 +18,7 @@ from blog_app.models import *
 from xidmetler_app.models import *
 
 def homepage(request):
+    seohome = SEO_AnaSəhifə.objects.all()
     mobileres = MobileFoto.objects.all()
     youtube_link_esas = Youtube_Link_Əsas.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
@@ -71,9 +72,11 @@ def homepage(request):
         'acilish_vaxt' : acilish_vaxt,
         'haqqimizdamel' : haqqimizdamel,
         'mobileres' : mobileres,
+        'seohome' : seohome,
     })
 
 def abouscroll(request):
+    seohome = SEO_AnaSəhifə.objects.all()
     mobileres = MobileFoto.objects.all()
     youtube_link_esas = Youtube_Link_Əsas.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
@@ -123,6 +126,7 @@ def abouscroll(request):
         'acilish_vaxt' : acilish_vaxt,
         'haqqimizdamel' : haqqimizdamel,
         'mobileres' : mobileres,
+        'seohome' : seohome,
     })
 
 

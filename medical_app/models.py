@@ -150,3 +150,6 @@ class Youtube_Link_Əsas(models.Model):
 
 class MobileFoto(models.Model):
     foto_res = models.ImageField(upload_to='media/')
+
+class SEO_AnaSəhifə(models.Model):
+    metatag = models.TextField()
