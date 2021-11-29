@@ -10,7 +10,6 @@
     {% for i in seohome %}
     {{ i.metatag }}
     {% endfor %}
-    <meta name="google-site-verification" content="OXXG9l1pYzna7dpyBSKNdP-fmX4JXU0NanfHV95xFvM" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -83,8 +82,8 @@
                 left: auto !important;
             }
             .footerlogoimg {
-                width: 55%;
-                margin-left: 70px;
+                width: 35%;
+                margin-left: 100px;
             }
             .footer-contact-content p {
                 text-align: center;
@@ -120,50 +119,84 @@
                 width: 34px;
             }
             .service-content h4:hover {
-            color:
+                color: green;
             }
 
             .hero-slider-btn .btn-icon {
-            left: -50px;
-            top: 111px;
-            border-radius: 30px;
-            padding-left: 60px;
-            padding-right: 11px;
-            padding-top: 24px;
-            padding-bottom: 22px;
-            background-color: rgb(225, 36, 84);
-            box-shadow: 0px 8px 16px 0px rgb(225 36 84 / 20%);
+                left: -83px;
+                top: 67px;
+                border-radius: 30px;
+                padding-left: 60px;
+                padding-right: 15px;
+                text-transform: capitalize;
+                padding-top: 17px;
+                padding-bottom: 20px;
+                background-color: rgb(225, 36, 84);
+                box-shadow: 0px 8px 16px 0px rgb(225 36 84 / 20%);
             }
+            
             .play-btn.popup-video {
-            margin-left: 200px;
-            margin-top: 52px;
-        } 
+                margin-left: 120px;
+                margin-top: 15px;
+            }
 
-        .hero-slider-caption h5 {
-            animation-delay: 0.2s;
-            width: 180px;
-            margin-top: 91px;
-            text-align: left;
-        }
+            .hero-slider-caption h5 {
+                animation-delay: 0.2s;
+                width: 145px;
+                margin-top: 91px;
+                text-align: left;
+                font-size:12px
+            }
 
-        .hero-slider-caption h2 {
-            animation-delay: 0.4s;
-            width: 165px;
-            margin-left: -1px;
-            text-align: initial;
-            margin-top: -17px;
-        }
+            .hero-slider-caption h2 {
+                animation-delay: 0.4s;
+                width: 165px;
+                margin-left: -1px;
+                text-align: initial;
+                margin-top: 20px;
+                font-size:22px
+            }
 
-        .section-button .btn-icon{
-            border-radius: 30px;
-            padding-left: 60px;
-            padding-right: 11px;
-            padding-top: 24px;
-            padding-bottom: 22px;
-            background-color: rgb(225, 36, 84);
-            box-shadow: 0px 8px 16px 0px rgb(225 36 84 / 20%);
+            .section-button .btn-icon{
+                left: -145px;
+                top: -1px;
+                border-radius: 45px;
+                padding-left: 41px;
+                padding-right: 12px;
+                text-transform: capitalize;
+                padding-top: 14px;
+                padding-bottom: 10px;
+                background-color: rgb(225, 36, 84);
+                box-shadow: 0px 8px 16px 0px rgb(225 36 84 / 20%);
+            }
+            .play-btn {
+                height: 50px;
+                width: 50px;
+                line-height: 53px;
+                display: inline-block;
+                border-radius: 50%;
+                background-color: rgb(143, 181, 105);
+                box-shadow: 0px 8px 16px 0px rgb(125 178 73 / 20%);
+                text-align: center;
+                color: #fff;
+                padding-left: 3px;
+            }
+            .btn-icon span {
+                position: absolute;
+                left: 5px;
+                text-align: center;
+                width: 40px;
+                height: 40px;
+                top: 5px;
+                line-height: 42px;
+                background: #fff;
+                transition: .3s;
+                font-size: 20px;
+                font-weight: 600;
+                color: #223645;
+                border-radius: 100%;
+            }
         }
-    }
         
         
     </style>
@@ -241,7 +274,7 @@
                                             <h2 data-animation="fadeInUp" data-delay=".4s" style="animation-delay: 0.4s;" class="ustfoto_yazisi">{{yazi.yazi_2}}</h2>
                                             {% endfor %}
                                         </div>
-                                        <div class="hero-slider-btn">
+                                        <div class="hero-slider-btn mt-50">
                                             <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'appoinment' %}" class="btn btn-icon ml-0"><span>+</span>Qəbula Yazıl</a> 
                                             {% for i in youtube_link_esas %}
                                             <a data-animation="fadeInRight" data-delay="1.0s" href="{{ i.youtube_link }}" class="play-btn popup-video"><i
@@ -306,7 +339,7 @@
         <!-- about-area start -->
         <!-- about-area end -->
         <!-- services-area start -->
-        <section class="servcies-area gray-bg pt-115 pb-90">
+        <section class="servcies-area gray-bg pt-115 pb-30">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
@@ -498,7 +531,7 @@
                                                                     <div class="h4service-box white-bg mb-30 text-left">
                                                                         <div class="service-thumb pos-rel mb-0">
                                                                             <img
-                                                                                width="700" height="250"
+                                                                                width="700" height="200"
                                                                                 src="{{ i.foto_post.url }}"
                                                                                 class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
                                                                                 alt="" loading="lazy"
@@ -549,8 +582,8 @@
                                 <div class="footer-emailing">
                                     <ul>
                                         {% for numbers in numberemail %}
-                                        <li style="font-size:15px !important"><i class="far fa-phone"></i>+{{numbers.number}}</li>
-                                        <li style="font-size:15px !important"><i class="far fa-envelope"></i>{{numbers.email}}</li>
+                                        <li style="font-size:14px !important"><i class="far fa-phone"></i>+{{numbers.number}}</li>
+                                        <li style="font-size:14px !important"><i class="far fa-envelope"></i>{{numbers.email}}</li>
                                         {% endfor %}
                                     </ul>
                                 </div>

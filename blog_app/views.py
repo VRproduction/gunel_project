@@ -10,6 +10,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def blog(request):
+    metatag = SEO_Bloq.objects.all()
     xidmetlerimiz = Xidmətlər_Postları.objects.all()
     footer_yazi = Footer_Yazısı.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
@@ -62,6 +63,7 @@ def blog(request):
         'xidmetlerimiz' : xidmetlerimiz,
         'page_range' : page_range,
         'items' : items,
+        'metatag' : metatag,
     })
 
 class BlogDetailView(DetailView):

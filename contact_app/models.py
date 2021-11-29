@@ -33,3 +33,7 @@ class Üst_Şəkil(models.Model):
 
 class MobileƏsasFoto(models.Model):
     img = models.ImageField('media/')
+
+
+class SEO_Əlaqə(models.Model):
+    metatag = models.TextField()

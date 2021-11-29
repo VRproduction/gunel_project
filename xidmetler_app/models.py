@@ -41,7 +41,6 @@ class Xidmətlərimiz_Haqqında(models.Model):
 class Məlumat_Sektoru(models.Model):
     kicik_metn = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
     bashliq = models.TextField(max_length=1500, help_text="Maksimum 1500 hərif")
-    metn = models.TextField(max_length=5000, help_text="Maksimum 5000 hərif")
 
     def __str__(self):
         return self.bashliq

@@ -62,3 +62,6 @@ class Footer_Açılış_Vaxtları(models.Model):
     acilis_vaxti = models.TimeField()
     baglanan_vaxt = models.TimeField()
     istirahet_gunleri = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
+
+class SEO_Bloq(models.Model):
+    metatag = models.TextField()

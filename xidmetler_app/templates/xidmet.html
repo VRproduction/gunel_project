@@ -48,6 +48,9 @@
         }
         
         @media screen and (min-width:375px) and (max-width:767px) {
+            nav .breadcrumb  {
+                margin-top: -50px !important;
+            }
             .basic-pagination nav {
                 margin-left:0em;
                 padding:40px
@@ -59,8 +62,8 @@
                 left: auto !important;
             }
             .footerlogoimg {
-                width: 55%;
-                margin-left: 70px;
+                width: 35%;
+                margin-left: 100px;
             }
             .footer-contact-content p {
                 text-align: center;
@@ -199,25 +202,27 @@
         <!-- about-area start -->
         <section style="background:aliceblue;" class="about-area pt-120 pb-90">
             <div class="container">
-                <div class="row ">
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-                        <div class="section-title section-title-m-0 pos-rel mb-50 text-right">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-8 col-md-12">
+                        <div class="section-title pos-rel mb-75">
                             <div class="section-icon">
-                                <img class="section-back-icon back-icon-right" src="{% static 'img/section/section-back-icon.png' %}" alt="">
+                                <img class="section-back-icon back-icon-left" src="{% static 'img/section/section-back-icon.png' %}" alt="">
                             </div>
-                            <div class="section-text section-text-small pos-rel">
+                            <div class="section-text pos-rel">
                                 {% for i in melumat_sektoru %}
                                 <h5>{{ i.kicik_metn }}</h5>
                                 <h1>{{ i.bashliq }}</h1>
                                 {% endfor %}
                             </div>
+                            <div class="section-line pos-rel">
+                                <img src="img/shape/section-title-line.png" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-                        <div class="facalty-text mb-50">
-                            {% for i in melumat_sektoru %}
-                            <p>{{ i.metn }}</p>
-                            {% endfor %}
+                    <div class="col-xl-5 col-lg-4">
+                        <div class="section-button text-right d-none d-lg-block pt-80">
+                            <a data-animation="fadeInLeft" data-delay=".6s" href="{% url 'blog' %}"
+                                class="btn btn-icon ml-0"><span>+</span>Bloq</a>
                         </div>
                     </div>
                 </div>
@@ -295,8 +300,8 @@
                             <div class="footer-emailing">
                                 <ul>
                                     {% for numbers in numberemail %}
-                                    <li style="font-size:15px !important"><i class="far fa-phone"></i>+{{numbers.number}}</li>
-                                    <li style="font-size:15px !important"><i class="far fa-envelope"></i>{{numbers.email}}</li>
+                                    <li style="font-size:14px !important"><i class="far fa-phone"></i>+{{numbers.number}}</li>
+                                    <li style="font-size:14px !important"><i class="far fa-envelope"></i>{{numbers.email}}</li>
                                     {% endfor %}
                                 </ul>
                             </div>
