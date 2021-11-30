@@ -38,8 +38,26 @@
             width: 55%;
             margin-left: 50px;
         }
+        .play-btn {
+            height: 60px;
+            width: 60px;
+            line-height: 60px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: rgb(143, 181, 105);
+            box-shadow: 0px 8px 16px 0px rgb(125 178 73 / 20%);
+            text-align: center;
+            color: #fff;
+            padding-left: 3px;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
         
-        @media screen and (min-width:375px) and (max-width:767px) {
+        @media screen and (min-width:375px) and (max-width:400px) {
+            .play-btn.popup-video {
+                margin-left: 97px;
+                margin-top: 80px;
+            }
             .fa-times-square {
                 left: auto !important;
             }
@@ -92,6 +110,14 @@
                 margin-bottom: 20px;
             }
         }
+
+        @media screen and (min-width:400px) and (max-width:425px) {
+            .play-btn.popup-video {
+                margin-left: 104px;
+                margin-top: 100px;
+            }
+        }
+
     </style>
 
 
@@ -227,14 +253,16 @@
                             <div class="portfolio-wrapper">
                                 <div class="portfolio-image">
                                     <img src="{{ i.foto.url }}" alt="" />
+                                    
                                     <div class="view-icon">
                                         <a class="popup-image" href="{{ i.foto.url }}">
                                             <i class="fas fa-plus"></i>
                                         </a>
+                                        <a data-animation="fadeInRight" data-delay="1.0s" href="{{ i.link_tv }}" class="play-btn popup-video"><i class="fas fa-play"></i></a> 
                                     </div>
                                 </div>
                                 <div class="portfolio-caption">
-                                    <a target="_blank" href="{{ i.link_tv }}"><h4>{{ i.metn }}</h4></a>
+                                    <a class="popup-video" data-animation="fadeInRight" data-delay="1.0s" href="{{ i.link_tv }}"><h4>{{ i.metn }}</h4></a>
                                 </div>
                             </div>
                         </div>
@@ -250,10 +278,11 @@
                                         <a class="popup-image" href="{{ i.foto.url }}">
                                             <i class="fas fa-plus"></i>
                                         </a>
+                                        <a data-animation="fadeInRight" data-delay="1.0s" href="{{ i.link_youtube }}" class="play-btn popup-video"><i class="fas fa-play"></i></a>
                                     </div>
                                 </div>
                                 <div class="portfolio-caption">
-                                    <a target="_blank" href="{{ i.link_youtube }}"><h4>{{ i.metn }}</h4></a> 
+                                    <a class="popup-video" data-animation="fadeInRight" data-delay="1.0s" href="{{ i.link_youtube }}"><h4>{{ i.metn }}</h4></a> 
                                 </div>
                             </div>
                         </div>
