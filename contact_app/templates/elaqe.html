@@ -195,8 +195,10 @@
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
                         <div class="page-title">
-                            <p class="small-text pb-15">Sualınız yaranıb?</p>
-                            <h2>Biznən Əlaqə Saxlayın</h2>
+                            {% for i in esasfotometn %}
+                            <p class="small-text pb-15">{{ i.metn_1 }}</p>
+                            <h2>{{ i.metn_2 }}</h2>
+                            {% endfor  %}
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center" style="left:-160px">
