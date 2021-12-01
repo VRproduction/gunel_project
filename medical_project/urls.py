@@ -33,7 +33,7 @@ urlpatterns = [
     path('',include('xidmetler_app.urls', namespace='xidmetler_app')),
     path('qebulayazil/', appoinment, name="appoinment"),
     path('elaqe/', contact, name="contact"),
-    path('xidmetleerimiz/', bizim_xidmetler, name="xidmetler"),
+    path('xidmetlerimiz/', bizim_xidmetler, name="xidmetler"),
     path('haqqimda/', abouscroll, name="abouscroll"),
    # path('ckeditor/', include('ckeditor_uploader.urls')),
     path('blog/', blog, name="blog"),

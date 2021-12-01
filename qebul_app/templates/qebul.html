@@ -196,15 +196,28 @@
         </section>
         <!-- hero-area end -->
         <!-- calculate-area start -->
-        {% for i in input_arxasekil %}
-        <section class="appointment-area appointment-area-3 pos-rel pt-115 pb-120"
-            style="background-image:url({{ i.foto.url }})">
-            {% endfor %}
+        <section class="appointment-area appointment-area-3 pos-rel pt-115 pb-120" style="background-color:azure;">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-7 col-lg-8">
+                    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                        <div class="section-title text-center pos-rel mb-75">
+                            <div class="section-icon">
+                                <img class="section-back-icon" src="{% static 'img/section/section-back-icon.png' %}" alt="">
+                            </div>
+                            <div class="section-text pos-rel">
+                                <h5></h5>
+                                <h2>Qəbula yazılmaq üçün forumu doldurun</h2>
+                            </div>
+                            <div class="section-line pos-rel">
+                                <img style="margin-top:40px" src="{% static 'img/shape/section-title-line.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-lg-8">
                         <div class="calculate-box white-bg">
-                            <div class="calculate-content">
+                            <div class="calculate-content mt-60">
                                 <div class="row">
                                     <form method="post" id="contact-form">
                                         {% csrf_token %} 
@@ -212,32 +225,32 @@
                                                <div class="col-lg-6">
                                                    <div class="form-box mb-30">
                                                        <label for="exampleInputEmail1">Adınız</label>
-                                                   <input type="text" class="form-control" id="exampleInputEmail1"
+                                                   <input style="height:55px;" type="text" class="form-control" id="exampleInputEmail1"
                                                    aria-describedby="emailHelp" name="adtext">
                                                    </div>
                                                </div>
                                                <div class="col-lg-6">
                                                    <div class="form-box mb-30">
                                                        <label for="exampleInputPassword1">Soyadınız</label>
-                                               <input type="text" class="form-control" id="exampleInputPassword1" name="soyadtext">
+                                               <input style="height:55px;" type="text" class="form-control" id="exampleInputPassword1" name="soyadtext">
                                                    </div>
                                                </div>
                                                <div class="col-lg-6">
                                                    <div class="form-box  mb-30">
                                                        <label for="exampleInputPassword1">Telefon Nömrəniz</label>
-                                               <input type="number" class="form-control" id="exampleInputPassword1" name="telefon">
+                                               <input style="height:55px;" type="number" class="form-control" id="exampleInputPassword1" name="telefon">
                                                    </div>
                                                </div>
                                                <div class="col-lg-6">
                                                    <div class="form-box mb-30">
                                                        <label for="exampleInputPassword1">E-mail</label>
-                                               <input type="text" class="form-control" id="exampleInputPassword1" name="mal">
+                                               <input style="height:55px;" type="text" class="form-control" id="exampleInputPassword1" name="mal">
                                                    </div>
                                                </div>
                                                <div class="col-lg-12">
                                                    <div class="form-box mb-30">
-                                                       <label for="exampleInputPassword1">Müraciyyət</label>
-                                                   <textarea class="form-control" name="subject"></textarea>
+                                                       <label  for="exampleInputPassword1">Müraciət</label>
+                                                   <textarea style="height:55px;" class="form-control" name="subject"></textarea>
                                                    
                                                    </div>
                                                    <div class="contact-btn text-center pb-40">
@@ -408,6 +421,33 @@
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+
+
+     <script>
+
+        var $form = $("#contact-form"),
+            $errorMsg = $("<span style='color:red;' class='error'>Boş məlumat göndərə bilmərsiz</span>");
+
+        $("#butikk").on("click", function () {
+            var toReturn = true;
+            $("input", $form).each(function () {
+                if ($(this).val() == "") {
+                    if (!$(this).data("error")) {
+                        $(this).data("error", $errorMsg.clone().insertAfter($(this)));
+                    }
+                    toReturn = false;
+                }
+                else {
+                    if ($(this).data("error")) {
+                        $(this).data("error").remove();
+                        $(this).removeData("error");
+                    }
+                }
+            });
+            return toReturn;
+        });
+
+    </script>
 
     <script>
         var faq = document.getElementsByClassName("faq-page");

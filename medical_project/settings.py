@@ -107,13 +107,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 'emin@mpy.az'
-EMAIL_HOST_PASSWORD = 'orfbtoqfmlmrfiau'
+EMAIL_HOST_USER = 'info@sudvezixercengi.az'
+EMAIL_HOST_PASSWORD = 'ctstasmwtavmrwce'
 EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
-
-
 
 
 # Internationalization
