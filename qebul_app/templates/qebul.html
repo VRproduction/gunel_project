@@ -444,6 +444,22 @@
                     }
                 }
             });
+
+            $("textarea", $form).each(function () {
+                if ($(this).val() == "") {
+                    if (!$(this).data("error")) {
+                        $(this).data("error", $errorMsg.clone().insertAfter($(this)));
+                    }
+                    toReturn = false;
+                }
+                else {
+                    if ($(this).data("error")) {
+                        $(this).data("error").remove();
+                        $(this).removeData("error");
+                    }
+                    alert("Məlumatlarınız uğurla göndərildi")
+                }
+            });
             return toReturn;
         });
 
