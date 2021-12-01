@@ -48,12 +48,12 @@ def contact(request):
     #        Email: {}
     #        Mesaj: {}
     #    '''.format(data['adtext'], data['telefon'], data['mal'], data['subject'])
-        message = render_to_string('mail.html', data)
+        message = render_to_string('mail-murciyyetelaqe.html', data)
         send_mail(
-            "Müştəri tərəfindən sizə mesaj gəlib",
+            "Sizə sudvezixercengi.az saytından müraciət gəlib",
             message,
             settings.EMAIL_HOST_USER,
-            ['emka6451@gmail.com'],
+            ['info@sudvezixercengi.az'],
             fail_silently=False, html_message=message
         )
 

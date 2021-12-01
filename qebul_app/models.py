@@ -27,17 +27,11 @@ class Qəbul_Haqqımızda(models.Model):
     def __str__(self):
         return self.ust_metn
 
-class Qəbul_Form_Arxa_Foto(models.Model):
-    foto = models.ImageField(upload_to='media/')
-
 class QəbulXəritə(models.Model):
     xerite_url = models.TextField(max_length=500, help_text='Google Xəritənin Linki')
 
     def __str__(self):
         return self.xerite_url
-
-class Qəbula_Yazıl_Forma_Arxa_Foto(models.Model):
-    foto = models.ImageField(upload_to='media/')
 
 class Əsas_Şəkil(models.Model):
     esassekil = models.ImageField(upload_to='media/')

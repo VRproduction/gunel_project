@@ -420,20 +420,6 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!-- {% for i in haqqimizdamel %}
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="service-box service-box-border text-center mb-30">
-                            <div class="service-thumb">
-                                <img src="{{ i.esas_foto.url }}" alt="">
-                            </div>
-                            <div class="service-content">
-                                <h3><a href="{% url 'xidmetler_app:news-detail' pk=i.id %}">{{ i.haqqimizda_ust_yazi_1 }}</a></h3>
-                                <p>{{ i.metn | slice:97 }}...</p> 
-                                <a class="service-link" href="{% url 'xidmetler_app:news-detail' pk=i.id %}">Daha Ətraflı</a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %} -->
                     {% for i in servismelumat %}
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="service-box text-center mb-30">

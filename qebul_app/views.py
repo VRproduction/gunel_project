@@ -27,7 +27,6 @@ from blog_app.models import *
 
 def appoinment(request):
     sekil = Əsas_Şəkil.objects.all()
-    input_arxasekil = Qəbula_Yazıl_Forma_Arxa_Foto.objects.all()
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     footer_yazi = Footer_Yazısı.objects.all()
     footer_bloq = Footer_Bloq.objects.all()
@@ -37,7 +36,6 @@ def appoinment(request):
     haqqimizdayazi = HaqqımızdaYazılar.objects.all()
     # bloqsolmetn = BloqSolMətn.objects.all()
     # bloqxeber = Bloq_YeniXəbərlər_AnaSehifə.objects.all()
-    arxasekilform = Qəbul_Form_Arxa_Foto.objects.all()
     haqqimizda = SosialŞəbəkəLinkləri.objects.all()
     foto = Qəbul_Haqqımızda_foto.objects.all()
     esasyazilar = Əsas_Şəkilin_Yazıları.objects.all()
@@ -73,7 +71,7 @@ def appoinment(request):
             "Müştəri tərəfindən sizə mesaj gəlib",
             message,
             settings.EMAIL_HOST_USER,
-            ['emka6451@gmail.com'],
+            ['info@sudvezixercengi.az'],
             fail_silently=False, html_message=message
         )
 
@@ -84,11 +82,9 @@ def appoinment(request):
         'bashlig': bashlig,
         'numberemail': numberemail,
         'logosekil': logosekil,
-        'input_arxasekil' : input_arxasekil,
         'esasyazilar': esasyazilar,
         'foto': foto,
         'haqqimizda': haqqimizda,
-        'arxasekilform': arxasekilform,
         # 'bloqxeber' : bloqxeber,
         # 'bloqsolmetn' : bloqsolmetn,
         'haqqimizdayazi': haqqimizdayazi,
@@ -103,32 +99,3 @@ def appoinment(request):
     })
 
 
-
-
-
-#     }
-    #     adtext = '''
-    #        Ad: {}
-    #        Soyad: {}
-    #        telefon: {}
-    #        Email: {}
-    #    '''.format(data['adtext'], data['soyadtext'], data['telefon'], data['mal'])
-    #     
-    #     send_mail(
-    #         "Müştəri tərəfindən sizə mesaj gəlib",
-    #         adtext,
-    #         settings.EMAIL_HOST_USER,
-    #         ['emka6451@gmail.com'],
-    #         fail_silently=False
-    #     )
-
-
-    # server = smtplib.SMTP(settings.EMAIL_HOST, settings.EMAIL_PORT)
-    #     server.login (settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD) 
-    #     server.sendmail(
-    #         "Müştəri tərəfindən sizə mesaj gəlib",
-    #         adtext,
-    #         settings.EMAIL_HOST_USER, 
-    #         ['emka6451@gmail.com'], 
-    #         message.as_string ()
-    #         )
