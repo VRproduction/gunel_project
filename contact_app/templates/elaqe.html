@@ -31,15 +31,11 @@
 
     <style>
         .breadcrumb-bg {
-                {
-                % for i in sekil %
-            }
+                {% for i in sekil %}
 
             background-image: url({{ i.img.url }});
 
-                {
-                % endfor %
-            }
+                {% endfor %}
 
         }
 
@@ -54,15 +50,11 @@
 
         @media screen and (min-width:375px) and (max-width:767px) {
             .breadcrumb-bg {
-                    {
-                    % for i in mobilefoto %
-                }
+                    {% for i in mobilefoto %}
 
                 background-image: url({{ i.img.url }});
 
-                    {
-                    % endfor %
-                }
+                    {% endfor %}
             }
 
             .fa-times-square {
@@ -154,6 +146,16 @@
                 font-weight: 500;
                 letter-spacing: 2px;
             }
+        }
+
+        .success_text {
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success_text.show {
+            display: block;
         }
     </style>
 
@@ -330,12 +332,13 @@
                                 <div class="col-lg-12">
                                     <div class="form-box message-icon mb-30">
                                         <label for="exampleInputPassword1">Müraciət</label>
-                                        <textarea id="contact-form" class="form-control" name="subject"></textarea>
+                                        <textarea id="subject" class="form-control" name="subject"></textarea>
 
                                     </div>
                                     <div class="contact-btn text-center">
                                         <button id="butikk" type="submit" class="btn btn-primary">Göndər</button>
                                     </div>
+                                    <p class="success_text">Success!</p>
                                 </div>
                             </div>
                         </form>
@@ -532,8 +535,33 @@
                     }
                 }
             });
+
+            $("textarea", $form).each(function () {
+                if ($(this).val() == "") {
+                    if (!$(this).data("error")) {
+                        $(this).data("error", $errorMsg.clone().insertAfter($(this)));
+                    }
+                    toReturn = false;
+                }
+                else {
+                    if ($(this).data("error")) {
+                        $(this).data("error").remove();
+                        $(this).removeData("error");
+                    }
+                    alert("Məlumatlarınız uğurla göndərildi")
+                }
+            });
             return toReturn;
         });
+
+
+        // var $form = $("#subject"),
+        // $errorMsg = $("<span style='color:red;' class='error'>Boş məlumat göndərə bilmərsiz</span>");
+
+        // $("#butikk").on("click", function(){
+        //     var toReturn = true;
+
+        // })
 
     </script>
 
