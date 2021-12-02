@@ -15,7 +15,7 @@ class ƏsasŞəkilin_ÜstMətini(models.Model):
 
 class Müsahibe(models.Model):
     foto = models.ImageField(upload_to='media/', help_text="Fotonun həcmi 570 uzunluğu 700 enni olmalıdır (570x700)")
-    link_musahibe = models.CharField(max_length=40, help_text="Maksimum 40 simvol")
+    link_musahibe = models.CharField(max_length=10000, help_text="Maksimum 10000 simvol")
     metn = models.TextField(max_length=1000, help_text="Kicik metn")
 
     def __str__(self):
