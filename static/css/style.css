@@ -5347,7 +5347,6 @@ p.checkout-coupon input[type="text"] {
 }
 
 .portfolio-image::before {
-    background: #e12454;
     content: "";
     height: 100%;
     left: 0;
