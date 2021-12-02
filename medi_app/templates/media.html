@@ -4,14 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge"> {% for bashlig in baslig %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"> 
+    {% for bashlig in baslig %}
     <title>{{ bashlig }}</title>
     {% endfor %}
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="manifest" href="site.webmanifest"> {% for photos in photobashlig %}
-    <link rel="shortcut icon" href="{{photos.bashligsekil.url}}"> {% endfor %}
+    <link rel="manifest" href="site.webmanifest"> 
+    {% for photos in photobashlig %}
+    <link rel="shortcut icon" href="{{photos.bashligsekil.url}}"> 
+    {% endfor %}
     <!-- Place favicon.png in the root directory -->
 
     <!-- CSS here -->
@@ -55,10 +58,7 @@
         }
         
         @media screen and (min-width:375px) and (max-width:400px) {
-            .play-btn.popup-video {
-                margin-left: 97px;
-                margin-top: 80px;
-            }
+            
             .fa-times-square {
                 left: auto !important;
             }
@@ -112,12 +112,7 @@
             }
         }
 
-        @media screen and (min-width:400px) and (max-width:425px) {
-            .play-btn.popup-video {
-                margin-left: 104px;
-                margin-top: 100px;
-            }
-        }
+        
 
     </style>
 
@@ -189,7 +184,7 @@
                         <div class="page-title">
                             {% for i in fotometn %}
                             <p class="small-text pb-15">{{ i.yazı_1 }}</p>
-                            <h1>{{ i.yazı_2 }}</h1>
+                            <h2>{{ i.yazı_2 }}</h2>
                             {% endfor %}
                         </div>
                     </div>
@@ -234,6 +229,7 @@
                         <div class="portfolio-item mb-30">
                             <div class="portfolio-wrapper">
                                 <div class="portfolio-image">
+                                    <a data-animation="fadeInRight" data-delay="1.0s" href="{{ i.link_musahibe }}" class="play-btn"><i class="fas fa-link"></i></a>
                                     <img style="border-radius: 15%;"  src="{{ i.foto.url }}" alt="" />
                                     <div class="view-icon">
                                         <a class="popup-image" href="{{ i.foto.url }}">
@@ -276,12 +272,12 @@
                         <div class="portfolio-item mb-30">
                             <div class="portfolio-wrapper">
                                 <div class="portfolio-image">
+                                    <a data-animation="fadeInRight" data-delay="1.0s" href="{{ i.link_youtube }}" class="play-btn popup-video"><i class="fas fa-play"></i></a>
                                     <img style="border-radius: 15%;" src="{{ i.foto.url }}" alt="" />
                                     <div class="view-icon">
                                         <a class="popup-image" href="{{ i.foto.url }}">
                                             <i class="fas fa-plus"></i>
                                         </a>
-                                        <a data-animation="fadeInRight" data-delay="1.0s" href="{{ i.link_youtube }}" class="play-btn popup-video"><i class="fas fa-play"></i></a>
                                     </div>
                                 </div>
                                 <div class="portfolio-caption">
