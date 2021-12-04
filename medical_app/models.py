@@ -8,7 +8,7 @@ from django.utils import timezone
 #Ana sehfe basgligi
 
 class SaytınBaşlığı(models.Model):
-    bashlig = models.CharField(max_length=20, help_text="Maksimum 20 hərif")
+    bashlig = models.CharField(max_length=1000,  help_text="Maksimum 1000 hərif")
 
     def __str__(self):
         return self.bashlig
