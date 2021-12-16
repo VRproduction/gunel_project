@@ -49,6 +49,9 @@
         }
         
         @media screen and (min-width:375px) and (max-width:767px) {
+            .section-button a {
+                display: none;
+            }
             .hero-area { 
                 {% for i in mobileres %}
                 background-image: url({{ i.foto_res.url }}) ;
