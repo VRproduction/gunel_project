@@ -34,3 +34,5 @@ def med(request):
         'acilish_vaxt' : acilish_vaxt,
     })
 
+def sitemap(request):
+    return render(request,"sitemap.xml")
