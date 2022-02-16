@@ -125,7 +125,7 @@
                     <div class="logo">
                         <div class="logo logo-circle pos-rel">
                             {% for i in logosekil %}
-                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
+                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}" alt="Günel Qəmbərova"></a>
                             {% endfor %}
                         </div>
                     </div>
@@ -188,7 +188,7 @@
                     <div class="col-lg-8">
                         <article class="postbox post format-image mb-40">
                             <div class="postbox__thumb mb-35">
-                                <img src="{{ bloging.foto_post.url }}">
+                                <img src="{{ bloging.foto_post.url }}" alt="{{ bloging.metinin_bashligi }}">
                             </div>
                             <div class="postbox__text bg-none">
                                 <div class="post-meta mb-15">
@@ -213,7 +213,7 @@
                             </div>
                             <div class="about-me text-center">
                                 {% for i in haqqimda_melumat %}
-                                <img src="{{ i.foto.url }}" alt="">
+                                <img src="{{ i.foto.url }}" alt="Günel Qəmbərova">
                                 <h4>{{ i.ad_soyad }}</h4>
                                 <p>{{ i.kicik_metn }}</p>
                                 {% endfor %}
@@ -235,7 +235,7 @@
                                 {% for i in xidmetlerimiz %}
                                 <li>
                                     <div class="widget-posts-image">
-                                        <a href="{% url 'xidmetler_app:news-detail' pk=i.id %}"><img src="{{ i.foto.url }}" alt=""></a>
+                                        <a href="{% url 'xidmetler_app:news-detail' pk=i.id %}"><img src="{{ i.foto.url }}" alt="{{ i.bashliq }}"></a>
                                     </div>
                                     <div class="widget-posts-body">
                                         <h6 class="widget-posts-title"><a href="{% url 'xidmetler_app:news-detail' pk=i.id %}">{{ i.bashliq }}</a></h6>
@@ -265,7 +265,7 @@
                             </div>
                             <ul id="Instafeed">
                                 {% for i in instagram_post %}
-                                <li><a href="{{ i.post_link }}"><img src="{{ i.foto.url }}" alt=""></a></li>
+                                <li><a href="{{ i.post_link }}"><img src="{{ i.foto.url }}" alt="Günel Qəmbərova"></a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -286,7 +286,7 @@
                             <div class="footer-contact-info footer-contact-info-3 mb-40">
                                 <div class="footer-logo mb-35">
                                     {% for i in logosekil %}
-                                    <a href="{% url 'homepage' %}"><img class="footerlogoimg" src="{{ i.logosekilana.url }}" alt=""></a>
+                                    <a href="{% url 'homepage' %}"><img class="footerlogoimg" src="{{ i.logosekilana.url }}" alt="Günel Qəmbərova"></a>
                                     {% endfor %}
                                 </div>
                                 <div class="footer-contact-content mb-25">
@@ -329,7 +329,7 @@
                                     <div class="signle-blog-feeds mb-20">
                                         <div class="blog-feeds-thumb">
                                             {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_1.url }}" alt=""></a>
+                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_1.url }}" alt="{{ i.bloq_1_seyfenin_bashliq_postu }}"></a>
                                             {% endfor %}
                                         </div>
                                         <div class="blog-feeds-text">
@@ -342,7 +342,7 @@
                                     <div class="signle-blog-feeds mb-20">
                                         <div class="blog-feeds-thumb">
                                             {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt=""></a>
+                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt="{{ i.bloq_2_seyfenin_bashliq_postu }}"></a>
                                             {% endfor %}
                                         </div>
                                         <div class="blog-feeds-text">
@@ -355,7 +355,7 @@
                                     <div class="signle-blog-feeds  mb-20">
                                         <div class="blog-feeds-thumb">
                                             {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt=""></a>
+                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt="{{ i.bloq_3_seyfenin_bashliq_postu }}"></a>
                                             {% endfor %}
                                         </div>
                                         <div class="blog-feeds-text">
