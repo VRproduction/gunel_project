@@ -5,6 +5,7 @@
 <head>
     <meta name="google-site-verification" content="OXXG9l1pYzna7dpyBSKNdP-fmX4JXU0NanfHV95xFvM" />
     <meta name="google-site-verification" content="_gDJKOi7W2ZTg5VRXA9jhNXpBrCZCtJINmifXrsaEZU" />
+    <link rel="canonical" href="https://sudvezixercengi.az/" />
     <meta name=”description” content="Süd vəzi xərçəngi irsidirmi?. Qadınlarda sinə xərçəngi. Mammoloq radioloq Günel Qəmbərova">
     <meta name="keywords" content="xərçəng xəstəliyi, süd vəzi xərçəngi, meme kanseri, göğüs kanseri, qadınlarda xerçeng">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -358,14 +359,14 @@
                     {% for i in haqqimizdasekil %}
                     <div class="col-xl-6 col-lg-5">
                         <div class="medical-icon-brand-2">
-                            <img src="{{ i.orta_sekil.url }}" alt="">
+                            <img src="{{ i.orta_sekil.url }}" alt="Günel Qəmbərova">
                         </div>
                         <div class="about-left-side pos-rel mb-30">
                             <div class="about-front-img">
-                                <img src="{{ i.esas_sekil.url }}" alt="">
+                                <img src="{{ i.esas_sekil.url }}" alt="Günel Qəmbərova">
                             </div>
                             <div class="about-shape">
-                                <img style="height:60em" src="https://www.devsnews.com/wp/medidove/wp-content/themes/medidove/img/about/about-shape.png" alt="">
+                                <img style="height:60em" src="https://www.devsnews.com/wp/medidove/wp-content/themes/medidove/img/about/about-shape.png" alt="Günel Qəmbərova">
                             </div>
                         </div>
                     </div>
@@ -425,7 +426,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="service-box text-center mb-30">
                             <div class="service-thumb">
-                                <img style="width: 35%;" src="{{ i.balaca_sekil_hecmi_244_x_80.url }}" />
+                                <img style="width: 35%;" src="{{ i.balaca_sekil_hecmi_244_x_80.url }}" alt="{{i.servis_ust_yazi}}" />
                             </div>
                             <div class="service-content">
                                 <a>
@@ -486,7 +487,7 @@
                 {% for i in reyler %}
                 <div class="blog-slider__item swiper-slide">
                     <div class="blog-slider__img">
-                        <img src="{{ i.foto.url }}" alt="">
+                        <img src="{{ i.foto.url }}" alt="{{ i.instagram }}">
                     </div>
                     <div class="blog-slider__content">
                         <span class="blog-slider__code">{{ i.vaxt }}</span>
@@ -507,7 +508,7 @@
                     <div class="col-xl-6 col-lg-7">
                         <div class="section-title pos-rel mb-75">
                             <div class="section-icon">
-                                <img class="section-back-icon back-icon-left" src="{% static 'img/section/section-back-icon.png' %}" alt="">
+                                <img class="section-back-icon back-icon-left" src="{% static 'img/section/section-back-icon.png' %}" alt="Günel Qəmbərova">
                             </div>
                             <div class="section-text pos-rel">
                                 <br>
@@ -528,7 +529,8 @@
                         <div class="section-title pos-rel mb-75">
                             <div class="section-icon">
                                 {% for i in bloqanaseyfefoto %}
-                                <img class="section-back-icon back-icon-left" src="{{ i.arxafonfoto.url }}" alt=""> {% endfor %}
+                                <img class="section-back-icon back-icon-left" src="{{ i.arxafonfoto.url }}" alt="Günel Qəmbərova"> 
+                                {% endfor %}
                             </div>
                             <div class="section-text pos-rel">
                                 {% for i in bloqsolmetn %}
@@ -569,7 +571,7 @@
                                                     <section class="services-area pos-rel pb-100">
                                                         <span class="h4services-bg">
                                                             <img src="https://www.devsnews.com/wp/medidove/wp-content/uploads/2019/11/services__overlay__bg.png"
-                                                                alt="Overlay Image">
+                                                                alt="Günel Qəmbərova">
                                                         </span>
                                                         <div class="container">
                                                             <div class="row h4service-active">
@@ -581,7 +583,7 @@
                                                                                 width="700" height="200"
                                                                                 src="{{ i.foto_post.url }}"
                                                                                 class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
-                                                                                alt="" loading="lazy"
+                                                                                alt="{{ i.metinin_bashligi }}" loading="lazy"
                                                                                 sizes="(max-width: 700px) 100vw, 700px" />
                                                                             <a class="h4services-tag green-bg white-color text-uppercase f-700"
                                                                                 href="">{{ i.vaxt }}</a>
@@ -618,7 +620,7 @@
                             <div class="footer-contact-info footer-contact-info-3 mb-40">
                                 <div class="footer-logo mb-35">
                                     {% for i in logosekil %}
-                                    <a href="{% url 'homepage' %}"><img class="footerlogoimg" src="{{ i.logosekilana.url }}" alt=""></a>
+                                    <a href="{% url 'homepage' %}"><img class="footerlogoimg" src="{{ i.logosekilana.url }}" alt="Günel Qəmbərova"></a>
                                     {% endfor %}
                                 </div>
                                 <div class="footer-contact-content mb-25">
@@ -661,7 +663,7 @@
                                     <div class="signle-blog-feeds mb-20">
                                         <div class="blog-feeds-thumb">
                                             {% for i in footer_bloq %}
-                                            <a href="{% url 'blog_app:blog-detail' pk=i.id %}"><img src="{{ i.foto_1.url }}" alt=""></a>
+                                            <a href="{% url 'blog_app:blog-detail' pk=i.id %}"><img src="{{ i.foto_1.url }}" alt="{{ i.bloq_1_seyfenin_bashliq_postu }}"></a>
                                             {% endfor %}
                                         </div>
                                         <div class="blog-feeds-text">
@@ -674,7 +676,7 @@
                                     <div class="signle-blog-feeds mb-20">
                                         <div class="blog-feeds-thumb">
                                             {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt=""></a>
+                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt="{{ i.bloq_2_seyfenin_bashliq_postu }}"></a>
                                             {% endfor %}
                                         </div>
                                         <div class="blog-feeds-text">
@@ -687,7 +689,7 @@
                                     <div class="signle-blog-feeds  mb-20">
                                         <div class="blog-feeds-thumb">
                                             {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt=""></a>
+                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt="{{ i.bloq_3_seyfenin_bashliq_postu }}"></a>
                                             {% endfor %}
                                         </div>
                                         <div class="blog-feeds-text">
