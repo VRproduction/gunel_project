@@ -190,7 +190,7 @@
                     <div class="logo">
                         <div class="logo logo-circle pos-rel">
                             {% for i in logosekil %}
-                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
+                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}" alt="Günel Qəmbərova"></a>
                             {% endfor %}
                         </div>
                     </div>
@@ -363,7 +363,7 @@
                             <div class="footer-logo mb-35">
                                 {% for i in logosekil %}
                                 <a href="{% url 'homepage' %}"><img class="footerlogoimg" src="{{ i.logosekilana.url }}"
-                                        alt=""></a>
+                                        alt="Günel Qəmbərova"></a>
                                 {% endfor %}
                             </div>
                             <div class="footer-contact-content mb-25">
@@ -408,7 +408,7 @@
                                 <div class="signle-blog-feeds mb-20">
                                     <div class="blog-feeds-thumb">
                                         {% for i in footer_bloq %}
-                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_1.url }}" alt=""></a>
+                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_1.url }}" alt="{{ i.bloq_1_seyfenin_bashliq_postu }}"></a>
                                         {% endfor %}
                                     </div>
                                     <div class="blog-feeds-text">
@@ -421,7 +421,7 @@
                                 <div class="signle-blog-feeds mb-20">
                                     <div class="blog-feeds-thumb">
                                         {% for i in footer_bloq %}
-                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt=""></a>
+                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt="{{ i.bloq_2_seyfenin_bashliq_postu }}"></a>
                                         {% endfor %}
                                     </div>
                                     <div class="blog-feeds-text">
@@ -434,7 +434,7 @@
                                 <div class="signle-blog-feeds  mb-20">
                                     <div class="blog-feeds-thumb">
                                         {% for i in footer_bloq %}
-                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt=""></a>
+                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt="{{ i.bloq_3_seyfenin_bashliq_postu }}"></a>
                                         {% endfor %}
                                     </div>
                                     <div class="blog-feeds-text">
