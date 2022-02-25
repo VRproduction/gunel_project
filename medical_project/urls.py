@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from qebul_app.views import appoinment
 from medical_app.views import homepage, abouscroll
-from contact_app.views import contact
+from contact_app.views import contact, konfras
 from xidmetler_app.views import bizim_xidmetler
 from medi_app.views import med, sitemap
 from blog_app.views import blog
@@ -36,6 +36,7 @@ urlpatterns = [
     path('haqqimda/', abouscroll, name="abouscroll"),
    # path('ckeditor/', include('ckeditor_uploader.urls')),
     path('blog/', blog, name="blog"),
+    path('konfrans/', konfras, name="konfrans"),
     path('medi/', med , name="media"),
     path("sitemap.xml", sitemap)
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
