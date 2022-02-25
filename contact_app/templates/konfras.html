@@ -30,59 +30,66 @@
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
 
     <style>
-        #butik {
-            width: 50%;
+        .breadcrumb-bg {
+                {% for i in sekil %}
+
+            background-image: url({{ i.img.url }});
+
+                {% endfor %}
+
         }
+
         .ustfoto_yazisi {
             font-size: 56px;
         }
-        
+
         .footerlogoimg {
             width: 55%;
             margin-left: 50px;
         }
-        
+
         @media screen and (min-width:375px) and (max-width:767px) {
             .breadcrumb-bg {
-                padding-top: 16px;
-                padding-bottom: 140px;
+                    {% for i in mobilefoto %}
+
+                background-image: url({{ i.img.url }});
+
+                    {% endfor %}
             }
-            .page-title h1 {
-                font-size: 25px;
-                margin-bottom: 20px;
-            }
+
             .fa-times-square {
                 left: auto !important;
             }
-            .small-text {
-                color: #647589;
-                font-size: 16px;
-                font-weight: 500;
-                width: 245px;
-                margin-bottom: 0;
-            }
+
             .fa-clock {
                 left: auto !important;
             }
+
             .footerlogoimg {
                 width: 35%;
                 margin-left: 120px;
             }
+
             .footer-contact-content p {
                 text-align: center;
             }
+
             .footer-emailing ul {
                 text-align: center;
             }
+
             .col-xl-2 .footer-widget {
                 text-align: center;
             }
+
             .col-xl-3 .footer-widget {
                 text-align: center;
             }
+
             .logoimg {
                 width: 30%;
             }
+
             .mean-container a.meanmenu-reveal {
                 border: 1px solid #E12454;
                 color: #E12454;
@@ -101,6 +108,54 @@
                 top: -15px;
                 width: 34px;
             }
+
+            .breadcrumb-bg {
+                padding-top: 80px;
+                padding-bottom: 0px;
+            }
+
+            .contact i {
+                background: #8fb569;
+                font-size: 25px;
+                height: 90px;
+                width: 90px;
+                color: #ffffff;
+                border-radius: 50%;
+                line-height: 70px;
+                border: 10px solid #fff;
+                box-shadow: 0px 16px 32px 0px rgb(206 226 255 / 40%);
+                margin-bottom: 29px;
+            }
+
+            .page-title h2 {
+                font-size: 25px;
+            }
+
+            .section-title h3 {
+                text-align: center;
+            }
+
+            .contact-form input {
+                background: #ffffff;
+                height: 40px;
+                width: 100%;
+                padding: 0 20px;
+                padding-right: 30px;
+                border: 0;
+                color: #aab5ca;
+                font-weight: 500;
+                letter-spacing: 2px;
+            }
+        }
+
+        .success_text {
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success_text.show {
+            display: block;
         }
     </style>
 
@@ -116,7 +171,7 @@
                         <div class="header-info">
                             {% for numbers in numberemail %}
                             <span><i class="fas fa-phone"></i> +{{numbers.number}}</span>
-                            <span><i class="fas fa-envelope"></i> {{numbers.email}}</span> 
+                            <span><i class="fas fa-envelope"></i> {{numbers.email}}</span>
                             <span><i class="fas fa-clock"></i> {{numbers.clock}}</span>{% endfor %}
                         </div>
                     </div>
@@ -135,7 +190,7 @@
                     <div class="logo">
                         <div class="logo logo-circle pos-rel">
                             {% for i in logosekil %}
-                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}"></a>
+                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}" alt="Günel Qəmbərova"></a>
                             {% endfor %}
                         </div>
                     </div>
@@ -143,15 +198,16 @@
                     <div class="button"></div>
                     <ul class="socialico">
                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
-                        <li><a href="{% url 'konfrans' %}">Konfrans qeydiyyat</a></li>
                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                         <li><a href="{% url 'media' %}">Media</a></li>
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
                         <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                         {% for i in haqqimda %}
-                        <a class="rotate" target="_blank" href="{{ i.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+                        <a class="rotate" target="_blank" href="{{ i.facebook_url }}"><i
+                                class="fab fa-facebook-f"></i></a>
                         <a class="rotate" target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
-                        <a class="rotate" target="_blank" href="{{ i.instagram_url }}"><i class="fab fa-instagram"></i></a> {% endfor %}
+                        <a class="rotate" target="_blank" href="{{ i.instagram_url }}"><i
+                                class="fab fa-instagram"></i></a> {% endfor %}
 
                     </ul>
 
@@ -164,30 +220,23 @@
 
     <main>
         <!-- hero-area start -->
-        {% for i in sekil %}
-        <section class="breadcrumb-bg pt-200 pb-180"
-            style="background-image: url( {{ i.esassekil.url }} );">
-        {% endfor %}
-
+        <section class="breadcrumb-bg pt-200 pb-180">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9 col-md-9 col-12">
-                        {% for i in esasyazilar %}
+                    <div class="col-lg-9 col-md-9">
                         <div class="page-title">
-                            <p class="small-text pb-15">{{ i.yazı_1 }}</p>
-                            <h1>{{ i.yazı_2 }}</h1>
+                            <h2>Konfrans Qeydiyyat Bölməsi</h2>
                         </div>
-                        {% endfor %}
                     </div>
-                    <div
-                        class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">
+                    <div class="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center"
+                        style="left:-160px">
                         <div class="page-breadcumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb ">
                                     <li class="breadcrumb-item">
-                                        <a href="{% url 'homepage' %}">Ana Səhifə</a>
+                                        <a href="{% url 'homepage' %}">Ana səhifə</a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Qəbula Yazıl</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Konfrans Qeydiyyat</li>
                                 </ol>
                             </nav>
                         </div>
@@ -196,80 +245,79 @@
             </div>
         </section>
         <!-- hero-area end -->
-        <!-- calculate-area start -->
-        <section class="appointment-area appointment-area-3 pos-rel pt-115 pb-120" style="background-color:azure;">
+        <!-- contact-area start -->
+        <!-- contact-form-area start -->
+        <section class="contact-form-area gray-bg pt-100 pb-100">
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-                        <div class="section-title text-center pos-rel mb-75">
-                            <div class="section-icon">
-                                <img class="section-back-icon" src="{% static 'img/section/section-back-icon.png' %}" alt="Günel Qəmbərova">
-                            </div>
-                            <div class="section-text pos-rel">
-                                <h5></h5>
-                                <h2>Qəbula yazılmaq üçün forumu doldurun</h2>
-                            </div>
-                            <div class="section-line pos-rel">
-                                <img style="margin-top:40px" src="{% static 'img/shape/section-title-line.png' %}" alt="Günel Qəmbərova">
+                <div class="form-wrapper">
+                    <div class="row align-items-center">
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="section-title mb-55">
+                                <h3>Konfransa Qeydiyyata yazıl</h3>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-8">
-                        <div class="calculate-box white-bg">
-                            <div class="calculate-content mt-60">
-                                <div class="row">
-                                    <form method="post" id="contact-form">
-                                        {% csrf_token %} 
-                                           <div class="row">
-                                               <div class="col-lg-6">
-                                                   <div class="form-box mb-30">
-                                                       <label for="exampleInputEmail1">Adınız</label>
-                                                   <input style="height:55px;" type="text" class="form-control" id="exampleInputEmail1"
-                                                   aria-describedby="emailHelp" name="adtext">
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-6">
-                                                   <div class="form-box mb-30">
-                                                       <label for="exampleInputPassword1">Soyadınız</label>
-                                               <input style="height:55px;" type="text" class="form-control" id="exampleInputPassword1" name="soyadtext">
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-6">
-                                                   <div class="form-box  mb-30">
-                                                       <label for="exampleInputPassword1">Telefon Nömrəniz</label>
-                                               <input style="height:55px;" type="number" class="form-control" id="exampleInputPassword1" name="telefon">
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-6">
-                                                   <div class="form-box mb-30">
-                                                       <label for="exampleInputPassword1">E-mail</label>
-                                               <input style="height:55px;" type="text" class="form-control" id="exampleInputPassword1" name="mal">
-                                                   </div>
-                                               </div>
-                                               <div class="col-lg-12">
-                                                   <div class="form-box mb-30">
-                                                       <label  for="exampleInputPassword1">Müraciət</label>
-                                                   <textarea style="height:55px;" class="form-control" name="subject"></textarea>
-                                                   
-                                                   </div>
-                                                   <div class="contact-btn text-center pb-40">
-                                                       <button id="butikk" style="margin-top: 1em;" type="submit"
-                                                       class="btn btn-primary">Göndər</button>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </form> 
+                    <div class="contact-form">
+                        <form method="post" id="contact-form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-box user-icon mb-30">
+                                        <label for="exampleInputEmail1">Adınız</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" name="adtext">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-box user-icon mb-30">
+                                        <label for="exampleInputPassword1">Soyadınız</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1"
+                                            name="soyadtext">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-box email-icon mb-30">
+                                        <label for="exampleInputPassword1">Şəxsiyyət vəsiqəsinin seriya nömrəsi</label>
+                                        <input type="number" class="form-control" id="exampleInputPassword1"
+                                            name="seriya">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-box phone-icon mb-30">
+                                        <label for="exampleInputPassword1">İxtisas</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" name="ixtisas">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-box phone-icon mb-30">
+                                        <label for="exampleInputPassword1">E-poçt</label>
+                                        <input type="email" class="form-control" id="exampleInputPassword1" name="mal">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-box message-icon mb-30">
+                                        <label for="exampleInputPassword1">İşlədiyiniz müəssisə</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" name="muessise">
+
+                                    </div>
+                                    <div class="contact-btn text-center">
+                                        <button id="butikk" type="submit" class="btn btn-primary">Göndər</button>
+                                    </div>
+                                    <p class="success_text">Success!</p>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- calculate-area end -->
+        <!-- contact-form-area end -->
+
+        <section class="map-area">
+            <!-- MAP -->
+        </section>
     </main>
+
     <!-- footer start -->
     <footer>
         <div class="footer-top primary-bg footer-map pos-rel pt-120 pb-80">
@@ -279,7 +327,8 @@
                         <div class="footer-contact-info footer-contact-info-3 mb-40">
                             <div class="footer-logo mb-35">
                                 {% for i in logosekil %}
-                                <a href="{% url 'homepage' %}"><img class="footerlogoimg" src="{{ i.logosekilana.url }}" alt="Günel Qəmbərova"></a>
+                                <a href="{% url 'homepage' %}"><img class="footerlogoimg" src="{{ i.logosekilana.url }}"
+                                        alt="Günel Qəmbərova"></a>
                                 {% endfor %}
                             </div>
                             <div class="footer-contact-content mb-25">
@@ -290,8 +339,10 @@
                             <div class="footer-emailing">
                                 <ul>
                                     {% for numbers in numberemail %}
-                                    <li style="font-size:14px !important"><i class="far fa-phone"></i>+{{numbers.number}}</li>
-                                    <li style="font-size:14px !important"><i class="far fa-envelope"></i>{{numbers.email}}</li>
+                                    <li style="font-size:14px !important"><i
+                                            class="far fa-phone"></i>+{{numbers.number}}</li>
+                                    <li style="font-size:14px !important"><i
+                                            class="far fa-envelope"></i>{{numbers.email}}</li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -304,11 +355,11 @@
                             </div>
                             <div class="footer-menu footer-menu-2 h4footer-menu">
                                 <ul>
-                                    <li><a href="{% url 'konfrans' %}">Konfrans qeydiyyat</a></li>
-                                    <li><a href="{% url 'contact' %}">Əlaqə</a></li>
-                                    <li><a href="{% url 'blog' %}">Bloq</a></li>
-                                    <li><a href="{% url 'media' %}">Media</a></li>
+                                    <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
                                     <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
+                                    <li><a href="{% url 'media' %}">Media</a></li>
+                                    <li><a href="{% url 'blog' %}">Bloq</a></li>
+                                    <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -319,46 +370,46 @@
                                 <h3>Bloq</h3>
                             </div>
                             <div class="blog-feeds pr-15">
-                                    <div class="signle-blog-feeds mb-20">
-                                        <div class="blog-feeds-thumb">
-                                            {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_1.url }}" alt="{{ i.bloq_1_seyfenin_bashliq_postu }}"></a>
-                                            {% endfor %}
-                                        </div>
-                                        <div class="blog-feeds-text">
-                                            {% for i in footer_bloq %}
-                                            <h5><a href="{% url 'blog' %}">{{ i.bloq_1_seyfenin_bashliq_postu }}</a></h5>
-                                            <span class="feeds-date">{{ i.vaxt_1 }}</span>
-                                            {% endfor %}
-                                        </div>
+                                <div class="signle-blog-feeds mb-20">
+                                    <div class="blog-feeds-thumb">
+                                        {% for i in footer_bloq %}
+                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_1.url }}" alt="{{ i.bloq_1_seyfenin_bashliq_postu }}"></a>
+                                        {% endfor %}
                                     </div>
-                                    <div class="signle-blog-feeds mb-20">
-                                        <div class="blog-feeds-thumb">
-                                            {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt="{{ i.bloq_2_seyfenin_bashliq_postu }}"></a>
-                                            {% endfor %}
-                                        </div>
-                                        <div class="blog-feeds-text">
-                                            {% for i in footer_bloq %}
-                                            <h5><a href="{% url 'blog' %}">{{ i.bloq_2_seyfenin_bashliq_postu }}</a></h5>
-                                            <span class="feeds-date">{{ i.vaxt_2 }}</span>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                    <div class="signle-blog-feeds  mb-20">
-                                        <div class="blog-feeds-thumb">
-                                            {% for i in footer_bloq %}
-                                            <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt="{{ i.bloq_3_seyfenin_bashliq_postu }}"></a>
-                                            {% endfor %}
-                                        </div>
-                                        <div class="blog-feeds-text">
-                                            {% for i in footer_bloq %}
-                                            <h5><a href="{% url 'blog' %}">{{i.bloq_3_seyfenin_bashliq_postu}}</a></h5>
-                                            <span class="feeds-date">{{i.vaxt_3}}</span>
-                                            {% endfor %}
-                                        </div>
+                                    <div class="blog-feeds-text">
+                                        {% for i in footer_bloq %}
+                                        <h5><a href="{% url 'blog' %}">{{ i.bloq_1_seyfenin_bashliq_postu }}</a></h5>
+                                        <span class="feeds-date">{{ i.vaxt_1 }}</span>
+                                        {% endfor %}
                                     </div>
                                 </div>
+                                <div class="signle-blog-feeds mb-20">
+                                    <div class="blog-feeds-thumb">
+                                        {% for i in footer_bloq %}
+                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_2.url }}" alt="{{ i.bloq_2_seyfenin_bashliq_postu }}"></a>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="blog-feeds-text">
+                                        {% for i in footer_bloq %}
+                                        <h5><a href="{% url 'blog' %}">{{ i.bloq_2_seyfenin_bashliq_postu }}</a></h5>
+                                        <span class="feeds-date">{{ i.vaxt_2 }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="signle-blog-feeds  mb-20">
+                                    <div class="blog-feeds-thumb">
+                                        {% for i in footer_bloq %}
+                                        <a href="{% url 'blog' %}"><img src="{{ i.foto_3.url }}" alt="{{ i.bloq_3_seyfenin_bashliq_postu }}"></a>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="blog-feeds-text">
+                                        {% for i in footer_bloq %}
+                                        <h5><a href="{% url 'blog' %}">{{i.bloq_3_seyfenin_bashliq_postu}}</a></h5>
+                                        <span class="feeds-date">{{i.vaxt_3}}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6">
@@ -369,18 +420,22 @@
                             <div class="h4events-list mb-30">
                                 <ul>
                                     {% for i in acilish_vaxt %}
-                                        <li><i class="fal fa-clock"></i><span>{{ i.hefteler }} <span>{{ i.acilis_vaxti }} - {{ i.baglanan_vaxt }} </span></span></li>
-                                        <li><i class="fal fa-times-square"></i><span>{{ i.istirahet_gunleri }}</span></li>
-                                        {% endfor %}
+                                    <li><i class="fal fa-clock"></i><span>{{ i.hefteler }} <span>{{ i.acilis_vaxti }} -
+                                                {{ i.baglanan_vaxt }} </span></span></li>
+                                    <li><i class="fal fa-times-square"></i><span>{{ i.istirahet_gunleri }}</span></li>
+                                    {% endfor %}
+
                                 </ul>
                             </div>
                             <div class="h4footer-social">
                                 <ul class="list-inline">
                                     {% for i in haqqimda %}
-                                    <li><a href="{{ i.facebook_url }}" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="{{ i.instagram_url }}" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="{{ i.youtube_url }}" title="Youtube"><i class="fab fa-youtube"></i></a>
+                                    <li><a target="_blank" href="{{ i.facebook_url }}"><i
+                                                class="fab fa-facebook-f"></i></a></li>
+                                    <li><a target="_blank" href="{{ i.youtube_url }}"><i class="fab fa-youtube"></i></a>
                                     </li>
+                                    <li><a target="_blank" href="{{ i.instagram_url }}"><i
+                                                class="fab fa-instagram"></i></a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -394,7 +449,8 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="footer-copyright footer-copyright-3 text-center">
-                            <p>Copyright  <a style="color:#9aacbb" target="_blank" href="https://vrproduction.az/">@VRProduction</a> -  2021</p>
+                            <p>Copyright <a style="color:#9aacbb" target="_blank"
+                                    href="https://vrproduction.az/">@VRProduction</a> - 2021</p>
                         </div>
                     </div>
                 </div>
@@ -422,10 +478,8 @@
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-
-
-     <script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+    <script>
 
         var $form = $("#contact-form"),
             $errorMsg = $("<span style='color:red;' class='error'>Boş məlumat göndərə bilmərsiz</span>");
@@ -465,13 +519,22 @@
             return toReturn;
         });
 
+
+        // var $form = $("#subject"),
+        // $errorMsg = $("<span style='color:red;' class='error'>Boş məlumat göndərə bilmərsiz</span>");
+
+        // $("#butikk").on("click", function(){
+        //     var toReturn = true;
+
+        // })
+
     </script>
 
     <script>
         var faq = document.getElementsByClassName("faq-page");
         var i;
         for (i = 0; i < faq.length; i++) {
-            faq[i].addEventListener("click", function() {
+            faq[i].addEventListener("click", function () {
                 /* Toggle between adding and removing the "active" class,
                 to highlight the button that controls the panel */
                 this.classList.toggle("active");
@@ -523,15 +586,15 @@
                 disableOnInteraction: false,
             }
         });
-        (function($) {
-            $.fn.menumaker = function(options) {
+        (function ($) {
+            $.fn.menumaker = function (options) {
                 var cssmenu = $(this),
                     settings = $.extend({
                         format: "dropdown",
                         sticky: false
                     }, options);
-                return this.each(function() {
-                    $(this).find(".button").on('click', function() {
+                return this.each(function () {
+                    $(this).find(".button").on('click', function () {
                         $(this).toggleClass('menu-opened');
                         var mainmenu = $(this).next('ul');
                         if (mainmenu.hasClass('open')) {
@@ -544,9 +607,9 @@
                         }
                     });
                     cssmenu.find('li ul').parent().addClass('has-sub');
-                    multiTg = function() {
+                    multiTg = function () {
                         cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
-                        cssmenu.find('.submenu-button').on('click', function() {
+                        cssmenu.find('.submenu-button').on('click', function () {
                             $(this).toggleClass('submenu-opened');
                             if ($(this).siblings('ul').hasClass('open')) {
                                 $(this).siblings('ul').removeClass('open').slideToggle();
@@ -558,7 +621,7 @@
                     if (settings.format === 'multitoggle') multiTg();
                     else cssmenu.addClass('dropdown');
                     if (settings.sticky === true) cssmenu.css('position', 'fixed');
-                    resizeFix = function() {
+                    resizeFix = function () {
                         var mediasize = 1000;
                         if ($(window).width() > mediasize) {
                             cssmenu.find('ul').show();
@@ -573,8 +636,8 @@
             };
         })(jQuery);
 
-        (function($) {
-            $(document).ready(function() {
+        (function ($) {
+            $(document).ready(function () {
                 $("#cssmenu").menumaker({
                     format: "multitoggle"
                 });
