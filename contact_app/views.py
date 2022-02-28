@@ -29,14 +29,14 @@ def contact(request):
 
     if request.method == 'POST':
         adtext = request.POST.get('adtext')
-        soyadtext = request.POST.get('soyadtext')
+        soyadtext = request.POST.get('num')
         telefon = request.POST.get('telefon')
         mal = request.POST.get('mal')
         subject = request.POST.get('subject')
 
         data = {
             'adtext': adtext,
-            'soyadtext' : soyadtext,
+            'num' : num,
             'telefon': telefon,
             'mal': mal,
             'subject': subject,
