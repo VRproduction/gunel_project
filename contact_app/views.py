@@ -29,14 +29,14 @@ def contact(request):
 
     if request.method == 'POST':
         adtext = request.POST.get('adtext')
-        num = request.POST.get('num')
+        soyadtext = request.POST.get('soyadtext')
         telefon = request.POST.get('telefon')
         mal = request.POST.get('mal')
         subject = request.POST.get('subject')
 
         data = {
             'adtext': adtext,
-            'num' : num,
+            'soyadtext' : soyadtext,
             'telefon': telefon,
             'mal': mal,
             'subject': subject,
@@ -100,7 +100,7 @@ def konfras(request):
 
     if request.method == 'POST':
         adtext = request.POST.get('adtext')
-        soyadtext = request.POST.get('soyadtext')
+        num = request.POST.get('num')
         seriya = request.POST.get('seriya')
         ixtisas = request.POST.get('ixtisas')
         mal = request.POST.get('mal')
@@ -108,7 +108,7 @@ def konfras(request):
 
         data = {
             'adtext': adtext,
-            'soyadtext' : soyadtext,
+            'num' : num,
             'seriya': seriya,
             'mal': mal,
             'muessise': muessise,
