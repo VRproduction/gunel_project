@@ -15,6 +15,7 @@ class SaytınBaşlığı(models.Model):
 
 class SaytınBaşlığıFoto(models.Model):
     bashligsekil = models.ImageField(upload_to='media/', blank=True)
+    apple_icon = models.ImageField(upload_to='media/', null=True, blank=True)
 
 class LogoŞəkilAnaSəhifə(models.Model):
     logosekilana = models.ImageField(upload_to='media/')

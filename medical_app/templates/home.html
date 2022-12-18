@@ -1,20 +1,29 @@
-{% load static %}
-<!Doctype html>
-<html class="no-js" lang="zxx">
-
+<!DOCTYPE html>
+{% load static fullurl %}
+<html lang="az" prefix="og: https://ogp.me/ns#">
 <head>
-    <meta name="google-site-verification" content="OXXG9l1pYzna7dpyBSKNdP-fmX4JXU0NanfHV95xFvM" />
-    <meta name="google-site-verification" content="_gDJKOi7W2ZTg5VRXA9jhNXpBrCZCtJINmifXrsaEZU" />
-    <link rel="canonical" href="https://sudvezixercengi.az/" />
-    <meta name=”description” content="Süd vəzi xərçəngi irsidirmi?. Qadınlarda sinə xərçəngi. Mammoloq radioloq Günel Qəmbərova">
-    <meta name="keywords" content="xərçəng xəstəliyi, süd vəzi xərçəngi, meme kanseri, göğüs kanseri, qadınlarda xerçeng">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge"> {% for bashlig in baslig %}
-    <title>{{ bashlig }}</title>
-    {% endfor %}
-    <link rel="manifest" href="site.webmanifest"> {% for photos in photobashlig %}
-    <link rel="shortcut icon" href="{{photos.bashligsekil.url}}"> {% endfor %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    {% block seo %}
+    <title>{% if seo.title %}{{ seo.title }}{% endif %}</title>
+    <meta name="description" content="{% if seo.description %}{{ seo.description }}{% endif %}">
+    <meta name="keywords" content="{% if seo.keyword %}{{ seo.keyword }}{% endif %}">
+    <meta property="og:title" content="{% if seo.title %}{{ seo.title }}{% endif %}"/>
+    <meta property="og:description" content="{% if seo.description %}{{ seo.description }}{% endif %}"/>
+    <meta property="og:image" content="{% if about.esas_sekil %}{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ about.esas_sekil.url }}{% endif %}"/>
+    {% endblock %}
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+    <link rel="canonical" href="{{ request.build_absolute_uri }}"/>
+    <meta property="og:locale" content="az_AZ"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+    <meta property="og:site_name" content="sudvezixercengi.az"/>
+    <link rel="shortcut icon" href="{% if context_icons.bashligsekil %}{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ context_icons.bashligsekil.url }}{% endif %}" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="{% if context_icons.apple_icon %}{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ context_icons.apple_icon.url }}{% endif %}"/>
     <!-- Place favicon.png in the root directory -->
 
     <!-- CSS here -->
@@ -366,9 +375,9 @@
                             <div class="about-front-img">
                                 <img src="{{ i.esas_sekil.url }}" alt="Günel Qəmbərova">
                             </div>
-                            <div class="about-shape">
-                                <img style="height:60em" src="https://www.devsnews.com/wp/medidove/wp-content/themes/medidove/img/about/about-shape.png" alt="Günel Qəmbərova">
-                            </div>
+{#                            <div class="about-shape">#}
+{#                                <img style="height:60em" src="https://www.devsnews.com/wp/medidove/wp-content/themes/medidove/img/about/about-shape.png" alt="Günel Qəmbərova">#}
+{#                            </div>#}
                         </div>
                     </div>
                     {% endfor %}

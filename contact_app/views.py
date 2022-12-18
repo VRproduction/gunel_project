@@ -1,6 +1,7 @@
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from medical_app.views import *
+from seo.models import ContactSeo, ConferenceSeo
 from .models import *
 from qebul_app.views import *
 from blog_app.models import *
@@ -26,6 +27,8 @@ def contact(request):
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
     photobashlig = SaytınBaşlığıFoto.objects.all()
+    seo = ContactSeo.objects.last()
+    about = HaqqımızdaŞəkillər.objects.last()
 
     if request.method == 'POST':
         adtext = request.POST.get('adtext')
@@ -76,6 +79,8 @@ def contact(request):
         'acilish_vaxt' : acilish_vaxt,
         'mobilefoto' : mobilefoto,
         'seoelaqe' : seoelaqe,
+        'seo': seo,
+        'about': about,
         
     })
 
@@ -97,6 +102,8 @@ def konfras(request):
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
     photobashlig = SaytınBaşlığıFoto.objects.all()
+    seo = ConferenceSeo.objects.last()
+    about = HaqqımızdaŞəkillər.objects.last()
 
     if request.method == 'POST':
         adtext = request.POST.get('adtext')
@@ -143,5 +150,7 @@ def konfras(request):
         'acilish_vaxt' : acilish_vaxt,
         'mobilefoto' : mobilefoto,
         'seoelaqe' : seoelaqe,
+        'seo': seo,
+        'about': about,
         
     })

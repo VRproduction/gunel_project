@@ -17,9 +17,17 @@ class Xidmətlərimiz_Haqqında(models.Model):
     haqqimizda_ust_yazi_2 = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
     xett_foto = models.ImageField(upload_to='media/')
     metn = models.TextField(max_length=10000,help_text="Maksimum 10000 hərif")
+    description = models.TextField(max_length=50000, null=True, blank=True)
+    title = models.TextField(max_length=50000, null=True, blank=True)
+    keyword = models.TextField(max_length=50000, null=True, blank=True)
+    slug = models.SlugField(db_index=True, max_length=500, null=True, blank=True)
 
     def __str__(self):
         return self.metn
+
+    class Meta:
+        verbose_name = 'Xidmətlər'
+        verbose_name_plural = 'Xidmətlər'
 
 
 # class ServisMəlumat(models.Model):

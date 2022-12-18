@@ -14,6 +14,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from medical_project.settings import *
+from seo.models import AppointmentSeo
 from .models import *
 from blog_app.models import SosialŞəbəkəLinkləri
 import smtplib
@@ -44,6 +45,8 @@ def appoinment(request):
     numberemail = BaşlıqNömrəEpoct.objects.all()
     # haqqimda = HaqqımdaMəlumat.objects.all()
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
+    seo = AppointmentSeo.objects.last()
+    about = HaqqımızdaŞəkillər.objects.last()
 
     if request.method == 'POST':
         adtext = request.POST.get('adtext')
@@ -95,7 +98,8 @@ def appoinment(request):
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
         'sekil' : sekil,
-
+        'seo': seo,
+        'about': about,
     })
 
 

@@ -16,11 +16,19 @@ class PostPaylaşılma(models.Model):
     foto_post = models.ImageField(upload_to='media/', help_text="770x561 Həcmində foto yükləməyinizi məsləhət görünür")
     vaxt = models.DateTimeField(default=timezone.now, help_text="Vaxtı avtomatik olaraq ozü təyin edəcək")
     ad_soyad = models.CharField(max_length=80, help_text="Maksimum 80 hərif")
-    metinin_bashligi = models.TextField(max_length=150, help_text="Maksimum 150 hərif")
-    metn = models.TextField(max_length=800, help_text="Maksimum 800 hərif")
+    metinin_bashligi = models.TextField(max_length=550, help_text="Maksimum 150 hərif")
+    metn = models.TextField()
+    description = models.TextField(max_length=50000, null=True, blank=True)
+    title = models.TextField(max_length=50000, null=True, blank=True)
+    keyword = models.TextField(max_length=50000, null=True, blank=True)
+    slug = models.SlugField(db_index=True, max_length=500, null=True, blank=True)
 
     def __str__(self):
         return self.metinin_bashligi
+
+    class Meta:
+        verbose_name = 'Bloqlar'
+        verbose_name_plural = 'Bloqlar'
 
 class SosialŞəbəkəLinkləri(models.Model):
     facebook_url = models.TextField(max_length=500, help_text="FaceBook profilinizin Linki")

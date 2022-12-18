@@ -15,6 +15,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from medical_project.settings import EMAIL_HOST_USER
 from blog_app.models import *
+from seo.models import HomeSeo
 from xidmetler_app.models import *
 
 def homepage(request):
@@ -44,6 +45,9 @@ def homepage(request):
     bashlig = SaytınBaşlığı.objects.all()
     slayderyazi = GirişŞəkilYazılar.objects.all()
     haqqimizdamel = Xidmətlərimiz_Haqqında.objects.all()
+    seo = HomeSeo.objects.last()
+    about = HaqqımızdaŞəkillər.objects.last()
+
     return render(request, "home.html", {
         'youtube_link_esas' : youtube_link_esas,
         'tezverilenfoto' : tezverilenfoto,
@@ -71,6 +75,8 @@ def homepage(request):
         'acilish_vaxt' : acilish_vaxt,
         'haqqimizdamel' : haqqimizdamel,
         'mobileres' : mobileres,
+        'seo': seo,
+        'about': about,
     })
 
 def abouscroll(request):

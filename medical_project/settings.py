@@ -36,13 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'fullurl',
     'medical_app',
     'qebul_app',
     'contact_app',
     'xidmetler_app',
     'blog_app',
     'medi_app',
-
+    'seo.apps.SeoConfig',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'medical_app.context_processors.header_and_footer',
             ],
         },
     },

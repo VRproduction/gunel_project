@@ -2,6 +2,7 @@ from django.core import paginator
 from django.shortcuts import render
 from medical_app.models import *
 from medical_app.views import *
+from seo.models import BlogSeo
 from xidmetler_app.models import *
 from .models import *
 from django.views.generic import DetailView
@@ -44,6 +45,8 @@ def blog(request):
     numberemail = BaşlıqNömrəEpoct.objects.all()
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
     photobashlig = SaytınBaşlığıFoto.objects.all()
+    seo = BlogSeo.objects.last()
+    about = HaqqımızdaŞəkillər.objects.last()
     return render(request, 'blog_main.html', {
         'bashlig' : bashlig,
         'photobashlig' : photobashlig,
@@ -64,6 +67,8 @@ def blog(request):
         'page_range' : page_range,
         'items' : items,
         'metatag' : metatag,
+        'seo': seo,
+        'about': about,
     })
 
 class BlogDetailView(DetailView):

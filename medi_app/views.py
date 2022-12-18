@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from seo.models import MediaSeo
 from .models import *
 from medical_app.models import *
 from blog_app.models import *
@@ -17,6 +19,9 @@ def med(request):
     foto = MediaƏsasŞəkil.objects.all()
     fotometn = ƏsasŞəkilin_ÜstMətini.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
+    seo = MediaSeo.objects.last()
+    about = HaqqımızdaŞəkillər.objects.last()
+
     return render(request, 'media.html', {
         'foto' : foto,
         'fotometn' : fotometn,
@@ -32,6 +37,8 @@ def med(request):
         'footer_bloq' : footer_bloq,
         'footer_yazi' : footer_yazi,
         'acilish_vaxt' : acilish_vaxt,
+        'seo': seo,
+        'about': about,
     })
 
 def sitemap(request):

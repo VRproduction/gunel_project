@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from medical_app.views import *
+from seo.models import ServiceSeo
 from .models import *
 from django.urls import reverse
 from django.views.generic import DetailView
@@ -47,6 +48,8 @@ def bizim_xidmetler(request):
     numberemail = BaşlıqNömrəEpoct.objects.all()
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
     photobashlig = SaytınBaşlığıFoto.objects.all()
+    seo = ServiceSeo.objects.last()
+    about = HaqqımızdaŞəkillər.objects.last()
     
     return render(request, 'xidmet.html',{
         'bashlig' : bashlig,
@@ -69,6 +72,8 @@ def bizim_xidmetler(request):
         'xidmetlerimiz' : xidmetlerimiz,
         'page_range' : page_range,
         'items' : items,
+        'seo': seo,
+        'about': about,
     })
 
 
