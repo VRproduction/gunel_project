@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class ƏsasFoto(models.Model):
@@ -17,10 +18,15 @@ class Xidmətlərimiz_Haqqında(models.Model):
     haqqimizda_ust_yazi_2 = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
     xett_foto = models.ImageField(upload_to='media/')
     metn = models.TextField(max_length=10000,help_text="Maksimum 10000 hərif")
+    created_at = models.DateTimeField(default=timezone.now, help_text="Vaxtı avtomatik olaraq özü təyin edəcək")
     description = models.TextField(max_length=50000, null=True, blank=True)
     title = models.TextField(max_length=50000, null=True, blank=True)
     keyword = models.TextField(max_length=50000, null=True, blank=True)
     slug = models.SlugField(db_index=True, max_length=500, null=True, blank=True)
+
+    @property
+    def sitemap_image(self):
+        return self.esas_foto.url if self.esas_foto else None
 
     def __str__(self):
         return self.metn

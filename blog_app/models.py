@@ -23,6 +23,10 @@ class PostPaylaşılma(models.Model):
     keyword = models.TextField(max_length=50000, null=True, blank=True)
     slug = models.SlugField(db_index=True, max_length=500, null=True, blank=True)
 
+    @property
+    def sitemap_image(self):
+        return self.foto_post.url if self.foto_post else None
+
     def __str__(self):
         return self.metinin_bashligi
 

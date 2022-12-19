@@ -18,12 +18,22 @@ from django.urls import path
 from django.urls.conf import include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic import TemplateView
+
 from qebul_app.views import appoinment
 from medical_app.views import homepage, abouscroll
 from contact_app.views import contact, konfras
 from xidmetler_app.views import bizim_xidmetler
 from medi_app.views import med, sitemap
 from blog_app.views import blog
+from django.contrib.sitemaps.views import sitemap
+from medical_project.sitemap import StaticSitemap, BlogSitemap, ServiceSitemap
+
+sitemaps = {
+    'static': StaticSitemap,
+    'blog': BlogSitemap,
+    'service': ServiceSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,7 +48,11 @@ urlpatterns = [
     path('blog/', blog, name="blog"),
     path('konfrans/', konfras, name="konfrans"),
     path('medi/', med , name="media"),
-    path("sitemap.xml", sitemap)
+    path('sitemap.xml', sitemap, {
+      'sitemaps': sitemaps,
+      'template_name': 'custom-sitemap.html'
+    }, name='django.contrib.sitemaps.views.sitemap'),
+    path('robots.txt/', TemplateView.as_view(template_name='robots.txt', content_type="text/plain")),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 
