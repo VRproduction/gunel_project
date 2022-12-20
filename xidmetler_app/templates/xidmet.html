@@ -231,7 +231,7 @@
                                 {% endfor %}
                             </div>
                             <div class="section-line pos-rel">
-                                <img src="img/shape/section-title-line.png" alt="Günel Qəmbərova">
+                                <img src="{% static 'img/shape/section-title-line.png' %}" alt="Günel Qəmbərova">
                             </div>
                         </div>
                     </div>
@@ -250,9 +250,9 @@
                                 <img style="border-radius:8%;" src="{{ i.esas_foto.url }}" alt="{{ i.haqqimizda_ust_yazi_1 }}">
                             </div>
                             <div class="service-content">
-                                <h3><a href="{% url 'xidmetler_app:news-detail' pk=i.id %}">{{ i.haqqimizda_ust_yazi_1 }}</a></h3>
+                                <h3><a href="{% url 'xidmetler_app:news-detail' i.slug %}">{{ i.haqqimizda_ust_yazi_1 }}</a></h3>
                                 <p>{{ i.metn | slice:97 }}...</p> 
-                                <a class="service-link" href="{% url 'xidmetler_app:news-detail' pk=i.id %}">Daha Ətraflı</a>
+                                <a class="service-link" href="{% url 'xidmetler_app:news-detail' i.slug %}">Daha Ətraflı</a>
                             </div>
                         </div>
                     </div>
