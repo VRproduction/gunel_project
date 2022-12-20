@@ -16,7 +16,7 @@ class BlogSitemap(Sitemap):
         return obj.vaxt
 
     def location(self, obj):
-        return '/blog/%s' % (obj.id)
+        return '/blog/%s' % (obj.slug)
 
 
 class ServiceSitemap(Sitemap):
@@ -31,7 +31,7 @@ class ServiceSitemap(Sitemap):
         return obj.created_at
 
     def location(self, obj):
-        return '/xidmetlerimiz/%s' % (obj.id)
+        return '/xidmetlerimiz/%s' % (obj.slug)
 
 
 class StaticSitemap(Sitemap):
