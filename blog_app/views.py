@@ -17,13 +17,13 @@ def blog(request):
     acilish_vaxt = Footer_Açılış_Vaxtları.objects.all()
     instagram_post = İnstagram_Postları.objects.all()
     haqqimda_melumat = Haqqımda_Məlumat.objects.all()
-    diger_bloq = Digər_Bloqlar.objects.all()
+    diger_bloq = PostPaylaşılma.objects.all().order_by('-vaxt')[:6]
     footer_bloq = Footer_Bloq.objects.all()
     haqqimda = SosialŞəbəkəLinkləri.objects.all()
     # baner = Sagbaner.objects.all()
     esasfoto_metn = ƏsasFoto_ÜstMətn.objects.all()
     esasfoto = ƏsasFoto.objects.all()
-    posts = PostPaylaşılma.objects.all()
+    posts = PostPaylaşılma.objects.all().order_by('-vaxt')
 
     number_items = 3
     page = request.GET.get('page')
@@ -88,7 +88,7 @@ class BlogDetailView(DetailView):
         context['acilish_vaxt'] = Footer_Açılış_Vaxtları.objects.all()
         context['footer_yazi'] = Footer_Yazısı.objects.all()
         context['footer_bloq'] = Footer_Bloq.objects.all()
-        context['xidmetlerimiz'] = Xidmətlər_Postları.objects.all()
+        context['xidmetlerimiz'] = Xidmətlərimiz_Haqqında.objects.all()
         return context
 
     

@@ -89,7 +89,7 @@ class NewsDetailView(DetailView):
         context['esasfoto'] = ƏsasFoto.objects.all()
         context['haqqimda_melumat'] = Haqqımda_Məlumat.objects.all()
         context['instagram_post'] = İnstagram_Postları.objects.all()
-        context['diger_bloq'] = Digər_Bloqlar.objects.all()
+        context['diger_bloq'] = PostPaylaşılma.objects.all().order_by('-vaxt')[:6]
         context['acilish_vaxt'] = Footer_Açılış_Vaxtları.objects.all()
         context['footer_yazi'] = Footer_Yazısı.objects.all()
         context['footer_bloq'] = Footer_Bloq.objects.all()

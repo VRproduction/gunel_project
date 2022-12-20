@@ -248,11 +248,11 @@
                                 {% for i in xidmetlerimiz %}
                                 <li>
                                     <div class="widget-posts-image">
-                                        <a href="{% url 'xidmetler_app:news-detail' pk=i.id %}"><img src="{{ i.foto.url }}" alt="{{ i.bashliq }}"></a>
+                                        <a href="{% url 'xidmetler_app:news-detail' i.slug %}"><img src="{{ i.esas_foto.url }}" alt="{{ i.haqqimizda_ust_yazi_1 }}"></a>
                                     </div>
                                     <div class="widget-posts-body">
-                                        <h6 class="widget-posts-title"><a href="{% url 'xidmetler_app:news-detail' pk=i.id %}">{{ i.bashliq }}</a></h6>
-                                        <div class="widget-posts-meta">{{ i.vaxt }}</div>
+                                        <h6 class="widget-posts-title"><a href="{% url 'xidmetler_app:news-detail' i.slug %}">{{ i.haqqimizda_ust_yazi_1 }}</a></h6>
+                                        <div class="widget-posts-meta">{{ i.created_at }}</div>
                                     </div>
                                 </li>
                                 {% endfor %}

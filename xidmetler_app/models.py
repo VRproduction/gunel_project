@@ -14,6 +14,9 @@ class ƏsasFoto_ÜstYazılar(models.Model):
 
 class Xidmətlərimiz_Haqqında(models.Model):
     esas_foto = models.ImageField(upload_to='media/')
+    logo = models.ImageField(upload_to = 'media/services/',
+                             help_text="Fotonun həcmi 244 uzunluğu 80 enni olmalıdır (244x80)",
+                             null=True, blank=True)
     haqqimizda_ust_yazi_1 = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
     haqqimizda_ust_yazi_2 = models.TextField(max_length=500, help_text="Maksimum 500 hərif")
     xett_foto = models.ImageField(upload_to='media/')

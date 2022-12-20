@@ -35,7 +35,7 @@ def homepage(request):
     posts = PostPaylaşılma.objects.all()
     haqqimizdasekil = HaqqımızdaŞəkillər.objects.all()
     logosekil = LogoŞəkilAnaSəhifə.objects.all()
-    servismelumat = Servis_Məlümat_AnaSəhifə.objects.all()
+    servismelumat = Xidmətlərimiz_Haqqında.objects.all()
     serviceustyazi = Servis_Üst_Yazılar.objects.all()
     haqqimizdamuellif = Haqqımızdamüəllif.objects.all()
     haqqimizdayazi = HaqqımızdaYazılar.objects.all()
