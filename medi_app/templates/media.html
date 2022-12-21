@@ -24,8 +24,10 @@
     <meta property="og:site_name" content="sudvezixercengi.az"/>
     <link rel="shortcut icon" href="{% if context_icons.bashligsekil %}{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ context_icons.bashligsekil.url }}{% endif %}" type="image/x-icon"/>
     <link rel="apple-touch-icon" href="{% if context_icons.apple_icon %}{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ context_icons.apple_icon.url }}{% endif %}"/>
-    <!-- Place favicon.png in the root directory -->
 
+    {% for head_content in head_seo_content %}
+        {{ head_content.text|safe }}
+    {% endfor %}
     <!-- CSS here -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
@@ -459,7 +461,10 @@
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+    {% for body_content in body_seo_content %}
+    {{ body_content.text|safe }}
+    {% endfor %}
 
     <script>
         var faq = document.getElementsByClassName("faq-page");

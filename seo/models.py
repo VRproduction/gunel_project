@@ -90,3 +90,11 @@ class MediaSeo(models.Model):
     class Meta:
         verbose_name = 'Media SEO'
         verbose_name_plural = 'Media SEO'
+
+
+class HeadSeoContent(models.Model):
+    text = models.TextField()
+
+
+class BodySeoContent(models.Model):
+    text = models.TextField()
