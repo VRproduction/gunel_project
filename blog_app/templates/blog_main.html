@@ -229,7 +229,7 @@
                                     <a href="{% url 'blog_app:blog-detail' i.slug %}">{{ i.metinin_bashligi }}</a>
                                 </h3>
                                 <div class="post-text mb-20">
-                                    <p>{{ i.metn|slice:300 }}.</p>
+                                    <p>{{ i.metn|safe|slice:300 }}.</p>
                                 </div>
                                 <div class="read-more mt-30">
                                     <a href="{% url 'blog_app:blog-detail' i.slug %}" class="btn theme-btn">Daha
