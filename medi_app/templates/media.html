@@ -161,7 +161,7 @@
                     <div class="logo">
                         <div class="logo logo-circle pos-rel">
                             {% for i in logosekil %}
-                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }} alt="Günel Qəmbərova"></a>
+                            <a href="{% url 'homepage' %}"><img class="logoimg" src="{{ i.logosekilana.url }}" alt="Günel Qəmbərova"></a>
                             {% endfor %}
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                     <div class="button"></div>
                     <ul class="socialico">
                         <li><a href="{% url 'homepage' %}">Ana Səhifə</a></li>
-                        <li><a href="{% url 'konfrans' %}">Konfrans qeydiyyat</a></li>
+{#                        <li><a href="{% url 'konfrans' %}">Konfrans qeydiyyat</a></li>#}
                         <li><a href="{% url 'xidmetler' %}">Xidmətlər</a></li>
                         <li><a href="{% url 'media' %}">Media</a></li>
                         <li><a href="{% url 'blog' %}">Bloq</a></li>
