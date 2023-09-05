@@ -22,7 +22,7 @@ class PostPaylaşılma(models.Model):
     title = models.TextField(max_length=50000, null=True, blank=True)
     keyword = models.TextField(max_length=50000, null=True, blank=True)
     slug = models.SlugField(db_index=True, max_length=500, null=True, blank=True)
-
+    description2_for_homepage = models.CharField(max_length=120, null=True, blank=True,help_text="Homepagede gorunen description")
     @property
     def sitemap_image(self):
         return self.foto_post.url if self.foto_post else None
